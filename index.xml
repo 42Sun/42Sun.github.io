@@ -1,78 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction</title>
-    <link>http://example.com/</link>
-    <description>Recent content on Introduction</description>
+    <title>Sun&#39;s Blog</title>
+    <link>https://sundingyi.com/</link>
+    <description>Recent content on Sun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Nov 2017 11:58:39 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 19:11:16 +0800</lastBuildDate>
     
-	<atom:link href="http://example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Photography</title>
-      <link>http://example.com/projects/photography/</link>
+      <link>https://sundingyi.com/projects/photography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/projects/photography/</guid>
+      <guid>https://sundingyi.com/projects/photography/</guid>
       <description>Sometimes I take pictures This project is about the pictures I take. Sometimes, they are pictures of cats.</description>
     </item>
     
     <item>
       <title>Design</title>
-      <link>http://example.com/projects/design/</link>
+      <link>https://sundingyi.com/projects/design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/projects/design/</guid>
-      <description>This theme was designed by Victoria Drake. Go on, explore! 💪
-If you want to use it for your website, check out the section at the bottom of the main page. 👍</description>
+      <guid>https://sundingyi.com/projects/design/</guid>
+      <description>Go on, explore! 💪</description>
     </item>
     
     <item>
-      <title>Writing</title>
-      <link>http://example.com/projects/writing/</link>
+      <title>Coding</title>
+      <link>https://sundingyi.com/projects/coding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/projects/writing/</guid>
-      <description>Aromatic aroma con panna, crema so coffee robust coffee barista, café au lait trifecta that strong blue mountain cortado aftertaste. Aroma extraction french press, skinny sweet, blue mountain cup roast barista, beans, extra cappuccino mug crema strong.
-To go viennese cream to go, flavour, so mocha as, carajillo iced et a siphon froth. Aged, eu, cup, brewed aroma kopi-luwak, coffee, id viennese french press brewed grounds acerbic froth. Decaffeinated acerbic, spoon beans seasonal, french press café au lait mazagran roast chicory, pumpkin spice galão as fair trade, dark irish cup ristretto half and half whipped shop.</description>
+      <guid>https://sundingyi.com/projects/coding/</guid>
+      <description>python</description>
+    </item>
+    
+    <item>
+      <title>什么是哥白尼哲学抑郁</title>
+      <link>https://sundingyi.com/blog/%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%A5%E7%99%BD%E5%B0%BC%E5%93%B2%E5%AD%A6%E6%8A%91%E9%83%81/</link>
+      <pubDate>Sun, 27 Oct 2019 19:11:16 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%A5%E7%99%BD%E5%B0%BC%E5%93%B2%E5%AD%A6%E6%8A%91%E9%83%81/</guid>
+      <description>极简宇宙史
+这是我最近正在阅读的一本书，特别值得推崇的是全书中只有E = mc^2这么一个简洁的公式，而且行文也易懂，我还是忘不了多次被我多次中途弃读的《时间简史》
+在文中我接触到了一个第一次接触到的词，哥白尼哲学抑郁。我用这个词在各大搜索引擎上找了又找，均指向了一个词哥白尼式革命不知道是不是翻译的问题，总之这两者代表的是一种意思，由康德提出。 哥白尼把地球和太阳之间的位置关系颠倒了过来看，而康德一改知识必须符合对象的传统思路，尝试让对象来符合主体本身的认识形式的新思路。是对哲学认识论中经验论和唯理论的一种调和。
+ 对于哲学，我几乎是没有涉猎的，对我来说太难理解了，需要很大的力气去翻书，思考。我在这里找到了一个例子来解释，对于车与路来说，以前的人研究的是路况，康德研究的是车子的性能。也就是说对于一件事的理性感性的差别，往往都会有不同的结果。
+还是要找机会读读《 纯粹理性批判 》。</description>
     </item>
     
     <item>
       <title>Hipster Ipsum</title>
-      <link>http://example.com/blog/hipster-ipsum/</link>
+      <link>https://sundingyi.com/blog/hipster-ipsum/</link>
       <pubDate>Mon, 13 Nov 2017 11:58:39 -0500</pubDate>
       
-      <guid>http://example.com/blog/hipster-ipsum/</guid>
+      <guid>https://sundingyi.com/blog/hipster-ipsum/</guid>
       <description>Occupy mlkshk kale chips woke, listicle locavore next level fingerstache glossier aesthetic man braid before they sold out kitsch prism. Cred copper mug freegan, flannel YOLO single-origin coffee skateboard artisan four loko church-key man bun. Synth literally gastropub, kombucha chillwave helvetica offal truffaut church-key freegan pop-up gentrify narwhal. Kombucha viral vexillologist green juice. Slow-carb hoodie mumblecore tumeric tattooed meditation, lo-fi fap cred affogato forage whatever austin. Shabby chic direct trade migas, brunch gochujang sriracha chambray fanny pack 8-bit mustache letterpress.</description>
     </item>
     
     <item>
       <title>Startup Ipsum</title>
-      <link>http://example.com/blog/startup-ipsum/</link>
+      <link>https://sundingyi.com/blog/startup-ipsum/</link>
       <pubDate>Mon, 06 Nov 2017 12:04:06 -0500</pubDate>
       
-      <guid>http://example.com/blog/startup-ipsum/</guid>
+      <guid>https://sundingyi.com/blog/startup-ipsum/</guid>
       <description>SpaceTeam affordances quantitative vs. qualitative SpaceTeam physical computing earned media thinker-maker-doer pair programming. Bootstrapping pitch deck physical computing driven cortado human-centered design innovate human-centered design driven. Grok pitch deck fund pitch deck sticky note affordances minimum viable product integrate paradigm viral iterate. Driven fund thought leader personas workflow SpaceTeam viral pair programming physical computing intuitive 360 campaign latte bootstrapping minimum viable product. Bootstrapping physical computing responsive pitch deck SpaceTeam parallax long shadow pitch deck bootstrapping ideate.</description>
     </item>
     
     <item>
       <title>Coffee Ipsum</title>
-      <link>http://example.com/blog/coffee-ipsum/</link>
+      <link>https://sundingyi.com/blog/coffee-ipsum/</link>
       <pubDate>Wed, 01 Nov 2017 12:04:16 -0500</pubDate>
       
-      <guid>http://example.com/blog/coffee-ipsum/</guid>
+      <guid>https://sundingyi.com/blog/coffee-ipsum/</guid>
       <description>Aromatic aroma con panna, crema so coffee robust coffee barista, café au lait trifecta that strong blue mountain cortado aftertaste. Aroma extraction french press, skinny sweet, blue mountain cup roast barista, beans, extra cappuccino mug crema strong. Americano caffeine white, con panna saucer sit, con panna eu, carajillo aftertaste kopi-luwak, body aftertaste cup single origin café au lait saucer. Macchiato java sweet arabica, turkish cup, eu flavour mug extraction white cortado saucer est white brewed instant, rich, barista breve cappuccino barista organic.</description>
     </item>
     
     <item>
       <title>Undated post</title>
-      <link>http://example.com/blog/no-date/</link>
+      <link>https://sundingyi.com/blog/no-date/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/blog/no-date/</guid>
+      <guid>https://sundingyi.com/blog/no-date/</guid>
       <description>I was born yesterday, tomorrow.</description>
     </item>
     

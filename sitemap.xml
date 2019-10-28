@@ -1,25 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>http://example.com/es/sitemap.xml</loc>
-		
-	   	<lastmod>2017-11-13T11:58:39-05:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>http://example.com/de/sitemap.xml</loc>
-		
-	   	<lastmod>2017-11-13T11:58:39-05:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>http://example.com/en/sitemap.xml</loc>
-		
-	   	<lastmod>2017-11-13T11:58:39-05:00</lastmod>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://sundingyi.com/projects/photography/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/projects/design/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/projects/coding/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/philosophy/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/reading/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%A5%E7%99%BD%E5%B0%BC%E5%93%B2%E5%AD%A6%E6%8A%91%E9%83%81/</loc>
+    <lastmod>2019-10-27T19:11:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/hipster-ipsum/</loc>
+    <lastmod>2017-11-13T11:58:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/ipsum/</loc>
+    <lastmod>2017-11-13T11:58:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/words/</loc>
+    <lastmod>2017-11-13T11:58:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/code/</loc>
+    <lastmod>2017-11-06T12:04:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/startup-ipsum/</loc>
+    <lastmod>2017-11-06T12:04:06-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/coffee/</loc>
+    <lastmod>2017-11-01T12:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/coffee-ipsum/</loc>
+    <lastmod>2017-11-01T12:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/tags/images/</loc>
+    <lastmod>2017-11-01T12:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/blog/no-date/</loc>
+  </url>
+  
+</urlset>
