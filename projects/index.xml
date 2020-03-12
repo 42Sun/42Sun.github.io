@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Sundy&#39;s Blog</title>
+    <title>照片 on Sundy&#39;s Blog</title>
     <link>https://sundingyi.com/projects/</link>
-    <description>Recent content in Projects on Sundy&#39;s Blog</description>
+    <description>Recent content in 照片 on Sundy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     
 	<atom:link href="https://sundingyi.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sundingyi.com/projects/design/</guid>
-      <description>Go on, explore! 💪</description>
+      <description></description>
     </item>
     
   </channel>
