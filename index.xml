@@ -6,17 +6,34 @@
     <description>Recent content on Sundy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 05 Apr 2020 15:25:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Git笔记</title>
+      <link>https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/</guid>
+      <description> git是这个世界上目前最先进的分布式版本控制系统。 千万不要使用Windows自带的记事本编辑任何文本文件。
+创建版本库 mkdir 是创建文件夹的命令， pwd 显示当前路径， git init 创建版本库。
+把文件加入到版本库 git add git commit -m &amp;quot;message&amp;quot; 提交，message里为本次提交的信息， git status 查看当前状态， git diff 查看某一文件变化。
+回退版本 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。 git reset 回退命令
+ 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+ 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+  git restore 文件名 取消工作区的修改， git restore --staged 文件名 取消暂存区的修改。
+删除文件 rm 文件名 删除文件， git rm 文件名 在暂存区中提交指令
+分支 查看分支：git branch 创建分支：git branch &amp;lt;name&amp;gt; 切换分支：git checkout &amp;lt;name&amp;gt;或者git switch &amp;lt;name&amp;gt; 创建+切换分支：git checkout -b &amp;lt;name&amp;gt;或者git switch -c &amp;lt;name&amp;gt; 合并某分支到当前分支：git merge &amp;lt;name&amp;gt; 删除分支：git branch -d &amp;lt;name&amp;gt; git merge --no-ff -m &amp;quot;merge with no-ff&amp;quot; dev 不使用fast forward模式合并 </description>
+    </item>
+    
+    <item>
       <title>阅读摘抄2020年3月30日</title>
-      <link>https://sundingyi.com/blog/5748244/</link>
+      <link>https://sundingyi.com/post/5748244/</link>
       <pubDate>Sun, 05 Apr 2020 15:25:10 +0000</pubDate>
       
-      <guid>https://sundingyi.com/blog/5748244/</guid>
+      <guid>https://sundingyi.com/post/5748244/</guid>
       <description>杨路：疫情阴影下的中美脱钩前景——有所缓和还是加速分离？｜端傳媒 Initium Media March 30, 2020
   中国二月份公布的官方制造业采购经理人指数（PMI）是35.7，而非制造业（主要是服务业）的PMI则为29.6。普通读者并不需要太熟悉中国的统计数据，根据历年数据的比较，就可以看出两个数字已经“低到坑里”，均为史上最差表现。简单来说，PMI指数高于50意味着预期扩张，反之则为预期收缩。二月的数据显然已经超出了历史浮动的范围，出现了自由落体式的下坠，幅度都已经超过了2007-2008金融危机时的最坏表现。
  货币与财政虽然是美国政策优先选项，但目前各有各的问题。对于白宫来说，另外一个短时间内可以马上动用的政策选项就是重振国际贸易。尽管特朗普可能会很不情愿，许多中美之间经济结构性问题也仍然没有得到解决，但随着美国今年经济衰退的可能性大大增加，他将最终不得不考虑与中国贸易和解的必要性。
@@ -42,10 +59,10 @@
     
     <item>
       <title>阅读摘抄2020年3月30日</title>
-      <link>https://sundingyi.com/post/5748244/</link>
-      <pubDate>Sun, 05 Apr 2020 15:25:10 +0000</pubDate>
+      <link>https://sundingyi.com/blog/5748244/</link>
+      <pubDate>Sun, 05 Apr 2020 15:15:10 +0000</pubDate>
       
-      <guid>https://sundingyi.com/post/5748244/</guid>
+      <guid>https://sundingyi.com/blog/5748244/</guid>
       <description>杨路：疫情阴影下的中美脱钩前景——有所缓和还是加速分离？｜端傳媒 Initium Media March 30, 2020
   中国二月份公布的官方制造业采购经理人指数（PMI）是35.7，而非制造业（主要是服务业）的PMI则为29.6。普通读者并不需要太熟悉中国的统计数据，根据历年数据的比较，就可以看出两个数字已经“低到坑里”，均为史上最差表现。简单来说，PMI指数高于50意味着预期扩张，反之则为预期收缩。二月的数据显然已经超出了历史浮动的范围，出现了自由落体式的下坠，幅度都已经超过了2007-2008金融危机时的最坏表现。
  货币与财政虽然是美国政策优先选项，但目前各有各的问题。对于白宫来说，另外一个短时间内可以马上动用的政策选项就是重振国际贸易。尽管特朗普可能会很不情愿，许多中美之间经济结构性问题也仍然没有得到解决，但随着美国今年经济衰退的可能性大大增加，他将最终不得不考虑与中国贸易和解的必要性。

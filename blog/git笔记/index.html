@@ -10,12 +10,12 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="孙丁一的个人博客">
 <title>
- - Sundy&#39;s Blog
+Git笔记 - Sundy&#39;s Blog
 </title>
 
 
 
-        <meta property="og:title" content=" - Sundy&#39;s Blog" />
+        <meta property="og:title" content="Git笔记 - Sundy&#39;s Blog" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="孙丁一的个人博客"/>
 <meta property="og:url" content="https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/"/>
@@ -136,10 +136,10 @@
                 
     <div class="container">
         <h2 class="title is-1 top-pad strong-post-title">
-            <a href="https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/"></a>
+            <a href="https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/">Git笔记</a>
         </h2>
         <div class="post-data">
-            
+            4.9-2020 |
             1 分钟
         </div>
         
@@ -149,25 +149,23 @@
     <div class="container markdown top-pad">
         
 
-<h1 id="git笔记">git笔记</h1>
-
 <p>git是这个世界上目前最先进的分布式版本控制系统。
 千万不要使用Windows自带的<strong>记事本</strong>编辑任何文本文件。</p>
 
-<h1 id="创建版本库">创建版本库</h1>
+<h2 id="创建版本库">创建版本库</h2>
 
 <p><code>mkdir</code> 是创建文件夹的命令，
 <code>pwd</code> 显示当前路径，
 <code>git init</code> 创建版本库。</p>
 
-<h1 id="把文件加入到版本库">把文件加入到版本库</h1>
+<h2 id="把文件加入到版本库">把文件加入到版本库</h2>
 
 <p><code>git add</code> 
 <code>git commit -m &quot;message&quot;</code> 提交，message里为本次提交的信息，
 <code>git status</code> 查看当前状态，
 <code>git diff</code> 查看某一文件变化。</p>
 
-<h1 id="回退版本">回退版本</h1>
+<h2 id="回退版本">回退版本</h2>
 
 <p>上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个<code>^</code>比较容易数不过来，所以写成<code>HEAD~100</code>。
 <code>git reset</code> 回退命令</p>
@@ -181,12 +179,12 @@
 <p><code>git restore 文件名</code> 取消工作区的修改，
 <code>git restore --staged 文件名</code> 取消暂存区的修改。</p>
 
-<h1 id="删除文件">删除文件</h1>
+<h2 id="删除文件">删除文件</h2>
 
 <p><code>rm 文件名</code> 删除文件，
 <code>git rm 文件名</code> 在暂存区中提交指令</p>
 
-<h1 id="分支">分支</h1>
+<h2 id="分支">分支</h2>
 
 <p>查看分支：<code>git branch</code>
 创建分支：<code>git branch &lt;name&gt;</code>
