@@ -3,8 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sundingyi.com/projects/photography/</loc>
+  </url>
+  
+  <url>
     <loc>https://sundingyi.com/blog/</loc>
     <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/projects/design/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sundingyi.com/projects/</loc>
   </url>
   
   <url>
