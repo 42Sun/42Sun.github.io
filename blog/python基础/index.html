@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="孙丁一的个人博客">
+<title>
+Python基础 - sundingyi.com
+</title>
+
+
+
+        <meta property="og:title" content="Python基础 - sundingyi.com" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="孙丁一的个人博客"/>
+<meta property="og:url" content="https://sundingyi.com/blog/python%E5%9F%BA%E7%A1%80/"/>
+<meta property="og:site_name" content="sundingyi.com"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/title.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5c5478bdd5363758f3e73657d5339b1ac7c131a401ffc3338edd7eb5e1a0114e.css" integrity="sha256-XFR4vdU2N1jz5zZX1TObGsfBMaQB/8Mzjt1&#43;teGgEU4=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">主页</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">关于</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://sundingyi.com/blog/">
+                  
+                  返回 文章
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://sundingyi.com/projects/">
+                  
+                  图
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">与我联系</a>
+            
+            
+
+            
+
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml"><i class="fas fa-rss"></i></a>
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/python%E5%9F%BA%E7%A1%80/">Python基础</a>
+    </h2>
+    <div class="post-data">
+        6.27-2020 |
+        
+    </div>
+    
+    
+    
+    <p>
+        Tag:
+        
+        <a href="/tags/python">Python</a>
+        
+    </p>
+    
+</div>
+
+<div class="container markdown top-pad">
+    <h2 id="python历史">Python历史</h2>
+<ol>
+<li>1989年圣诞节：Guido von Rossum开始写Python语言的编译器。</li>
+<li>1991年2月：第一个Python编译器（同时也是解释器）诞生，它是用C语言实现的（后面），可以调用C语言的库函数。在最早的版本中，Python已经提供了对“类”，“函数”，“异常处理”等构造块的支持，还有对列表、字典等核心数据类型，同时支持以模块为基础来构造应用程序。</li>
+<li>1994年1月：Python 1.0正式发布。</li>
+<li>2000年10月16日：Python 2.0发布，增加了完整的<a href="https://zh.wikipedia.org/wiki/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)">垃圾回收</a>，提供了对<a href="https://zh.wikipedia.org/wiki/Unicode">Unicode</a>的支持。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。</li>
+<li>2008年12月3日：Python 3.0发布，它并不完全兼容之前的Python代码，不过因为目前还有不少公司在项目和运维中使用Python 2.x版本，所以Python 3.x的很多新特性后来也被移植到Python 2.6/2.7版本中。</li>
+</ol>
+<p>更详细的历史：<a href="http://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html">《Python简史》</a></p>
+<hr>
+<h2 id="变量">变量</h2>
+<ul>
+<li>整形：Python可以处理任意大小的整数，在Python3中只有int。并且支持二进制（0b开头），八进制（0o开头），十进制，十六进制（0x开头）。</li>
+<li>浮点型：小数。浮点指的是在用科学计数法表示时，小数点是可以浮动的。支持科学计数法（1.11e2）。</li>
+<li>字符串型：以<code>''</code>或<code>&quot;&quot;</code>括起来。用<code>''' '''</code>的表示方法可以多行。</li>
+<li>布尔型： <code>True</code>和 <code>False</code>，布尔运算亦可以得出布尔型。</li>
+<li>复数型：如1+1j，并不常用。</li>
+</ul>
+<h3 id="给变量命名">给变量命名</h3>
+<ul>
+<li>硬性规则：
+字母数字下划线组成，数字不能开头。
+大小写区分
+不要用关键字</li>
+<li>PEP 8规则：
+用小写字母拼写，多个单词用下划线连接。
+受保护的实例属性用单个下划线开头。
+私有的实例属性用两个下划线开头。</li>
+</ul>
+<h3 id="变量的转换">变量的转换</h3>
+<ul>
+<li>
+<p><code>int()</code>：将一个数值或字符串转换成整数，可以指定进制。</p>
+</li>
+<li>
+<p><code>float()</code>：将一个字符串转换成浮点数。</p>
+</li>
+<li>
+<p><code>str()</code>：将指定的对象转换成字符串形式，可以指定编码。</p>
+</li>
+<li>
+<p><code>chr()</code>：将整数转换成该编码对应的字符串（一个字符）。</p>
+</li>
+<li>
+<p><code>ord()</code>：将字符串（一个字符）转换成对应的编码（整数）。</p>
+</li>
+</ul>
+<h2 id="分支结构">分支结构</h2>
+<h3 id="if">if</h3>
+<p>关键词有<code>if</code>,<code>elif</code>,<code>else</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#英制单位英寸和公制单位厘米互换</span>
+
+value <span style="color:#f92672">=</span> float(input(<span style="color:#e6db74">&#39;输入长度：&#39;</span>))
+unit <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;输入单位：&#39;</span>)
+<span style="color:#66d9ef">if</span> unit <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;in&#39;</span> <span style="color:#f92672">or</span> unit <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;英寸&#39;</span>:
+    <span style="color:#66d9ef">print</span>(str(value) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;英寸=&#39;</span> <span style="color:#f92672">+</span> str(value <span style="color:#f92672">*</span> <span style="color:#ae81ff">2.54</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;厘米&#39;</span>)
+<span style="color:#75715e"># if unit == &#39;in&#39; or unit == &#39;英寸&#39;:</span>
+<span style="color:#75715e">#     print(&#39;%f英寸=%f厘米&#39; %(value, value * 2.54))</span>
+<span style="color:#66d9ef">elif</span> unit <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;cm&#39;</span> <span style="color:#f92672">or</span> unit <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;厘米&#39;</span>:
+    <span style="color:#66d9ef">print</span>(str(value) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;厘米=&#39;</span> <span style="color:#f92672">+</span> str(value <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.54</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;英寸&#39;</span>)
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;请输入正确的格式&#39;</span>)
+</code></pre></div><h2 id="循环结构">循环结构</h2>
+<h3 id="for-in">for-in</h3>
+<ul>
+<li>
+<p><code>range(101)</code>：可以用来产生0到100范围的整数，需要注意的是取不到101。</p>
+</li>
+<li>
+<p><code>range(1, 101)</code>：可以用来产生1到100范围的整数，相当于前面是闭区间后面是开区间。</p>
+</li>
+<li>
+<p><code>range(1, 101, 2)</code>：可以用来产生1到100的奇数，其中2是步长，即每次数值递增的值。</p>
+</li>
+<li>
+<p><code>range(100, 0, -2)</code>：可以用来产生100到1的偶数，其中-2是步长，即每次数字递减的值。</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 用for循环实现1~100之间的偶数求和</span>
+
+sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">2</span>):
+    sum <span style="color:#f92672">+=</span> i
+<span style="color:#66d9ef">print</span>(sum)
+</code></pre></div><h3 id="while">while</h3>
+<p>适用于不知道要循环多少次的条件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;&#39;&#39;计算机出一个1到100之间的随机数，玩家输入自己猜的数字，
+</span><span style="color:#e6db74">计算机给出对应的提示信息（大一点、小一点或猜对了），
+</span><span style="color:#e6db74">如果玩家猜中了数字，计算机提示用户一共猜了多少次，游戏结束，否则游戏继续。
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span> 
+
+<span style="color:#f92672">import</span> random
+answer <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>)
+click <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">print</span>(answer)
+<span style="color:#66d9ef">while</span> True:
+    click <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    guest <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#39;请输入:&#39;</span>))
+    <span style="color:#66d9ef">if</span> guest <span style="color:#f92672">&lt;</span> answer:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;太小了&#39;</span>)
+    <span style="color:#66d9ef">elif</span> guest <span style="color:#f92672">&gt;</span> answer:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;太大了&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;输入正确&#39;</span>)
+        <span style="color:#66d9ef">break</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+        repo="42Sun/blogcomment"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+		</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        created with love ＆ peace by 孙丁一
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.e6934e69d06bb8a213134f4c1468f9478bb7755e786dfb60e3c5a917c5335805.js" integrity="sha256-5pNOadBruKITE09MFGj5R4u3dV54bftg48WpF8UzWAU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+        
+        
+        
+        
+    </body>
+</html>
