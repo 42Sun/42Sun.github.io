@@ -6,10 +6,24 @@
     <description>Recent content in 文章 on sundingyi.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 27 Jun 2020 14:19:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2020 15:53:03 +0800</lastBuildDate>
     
 	<atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>函数和模块</title>
+      <link>https://sundingyi.com/blog/%E5%87%BD%E6%95%B0%E5%92%8C%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Sun, 28 Jun 2020 15:53:03 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/%E5%87%BD%E6%95%B0%E5%92%8C%E6%A8%A1%E5%9D%97/</guid>
+      <description>函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。
+定义函数 使用def关键字来定义函数，函数的命名和变量的命名相同，即下划线命名法。 并且需要return回一个值作为函数执行结果。
+&amp;#34;&amp;#34;&amp;#34; 输入M和N计算C(M,N) 阶乘运算 &amp;#34;&amp;#34;&amp;#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&amp;#39;请输入m：&amp;#39;)) n = int(input(&amp;#39;请输入n：&amp;#39;)) print(fac(m) // fac(n) // fac(m - n)) 可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
+模块 为了避免函数的滥用，每个文件即是一个模块（module），使用import即可导入指定的模块。from .. import .. 如果导入的一个模块还含有可执行的代码，那么在导入这个模块的时候就会执行这些代码。
+if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如此，则只会在单纯执行此模块时才会运行。导入并不会执行
+函数的重命名 import example as exa</description>
+    </item>
     
     <item>
       <title>Python基础</title>

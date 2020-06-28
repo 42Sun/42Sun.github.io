@@ -252,19 +252,15 @@ Sundingyi.com
         
         <h2 class="title is-2 has-text-centered">最新文章</h2>
             
-            <div class="summary">6.27-2020
-                <h3 class="title is-3 latest-post-title"><a href="https://sundingyi.com/blog/python%E5%9F%BA%E7%A1%80/">Python基础</a></h3>
+            <div class="summary">6.28-2020
+                <h3 class="title is-3 latest-post-title"><a href="https://sundingyi.com/blog/%E5%87%BD%E6%95%B0%E5%92%8C%E6%A8%A1%E5%9D%97/">函数和模块</a></h3>
                     <div class="markdown">
-                    Python历史  1989年圣诞节：Guido von Rossum开始写Python语言的编译器。 1991年2月：第一个Python编译器（同时也是解释器）诞生，它是用C语言实现的（后面），可以调用C语言的库函数。在最早的版本中，Python已经提供了对“类”，“函数”，“异常处理”等构造块的支持，还有对列表、字典等核心数据类型，同时支持以模块为基础来构造应用程序。 1994年1月：Python 1.0正式发布。 2000年10月16日：Python 2.0发布，增加了完整的垃圾回收，提供了对Unicode的支持。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。 2008年12月3日：Python 3.0发布，它并不完全兼容之前的Python代码，不过因为目前还有不少公司在项目和运维中使用Python 2.x版本，所以Python 3.x的很多新特性后来也被移植到Python 2.6/2.7版本中。  更详细的历史：《Python简史》
- 变量  整形：Python可以处理任意大小的整数，在Python3中只有int。并且支持二进制（0b开头），八进制（0o开头），十进制，十六进制（0x开头）。 浮点型：小数。浮点指的是在用科学计数法表示时，小数点是可以浮动的。支持科学计数法（1.11e2）。 字符串型：以''或&quot;&quot;括起来。用''' '''的表示方法可以多行。 布尔型： True和 False，布尔运算亦可以得出布尔型。 复数型：如1+1j，并不常用。  给变量命名  硬性规则： 字母数字下划线组成，数字不能开头。 大小写区分 不要用关键字 PEP 8规则： 用小写字母拼写，多个单词用下划线连接。 受保护的实例属性用单个下划线开头。 私有的实例属性用两个下划线开头。  变量的转换   int()：将一个数值或字符串转换成整数，可以指定进制。
-  float()：将一个字符串转换成浮点数。
-  str()：将指定的对象转换成字符串形式，可以指定编码。
-  chr()：将整数转换成该编码对应的字符串（一个字符）。
-  ord()：将字符串（一个字符）转换成对应的编码（整数）。
-  分支结构 if 关键词有if,elif,else
-#英制单位英寸和公制单位厘米互换 value = float(input(&#39;输入长度：&#39;)) unit = input(&#39;输入单位：&#39;) if unit == &#39;in&#39; or unit == &#39;英寸&#39;: print(str(value) + &#39;英寸=&#39; + str(value * 2.
-                    
-                    <a href="https://sundingyi.com/blog/python%E5%9F%BA%E7%A1%80/">阅读全文</a>
+                    函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。
+定义函数 使用def关键字来定义函数，函数的命名和变量的命名相同，即下划线命名法。 并且需要return回一个值作为函数执行结果。
+&#34;&#34;&#34; 输入M和N计算C(M,N) 阶乘运算 &#34;&#34;&#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&#39;请输入m：&#39;)) n = int(input(&#39;请输入n：&#39;)) print(fac(m) // fac(n) // fac(m - n)) 可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
+模块 为了避免函数的滥用，每个文件即是一个模块（module），使用import即可导入指定的模块。from .. import .. 如果导入的一个模块还含有可执行的代码，那么在导入这个模块的时候就会执行这些代码。
+if __name__ = &#39;__main__&#39;: 如果被导入的模块中含有如此，则只会在单纯执行此模块时才会运行。导入并不会执行
+函数的重命名 import example as exa
                     
                     </div>
             </div>
@@ -277,6 +273,10 @@ Sundingyi.com
     <div class="container">
         <h2 class="title is-2 has-text-centered top-pad">所有文章</h2>
             
+    <li class="post-item">
+        <span><a href="https://sundingyi.com/blog/%E5%87%BD%E6%95%B0%E5%92%8C%E6%A8%A1%E5%9D%97/">函数和模块</a></span> - <span>6.28-2020</span>
+    </li>
+
     <li class="post-item">
         <span><a href="https://sundingyi.com/blog/python%E5%9F%BA%E7%A1%80/">Python基础</a></span> - <span>6.27-2020</span>
     </li>
