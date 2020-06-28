@@ -149,14 +149,22 @@ theinitium.com - 特约作者 科长 发自北京 于 2020年4月12日
       
       <guid>https://sundingyi.com/blog/git%E7%AC%94%E8%AE%B0/</guid>
       <description>git是这个世界上目前最先进的分布式版本控制系统。 千万不要使用Windows自带的记事本编辑任何文本文件。
-创建版本库 mkdir 是创建文件夹的命令， pwd 显示当前路径， git init 创建版本库。
-把文件加入到版本库 git add git commit -m &amp;quot;message&amp;quot; 提交，message里为本次提交的信息， git status 查看当前状态， git diff 查看某一文件变化。
-回退版本 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。 git reset 回退命令
-  穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
-  要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
-  git restore 文件名 取消工作区的修改， git restore --staged 文件名 取消暂存区的修改。
-删除文件 rm 文件名 删除文件， git rm 文件名 在暂存区中提交指令
-分支 查看分支：git branch 创建分支：git branch &amp;lt;name&amp;gt; 切换分支：git checkout &amp;lt;name&amp;gt;或者git switch &amp;lt;name&amp;gt; 创建+切换分支：git checkout -b &amp;lt;name&amp;gt;或者git switch -c &amp;lt;name&amp;gt; 合并某分支到当前分支：git merge &amp;lt;name&amp;gt; 删除分支：git branch -d &amp;lt;name&amp;gt; git merge --no-ff -m &amp;quot;merge with no-ff&amp;quot; dev 不使用fast forward模式合并 </description>
+创建版本库 mkdir 是创建文件夹的命令，
+pwd 显示当前路径，
+git init 创建版本库。
+把文件加入到版本库 git add git commit -m &amp;quot;message&amp;quot; 提交，message里为本次提交的信息，
+git status 查看当前状态，
+git diff 查看某一文件变化。
+回退版本 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+git reset 回退命令
+ 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。  git restore 文件名 取消工作区的修改，
+git restore --staged 文件名 取消暂存区的修改。
+删除文件 rm 文件名 删除文件，
+git rm 文件名 在暂存区中提交指令
+分支 查看分支：git branch
+创建分支：git branch &amp;lt;name&amp;gt;
+切换分支：git checkout &amp;lt;name&amp;gt;或者git switch &amp;lt;name&amp;gt;
+创建+切换分支：git checkout -b &amp;lt;name&amp;gt;或者git switch -c &amp;lt;name&amp;gt;</description>
     </item>
     
     <item>
