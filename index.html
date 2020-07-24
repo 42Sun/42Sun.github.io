@@ -51,6 +51,25 @@
 
 <link rel="stylesheet" href="https://sundingyi.com/styles/owlCarousel.min.b1f26e29c43c61fe8b5a6f225b4ee7c5f969a7b33cfe512706271e07246d93d1.css" integrity="sha256-sfJuKcQ8Yf6LWm8iW07nxflpp7M8/lEnBiceByRtk9E=" crossorigin="anonymous" media="screen">
 
+        <script>
+            window.onload = function(){ 
+                 var audio = document.getElementById('music');
+                     audio.pause();
+            }
+            function play() {
+                var audio = document.getElementById('music');
+                if (audio.paused) {
+                    audio.play();
+                    document.getElementById('musicImg').src="https://tvax3.sinaimg.cn/large/a8eb46baly1gh24su7k6dg20i20i2myv.gif";
+                }else{
+                    audio.pause();
+                    audio.currentTime = 0;
+                    document.getElementById('musicImg').src="https://tva4.sinaimg.cn/large/a8eb46baly1gh23p2fz77g20i20i2dhi.gif";
+                }
+            }
+            
+            </script>
+        
         <script data-ad-client="ca-pub-7454128581607028" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </head>
 
@@ -70,9 +89,10 @@
                     <div class="subtitle is-3 fade-in two">
                         <p>The lunatic is in my head</p>
 <hr>
+<p><audio id="music" src="https://cdn.jsdelivr.net/gh/42Sun/test/braindamage.mp3" loop="loop" ></audio></p>
 <script language=javascript>
 rand=Math.random()
-document.write("<img src=https://tvax1.sinaimg.cn/large/a8eb46baly1ggwgbj6en4g20i20i2dhi.gif?"+rand+">")
+document.write("<img id=musicImg src=https://tvax1.sinaimg.cn/large/a8eb46baly1ggwgbj6en4g20i20i2dhi.gif?"+rand+" onClick=play() alt=musicImg>")
 </script>
 
                     </div>
