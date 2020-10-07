@@ -152,16 +152,16 @@
         
         <h2 class="title is-2 top-pad">最新文章</h2>
         
-        <div class="summary">2020.9.29
+        <div class="summary">2020.10.7
             <h3 class="title is-3 strong-post-title">
-                <a href="https://sundingyi.com/blog/practice1/">
-                    Practice1
+                <a href="https://sundingyi.com/blog/sort/">
+                    排序
                 </a>
             </h3>
             <div class="markdown">
-                2020/10/4 待交 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &lt; 10; ++i) { if (arr[i] &gt; max) max = arr[i]; if (arr[i] &lt; min) min = arr[i]; } System.
+                选择排序 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &lt; arr.length; ++j) { if (arr[j] &lt; temp) { temp = arr[j]; flag = j; } } if (i != flag) { arr[flag] = arr[i]; arr[i] = temp; } } } public static void main(String[] args) { int[] arr = {2, 5, 7, 2, 1}; P.
                 
-                <a href="https://sundingyi.com/blog/practice1/">阅读全文</a>
+                <a href="https://sundingyi.com/blog/sort/">阅读全文</a>
                 
             </div>
         </div>
@@ -170,6 +170,10 @@
         
         <h2 class="title is-2 top-pad">所有文章</h2>
         
+    <li class="post-item">
+        <span><a href="https://sundingyi.com/blog/sort/">排序</a></span> - <span>2020.10.7</span>
+    </li>
+
     <li class="post-item">
         <span><a href="https://sundingyi.com/blog/practice1/">Practice1</a></span> - <span>2020.9.29</span>
     </li>
