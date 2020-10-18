@@ -152,16 +152,16 @@
         
         <h2 class="title is-2 top-pad">最新文章</h2>
         
-        <div class="summary">2020.10.9
+        <div class="summary">2020.10.18
             <h3 class="title is-3 strong-post-title">
-                <a href="https://sundingyi.com/blog/practice2/">
-                    Practice2
+                <a href="https://sundingyi.com/blog/practice3/">
+                    Practice3
                 </a>
             </h3>
             <div class="markdown">
-                public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.out.println(c); } } } } public class Test2 { public static void main(String[] args) { for (int i = 1; i &lt; 6; ++i) { for (int j = 1; j &lt;= i; ++j) { if (j !
+                学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；  public class Test14 { public static void main(String[] args) { NewStudent a = new NewStudent(&#34;Zhang&#34;, 20); a.setGrade(45, 35, 77); System.out.println(a.getAvg()); } } class Student { String name; int age; float mathGrade; float engGrade; Student(String name, int age) { this.name = name; this.age = age; } void setGrade(float mathGrade, float engGrade) { this.mathGrade = mathGrade; this.engGrade = engGrade; } float getAvg() { return (mathGrade + engGrade) / 2; } } class NewStudent extends Student { float polGrade; NewStudent(String name, int age) { super(name, age); } void setGrade(float mathGrade, float engGrade, float polGrade) { this.
                 
-                <a href="https://sundingyi.com/blog/practice2/">阅读全文</a>
+                <a href="https://sundingyi.com/blog/practice3/">阅读全文</a>
                 
             </div>
         </div>
@@ -170,6 +170,10 @@
         
         <h2 class="title is-2 top-pad">所有文章</h2>
         
+    <li class="post-item">
+        <span><a href="https://sundingyi.com/blog/practice3/">Practice3</a></span> - <span>2020.10.18</span>
+    </li>
+
     <li class="post-item">
         <span><a href="https://sundingyi.com/blog/practice2/">Practice2</a></span> - <span>2020.10.9</span>
     </li>
