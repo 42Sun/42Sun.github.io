@@ -6,7 +6,11 @@
     <description>Recent content in 建站 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 19 Jun 2020 22:36:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jun 2020 22:36:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://sundingyi.com/tags/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>评论/留言区上线</title>
       <link>https://sundingyi.com/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E4%B8%8A%E7%BA%BF/</link>
