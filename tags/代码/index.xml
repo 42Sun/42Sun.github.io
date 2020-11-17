@@ -13,10 +13,10 @@
     
     <item>
       <title>Practice4</title>
-      <link>https://sundingyi.com/c6bd01e2/</link>
+      <link>https://sundingyi.com/blog/c6bd01e2/</link>
       <pubDate>Tue, 03 Nov 2020 14:27:43 +0800</pubDate>
       
-      <guid>https://sundingyi.com/c6bd01e2/</guid>
+      <guid>https://sundingyi.com/blog/c6bd01e2/</guid>
       <description>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。  public class C { public static void main(String[] args) { A a = new A(); a.f(); B b = new B(); b.f(); b.g(); } } class A { void f() { System.out.println(&amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;); } } class B extends A { void g() { System.out.println(&amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;); } }  按要求编写一个Java应用程序：
 （1）编写一个矩形类Rect，包含：两个protected属性：矩形的宽width；矩形的高height。
 两个构造方法：
@@ -38,46 +38,46 @@
     
     <item>
       <title>Practice3</title>
-      <link>https://sundingyi.com/ac7d4884/</link>
+      <link>https://sundingyi.com/blog/ac7d4884/</link>
       <pubDate>Sun, 18 Oct 2020 10:16:43 +0800</pubDate>
       
-      <guid>https://sundingyi.com/ac7d4884/</guid>
+      <guid>https://sundingyi.com/blog/ac7d4884/</guid>
       <description>学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；  public class Test14 { public static void main(String[] args) { NewStudent a = new NewStudent(&amp;#34;Zhang&amp;#34;, 20); a.setGrade(45, 35, 77); System.out.println(a.getAvg()); } } class Student { String name; int age; float mathGrade; float engGrade; Student(String name, int age) { this.name = name; this.age = age; } void setGrade(float mathGrade, float engGrade) { this.mathGrade = mathGrade; this.engGrade = engGrade; } float getAvg() { return (mathGrade + engGrade) / 2; } } class NewStudent extends Student { float polGrade; NewStudent(String name, int age) { super(name, age); } void setGrade(float mathGrade, float engGrade, float polGrade) { this.</description>
     </item>
     
     <item>
       <title>Practice2</title>
-      <link>https://sundingyi.com/776d6f92/</link>
+      <link>https://sundingyi.com/blog/776d6f92/</link>
       <pubDate>Fri, 09 Oct 2020 13:04:36 +0800</pubDate>
       
-      <guid>https://sundingyi.com/776d6f92/</guid>
+      <guid>https://sundingyi.com/blog/776d6f92/</guid>
       <description>public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.out.println(c); } } } } public class Test2 { public static void main(String[] args) { for (int i = 1; i &amp;lt; 6; ++i) { for (int j = 1; j &amp;lt;= i; ++j) { if (j !</description>
     </item>
     
     <item>
       <title>排序</title>
-      <link>https://sundingyi.com/8fcb0271/</link>
+      <link>https://sundingyi.com/blog/8fcb0271/</link>
       <pubDate>Wed, 07 Oct 2020 17:58:04 +0800</pubDate>
       
-      <guid>https://sundingyi.com/8fcb0271/</guid>
+      <guid>https://sundingyi.com/blog/8fcb0271/</guid>
       <description>选择排序 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length; ++j) { if (arr[j] &amp;lt; temp) { temp = arr[j]; flag = j; } } if (i != flag) { arr[flag] = arr[i]; arr[i] = temp; } } } public static void main(String[] args) { int[] arr = {2, 5, 7, 2, 1}; P.</description>
     </item>
     
     <item>
       <title>Practice1</title>
-      <link>https://sundingyi.com/d9a93339/</link>
+      <link>https://sundingyi.com/blog/d9a93339/</link>
       <pubDate>Tue, 29 Sep 2020 16:49:06 +0800</pubDate>
       
-      <guid>https://sundingyi.com/d9a93339/</guid>
+      <guid>https://sundingyi.com/blog/d9a93339/</guid>
       <description>2020/10/4 待交 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &amp;lt; 10; ++i) { if (arr[i] &amp;gt; max) max = arr[i]; if (arr[i] &amp;lt; min) min = arr[i]; } System.</description>
     </item>
     
     <item>
       <title>算法第一章习题记录</title>
-      <link>https://sundingyi.com/96530be7/</link>
+      <link>https://sundingyi.com/blog/96530be7/</link>
       <pubDate>Mon, 28 Sep 2020 20:23:42 +0800</pubDate>
       
-      <guid>https://sundingyi.com/96530be7/</guid>
+      <guid>https://sundingyi.com/blog/96530be7/</guid>
       <description>刷题的第一天！！
  算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int a = input.nextInt(); int b = input.nextInt(); int c = input.nextInt(); if (a == b &amp;amp;&amp;amp; b == c) { System.out.println(&amp;#34;equal&amp;#34;); } else System.out.println(&amp;#34;not equal&amp;#34;); } } //1.1.5 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.</description>
     </item>

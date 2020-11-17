@@ -13,10 +13,10 @@
     
     <item>
       <title>Practice4</title>
-      <link>https://sundingyi.com/c6bd01e2/</link>
+      <link>https://sundingyi.com/blog/c6bd01e2/</link>
       <pubDate>Tue, 03 Nov 2020 14:27:43 +0800</pubDate>
       
-      <guid>https://sundingyi.com/c6bd01e2/</guid>
+      <guid>https://sundingyi.com/blog/c6bd01e2/</guid>
       <description>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。  public class C { public static void main(String[] args) { A a = new A(); a.f(); B b = new B(); b.f(); b.g(); } } class A { void f() { System.out.println(&amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;); } } class B extends A { void g() { System.out.println(&amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;); } }  按要求编写一个Java应用程序：
 （1）编写一个矩形类Rect，包含：两个protected属性：矩形的宽width；矩形的高height。
 两个构造方法：
@@ -38,56 +38,56 @@
     
     <item>
       <title>Practice3</title>
-      <link>https://sundingyi.com/ac7d4884/</link>
+      <link>https://sundingyi.com/blog/ac7d4884/</link>
       <pubDate>Sun, 18 Oct 2020 10:16:43 +0800</pubDate>
       
-      <guid>https://sundingyi.com/ac7d4884/</guid>
+      <guid>https://sundingyi.com/blog/ac7d4884/</guid>
       <description>学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；  public class Test14 { public static void main(String[] args) { NewStudent a = new NewStudent(&amp;#34;Zhang&amp;#34;, 20); a.setGrade(45, 35, 77); System.out.println(a.getAvg()); } } class Student { String name; int age; float mathGrade; float engGrade; Student(String name, int age) { this.name = name; this.age = age; } void setGrade(float mathGrade, float engGrade) { this.mathGrade = mathGrade; this.engGrade = engGrade; } float getAvg() { return (mathGrade + engGrade) / 2; } } class NewStudent extends Student { float polGrade; NewStudent(String name, int age) { super(name, age); } void setGrade(float mathGrade, float engGrade, float polGrade) { this.</description>
     </item>
     
     <item>
       <title>Practice2</title>
-      <link>https://sundingyi.com/776d6f92/</link>
+      <link>https://sundingyi.com/blog/776d6f92/</link>
       <pubDate>Fri, 09 Oct 2020 13:04:36 +0800</pubDate>
       
-      <guid>https://sundingyi.com/776d6f92/</guid>
+      <guid>https://sundingyi.com/blog/776d6f92/</guid>
       <description>public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.out.println(c); } } } } public class Test2 { public static void main(String[] args) { for (int i = 1; i &amp;lt; 6; ++i) { for (int j = 1; j &amp;lt;= i; ++j) { if (j !</description>
     </item>
     
     <item>
       <title>排序</title>
-      <link>https://sundingyi.com/8fcb0271/</link>
+      <link>https://sundingyi.com/blog/8fcb0271/</link>
       <pubDate>Wed, 07 Oct 2020 17:58:04 +0800</pubDate>
       
-      <guid>https://sundingyi.com/8fcb0271/</guid>
+      <guid>https://sundingyi.com/blog/8fcb0271/</guid>
       <description>选择排序 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length; ++j) { if (arr[j] &amp;lt; temp) { temp = arr[j]; flag = j; } } if (i != flag) { arr[flag] = arr[i]; arr[i] = temp; } } } public static void main(String[] args) { int[] arr = {2, 5, 7, 2, 1}; P.</description>
     </item>
     
     <item>
       <title>Practice1</title>
-      <link>https://sundingyi.com/d9a93339/</link>
+      <link>https://sundingyi.com/blog/d9a93339/</link>
       <pubDate>Tue, 29 Sep 2020 16:49:06 +0800</pubDate>
       
-      <guid>https://sundingyi.com/d9a93339/</guid>
+      <guid>https://sundingyi.com/blog/d9a93339/</guid>
       <description>2020/10/4 待交 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &amp;lt; 10; ++i) { if (arr[i] &amp;gt; max) max = arr[i]; if (arr[i] &amp;lt; min) min = arr[i]; } System.</description>
     </item>
     
     <item>
       <title>算法第一章习题记录</title>
-      <link>https://sundingyi.com/96530be7/</link>
+      <link>https://sundingyi.com/blog/96530be7/</link>
       <pubDate>Mon, 28 Sep 2020 20:23:42 +0800</pubDate>
       
-      <guid>https://sundingyi.com/96530be7/</guid>
+      <guid>https://sundingyi.com/blog/96530be7/</guid>
       <description>刷题的第一天！！
  算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int a = input.nextInt(); int b = input.nextInt(); int c = input.nextInt(); if (a == b &amp;amp;&amp;amp; b == c) { System.out.println(&amp;#34;equal&amp;#34;); } else System.out.println(&amp;#34;not equal&amp;#34;); } } //1.1.5 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.</description>
     </item>
     
     <item>
       <title>阅读摘抄（长期更新）</title>
-      <link>https://sundingyi.com/b2331782/</link>
+      <link>https://sundingyi.com/blog/b2331782/</link>
       <pubDate>Fri, 03 Jul 2020 15:03:40 +0800</pubDate>
       
-      <guid>https://sundingyi.com/b2331782/</guid>
+      <guid>https://sundingyi.com/blog/b2331782/</guid>
       <description>杨路：疫情阴影下的中美脱钩前景——有所缓和还是加速分离？｜端傳媒 Initium Media March 30, 2020
   中国二月份公布的官方制造业采购经理人指数（PMI）是35.7，而非制造业（主要是服务业）的PMI则为29.6。普通读者并不需要太熟悉中国的统计数据，根据历年数据的比较，就可以看出两个数字已经“低到坑里”，均为史上最差表现。简单来说，PMI指数高于50意味着预期扩张，反之则为预期收缩。二月的数据显然已经超出了历史浮动的范围，出现了自由落体式的下坠，幅度都已经超过了2007-2008金融危机时的最坏表现。 货币与财政虽然是美国政策优先选项，但目前各有各的问题。对于白宫来说，另外一个短时间内可以马上动用的政策选项就是重振国际贸易。尽管特朗普可能会很不情愿，许多中美之间经济结构性问题也仍然没有得到解决，但随着美国今年经济衰退的可能性大大增加，他将最终不得不考虑与中国贸易和解的必要性。   你当像鸟飞往你的山
   当你是一个地方的一部分，在它的土壤上成长的时候，没有必要说出你来自那里。我从未说过“我来自爱达荷州”，直到我离开了那里。   激荡十年，水大鱼大 (吴晓波)
@@ -100,10 +100,10 @@
     
     <item>
       <title>字符串和常用数据结构</title>
-      <link>https://sundingyi.com/ae27874a/</link>
+      <link>https://sundingyi.com/blog/ae27874a/</link>
       <pubDate>Sun, 28 Jun 2020 18:28:15 +0800</pubDate>
       
-      <guid>https://sundingyi.com/ae27874a/</guid>
+      <guid>https://sundingyi.com/blog/ae27874a/</guid>
       <description>字符串 字符串是由零个或多个字符组成的有限序列。在Python中，用&#39;&#39;或&amp;quot;&amp;quot;将一个或多个字符包含起来就可以表示一个字符串。
 转义符号 使用转义符号\可以将它后面的字母不再表示原本的意思。在\后面还可以跟一个八进制或者十六进制数来表示字符，例如\141和\x61都代表小写字母a，前者是八进制的表示法，后者是十六进制的表示法。也可以在\后面跟Unicode字符编码来表示字符。
 如果不希望转义，可以在字符串前面加r
@@ -114,10 +114,10 @@ a, b = 5, 10 print(f&amp;#39;{a} * {b} = {a * b}&amp;#39;) str1 = &amp;#39;hello
     
     <item>
       <title>函数和模块</title>
-      <link>https://sundingyi.com/e7215b2c/</link>
+      <link>https://sundingyi.com/blog/e7215b2c/</link>
       <pubDate>Sun, 28 Jun 2020 15:53:03 +0800</pubDate>
       
-      <guid>https://sundingyi.com/e7215b2c/</guid>
+      <guid>https://sundingyi.com/blog/e7215b2c/</guid>
       <description>函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。
 定义函数 使用def关键字来定义函数，函数的命名和变量的命名相同，即下划线命名法。 并且需要return回一个值作为函数执行结果。
 &amp;#34;&amp;#34;&amp;#34; 输入M和N计算C(M,N) 阶乘运算 &amp;#34;&amp;#34;&amp;#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&amp;#39;请输入m：&amp;#39;)) n = int(input(&amp;#39;请输入n：&amp;#39;)) print(fac(m) // fac(n) // fac(m - n)) 可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
@@ -128,10 +128,10 @@ if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如�
     
     <item>
       <title>Python基础</title>
-      <link>https://sundingyi.com/7565156f/</link>
+      <link>https://sundingyi.com/blog/7565156f/</link>
       <pubDate>Sat, 27 Jun 2020 14:19:44 +0800</pubDate>
       
-      <guid>https://sundingyi.com/7565156f/</guid>
+      <guid>https://sundingyi.com/blog/7565156f/</guid>
       <description>Python历史  1989年圣诞节：Guido von Rossum开始写Python语言的编译器。 1991年2月：第一个Python编译器（同时也是解释器）诞生，它是用C语言实现的（后面），可以调用C语言的库函数。在最早的版本中，Python已经提供了对“类”，“函数”，“异常处理”等构造块的支持，还有对列表、字典等核心数据类型，同时支持以模块为基础来构造应用程序。 1994年1月：Python 1.0正式发布。 2000年10月16日：Python 2.0发布，增加了完整的垃圾回收，提供了对Unicode的支持。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。 2008年12月3日：Python 3.0发布，它并不完全兼容之前的Python代码，不过因为目前还有不少公司在项目和运维中使用Python 2.x版本，所以Python 3.x的很多新特性后来也被移植到Python 2.6/2.7版本中。  更详细的历史：《Python简史》
  变量  整形：Python可以处理任意大小的整数，在Python3中只有int。并且支持二进制（0b开头），八进制（0o开头），十进制，十六进制（0x开头）。 浮点型：小数。浮点指的是在用科学计数法表示时，小数点是可以浮动的。支持科学计数法（1.11e2）。 字符串型：以&#39;&#39;或&amp;quot;&amp;quot;括起来。用&#39;&#39;&#39; &#39;&#39;&#39;的表示方法可以多行。 布尔型： True和 False，布尔运算亦可以得出布尔型。 复数型：如1+1j，并不常用。  给变量命名  硬性规则： 字母数字下划线组成，数字不能开头。 大小写区分 不要用关键字 PEP 8规则： 用小写字母拼写，多个单词用下划线连接。 受保护的实例属性用单个下划线开头。 私有的实例属性用两个下划线开头。  变量的转换   int()：将一个数值或字符串转换成整数，可以指定进制。
   float()：将一个字符串转换成浮点数。
@@ -144,10 +144,10 @@ if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如�
     
     <item>
       <title>评论/留言区上线</title>
-      <link>https://sundingyi.com/76d486f6/</link>
+      <link>https://sundingyi.com/blog/76d486f6/</link>
       <pubDate>Fri, 19 Jun 2020 22:36:47 +0800</pubDate>
       
-      <guid>https://sundingyi.com/76d486f6/</guid>
+      <guid>https://sundingyi.com/blog/76d486f6/</guid>
       <description>可真的会有人在里面写东西吗
   hugo使用评论区已经有几套成熟的方案了，我选择的是utterances+github的方式，不需要后端配合。 建立一个公开仓库用来储存评论内容。utterances提供了一个应用来绑定，很方便。每一个评论就是这个仓库里的issue，管理性没有大问题。
   在主题的对应html里加上提供的代码就可以了。
@@ -158,10 +158,10 @@ if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如�
     
     <item>
       <title>Git笔记</title>
-      <link>https://sundingyi.com/84292b5b/</link>
+      <link>https://sundingyi.com/blog/84292b5b/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://sundingyi.com/84292b5b/</guid>
+      <guid>https://sundingyi.com/blog/84292b5b/</guid>
       <description>git是这个世界上目前最先进的分布式版本控制系统。 千万不要使用Windows自带的记事本编辑任何文本文件。
 创建版本库 mkdir 是创建文件夹的命令，
 pwd 显示当前路径，
@@ -183,10 +183,10 @@ git rm 文件名 在暂存区中提交指令
     
     <item>
       <title>语雀作为在线平台同步hugo</title>
-      <link>https://sundingyi.com/9933235/</link>
+      <link>https://sundingyi.com/blog/9933235/</link>
       <pubDate>Mon, 09 Mar 2020 16:43:15 +0000</pubDate>
       
-      <guid>https://sundingyi.com/9933235/</guid>
+      <guid>https://sundingyi.com/blog/9933235/</guid>
       <description>第一次接触语雀是在去年，当时在找一个靠谱的在线笔记编辑平台，听闻是阿里出品的，后来实际接触感觉还不错。支持Markdown很舒服。
  同步语雀的文章到hugo里
 偶然看到了这个项目，慢慢上手发现语雀+hugo完美解决了我笔记+博客的需求。
@@ -196,10 +196,10 @@ git rm 文件名 在暂存区中提交指令
     
     <item>
       <title>有意思的一个转场</title>
-      <link>https://sundingyi.com/ca67d167/</link>
+      <link>https://sundingyi.com/blog/ca67d167/</link>
       <pubDate>Thu, 06 Feb 2020 21:00:55 +0800</pubDate>
       
-      <guid>https://sundingyi.com/ca67d167/</guid>
+      <guid>https://sundingyi.com/blog/ca67d167/</guid>
       <description>S03E08
 眼前一亮的感觉，反复看了几遍，发现拍摄手法比我想象的简单多了&amp;hellip;
 至于为什么看出来了？Joel跑完属实有点喘</description>
@@ -207,10 +207,10 @@ git rm 文件名 在暂存区中提交指令
     
     <item>
       <title>我抬起了头，却满是坟墓</title>
-      <link>https://sundingyi.com/7b03722e/</link>
+      <link>https://sundingyi.com/blog/7b03722e/</link>
       <pubDate>Mon, 04 Nov 2019 21:27:11 +0800</pubDate>
       
-      <guid>https://sundingyi.com/7b03722e/</guid>
+      <guid>https://sundingyi.com/blog/7b03722e/</guid>
       <description>跑完步了，戴着耳机享受下和自己相处，天气转凉以来身体明显没有夏天时候好了，呼吸到冷空气都会很难受，这几十年，原本就是个折腾的过程。一条路一条路的走，会走到哪里我永远都不会知道。
 因远离市区而得以享受清净的空气，抬头就是星星，时间就好像是一下从几岁开始流淌了几十年，一切都是那个样子。人人拼命自转，而他们还在那里。好吧，让我们从这个浪漫的情景中走出来，我在眼眶泛红的前一瞬猛然意识到，星星们好多都已经“死去”了，从遥远的虚空中长途迁徙而来的不过是他们发出的光，而他们本体，早早就成为了其他。
 得益于光，这个世界才出现在意识中央，行星们用尽寿命发光，直至死方休。那些光，勤恳的走了好多亿年，来到地球，不可否认，这是个很吸引人的说法。可表面光鲜也好，靓丽也好，本质上却早已经折败于宇宙中的基本运行理论。
@@ -219,10 +219,10 @@ git rm 文件名 在暂存区中提交指令
     
     <item>
       <title>原来我创造了世界</title>
-      <link>https://sundingyi.com/7d58f55f/</link>
+      <link>https://sundingyi.com/blog/7d58f55f/</link>
       <pubDate>Sat, 02 Nov 2019 00:22:31 +0800</pubDate>
       
-      <guid>https://sundingyi.com/7d58f55f/</guid>
+      <guid>https://sundingyi.com/blog/7d58f55f/</guid>
       <description>科幻作品我看过和读过不少，上一次读过的是《深渊上的火》，隔了几个月，我刚刚读完了小林泰三的《玩具修理者》和《醉步男》。
 很震惊的说，我已经很久不读硬科幻了，印象最为深刻的就是《三体》里令我抓心挠肝的文学描写，太偏了，实在是偏。但《醉》让我起了一身的鸡皮疙瘩
 《玩》扮演的是赠品的角色，与《醉》相比少了不少味道，算是一部中规中矩的恐怖小说，文学风格和他们的国土面积一样，都很小很秀气。~~不过好像我并没有觉得恐怖。~~接下来主要谈谈《醉》。
@@ -237,10 +237,10 @@ git rm 文件名 在暂存区中提交指令
     
     <item>
       <title>DNS污染？</title>
-      <link>https://sundingyi.com/5de126fb/</link>
+      <link>https://sundingyi.com/blog/5de126fb/</link>
       <pubDate>Mon, 28 Oct 2019 21:59:00 +0800</pubDate>
       
-      <guid>https://sundingyi.com/5de126fb/</guid>
+      <guid>https://sundingyi.com/blog/5de126fb/</guid>
       <description>这个站刚刚开放了3天，把我折腾的不行，刚刚又发现了点不对的地方，访问网站的时候某些json不能正确的加载导致动画不会出现。
 (index):52 Failed to find a valid digest in the &#39;integrity&#39; attribute for resource &#39;https://sundingyi.com/styles/owlCarousel.min.fb3b2db7ac73c4ba8d021450bcf5556ff7385dfd0c1ee5fb4a69c75f41f2fd29.css&#39; with computed SHA-256 integrity &#39;sfJuKcQ8Yf6LWm8iW07nxflpp7M8/lEnBiceByRtk9E=&#39;. The resource has been blocked. (index):1 
 Failed to find a valid digest in the &#39;integrity&#39; attribute for resource &#39;https://sundingyi.com/js/bundle.02b6288fcd4c358451657f10dc5ff7760229d03df75243bce75eeed353f4f935.js&#39; with computed SHA-256 integrity &#39;5pNOadBruKITE09MFGj5R4u3dV54bftg48WpF8UzWAU=&#39;. The resource has been blocked. (index):1 
@@ -249,10 +249,10 @@ Failed to find a valid digest in the &#39;integrity&#39; attribute for resource 
     
     <item>
       <title>什么是哥白尼哲学抑郁</title>
-      <link>https://sundingyi.com/27707530/</link>
+      <link>https://sundingyi.com/blog/27707530/</link>
       <pubDate>Sun, 27 Oct 2019 19:11:16 +0800</pubDate>
       
-      <guid>https://sundingyi.com/27707530/</guid>
+      <guid>https://sundingyi.com/blog/27707530/</guid>
       <description>极简宇宙史
 这是我最近正在阅读的一本书，特别值得推崇的是全书中只有E = mc^2这么一个简洁的公式，而且行文也易懂，我还是忘不了多次被我多次中途弃读的《时间简史》
 在文中我接触到了一个第一次接触到的词，哥白尼哲学抑郁。我用这个词在各大搜索引擎上找了又找，均指向了一个词哥白尼式革命不知道是不是翻译的问题，总之这两者代表的是一种意思，由康德提出。 哥白尼把地球和太阳之间的位置关系颠倒了过来看，而康德一改知识必须符合对象的传统思路，尝试让对象来符合主体本身的认识形式的新思路。是对哲学认识论中经验论和唯理论的一种调和。

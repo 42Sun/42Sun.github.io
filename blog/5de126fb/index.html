@@ -10,15 +10,15 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-Idea - 孙丁一的博客
+D N S污染？ - 孙丁一的博客
 </title>
 
-<link href="/tags/idea/index.xml" rel="alternate" type="application/rss+xml" title="孙丁一的博客" />
 
-        <meta property="og:title" content="idea - 孙丁一的博客" />
+
+        <meta property="og:title" content="DNS污染？ - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
-<meta property="og:url" content="https://sundingyi.com/tags/idea/"/>
+<meta property="og:url" content="https://sundingyi.com/blog/5de126fb/"/>
 <meta property="og:site_name" content="孙丁一的博客"/>
 
 
@@ -55,7 +55,9 @@ Idea - 孙丁一的博客
             
             <div class="container hero  fade-in one ">
                 
-    <h1 class="bold-title is-1">Tag: idea</h1>
+
+<h1 class="bold-title is-1">文章</h1>
+
 
             </div>
             
@@ -100,7 +102,7 @@ Idea - 孙丁一的博客
                 
                   <a class="navbar-item" href="https://sundingyi.com/blog/">
                   
-                  文章
+                  返回 文章
                   
                   </a>
                 
@@ -150,23 +152,53 @@ Idea - 孙丁一的博客
 
 
                 
-    <div class="container">
-        <ul>
-            
-            
-            <li>
-                <a href="https://sundingyi.com/blog/ca67d167/">2020.2.6 | 有意思的一个转场</a>
-            </li>
-            
-            
-            
-            <li>
-                <a href="https://sundingyi.com/blog/7b03722e/">2019.11.4 | 我抬起了头，却满是坟墓</a>
-            </li>
-            
-            
-        </ul>
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/5de126fb/">DNS污染？</a>
+    </h2>
+    <div class="post-data">
+        2019.10.28 |
+        
     </div>
+    
+    
+    
+    <p>
+        Tag:
+        
+        <a href="/tags/%E5%BB%BA%E7%AB%99">建站</a>
+        
+    </p>
+    
+</div>
+
+<div class="container markdown top-pad">
+    <p>这个站刚刚开放了3天，把我折腾的不行，刚刚又发现了点不对的地方，访问网站的时候某些json不能正确的加载导致动画不会出现。</p>
+<p><code>(index):52 Failed to find a valid digest in the 'integrity' attribute for resource 'https://sundingyi.com/styles/owlCarousel.min.fb3b2db7ac73c4ba8d021450bcf5556ff7385dfd0c1ee5fb4a69c75f41f2fd29.css' with computed SHA-256 integrity 'sfJuKcQ8Yf6LWm8iW07nxflpp7M8/lEnBiceByRtk9E='. The resource has been blocked. (index):1 </code></p>
+<p><code>Failed to find a valid digest in the 'integrity' attribute for resource 'https://sundingyi.com/js/bundle.02b6288fcd4c358451657f10dc5ff7760229d03df75243bce75eeed353f4f935.js' with computed SHA-256 integrity '5pNOadBruKITE09MFGj5R4u3dV54bftg48WpF8UzWAU='. The resource has been blocked. (index):1 </code></p>
+<p><code>Failed to find a valid digest in the 'integrity' attribute for resource 'https://sundingyi.com/js/bundleOwlCarousel.84c001859cd27dd29f730ab6e2a17834f2614cd035b5b887dcd252aeeda3c3a0.js' with computed SHA-256 integrity 'r8y2Zf/d+SEBqLwEuSSkpbmjbArQrWECTadRzdj9Htk='. The resource has been blocked.</code></p>
+<hr>
+<p>以上为报错信息，我的前端知识本来就匮乏的要死，多番搜索之后确定是SRI策略导致资源不能加载。</p>
+<ul>
+<li>
+<p>是我的代码错误？</p>
+<p>我又把主题作者的文件重新导入了一遍，发现问题还是存在。</p>
+<p>索性彻底把作者的example导入了试一下，发现仍然存在。</p>
+</li>
+</ul>
+<p>于是我觉得应该是<strong>github的DNS解析被污染了</strong>，导致了安全措施的采取。以后再来看看，真正原因是什么我也很懵。</p>
+
+</div>
+<script src="https://utteranc.es/client.js"
+        repo="42Sun/blogcomment"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+		</script>
+
+
+
 
 
                 
