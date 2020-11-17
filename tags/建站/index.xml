@@ -13,10 +13,10 @@
     
     <item>
       <title>评论/留言区上线</title>
-      <link>https://sundingyi.com/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E4%B8%8A%E7%BA%BF/</link>
+      <link>https://sundingyi.com/76d486f6/</link>
       <pubDate>Fri, 19 Jun 2020 22:36:47 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E4%B8%8A%E7%BA%BF/</guid>
+      <guid>https://sundingyi.com/76d486f6/</guid>
       <description>可真的会有人在里面写东西吗
   hugo使用评论区已经有几套成熟的方案了，我选择的是utterances+github的方式，不需要后端配合。 建立一个公开仓库用来储存评论内容。utterances提供了一个应用来绑定，很方便。每一个评论就是这个仓库里的issue，管理性没有大问题。
   在主题的对应html里加上提供的代码就可以了。
@@ -27,10 +27,10 @@
     
     <item>
       <title>语雀作为在线平台同步hugo</title>
-      <link>https://sundingyi.com/blog/5142000/</link>
+      <link>https://sundingyi.com/9933200000000000000000000000000000000000/</link>
       <pubDate>Mon, 09 Mar 2020 16:43:15 +0000</pubDate>
       
-      <guid>https://sundingyi.com/blog/5142000/</guid>
+      <guid>https://sundingyi.com/9933200000000000000000000000000000000000/</guid>
       <description>第一次接触语雀是在去年，当时在找一个靠谱的在线笔记编辑平台，听闻是阿里出品的，后来实际接触感觉还不错。支持Markdown很舒服。
  同步语雀的文章到hugo里
 偶然看到了这个项目，慢慢上手发现语雀+hugo完美解决了我笔记+博客的需求。
@@ -40,10 +40,10 @@
     
     <item>
       <title>DNS污染？</title>
-      <link>https://sundingyi.com/blog/dns%E6%B1%A1%E6%9F%93/</link>
+      <link>https://sundingyi.com/5de126fb/</link>
       <pubDate>Mon, 28 Oct 2019 21:59:00 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/dns%E6%B1%A1%E6%9F%93/</guid>
+      <guid>https://sundingyi.com/5de126fb/</guid>
       <description>这个站刚刚开放了3天，把我折腾的不行，刚刚又发现了点不对的地方，访问网站的时候某些json不能正确的加载导致动画不会出现。
 (index):52 Failed to find a valid digest in the &#39;integrity&#39; attribute for resource &#39;https://sundingyi.com/styles/owlCarousel.min.fb3b2db7ac73c4ba8d021450bcf5556ff7385dfd0c1ee5fb4a69c75f41f2fd29.css&#39; with computed SHA-256 integrity &#39;sfJuKcQ8Yf6LWm8iW07nxflpp7M8/lEnBiceByRtk9E=&#39;. The resource has been blocked. (index):1 
 Failed to find a valid digest in the &#39;integrity&#39; attribute for resource &#39;https://sundingyi.com/js/bundle.02b6288fcd4c358451657f10dc5ff7760229d03df75243bce75eeed353f4f935.js&#39; with computed SHA-256 integrity &#39;5pNOadBruKITE09MFGj5R4u3dV54bftg48WpF8UzWAU=&#39;. The resource has been blocked. (index):1 

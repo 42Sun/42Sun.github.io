@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="你好哈哈哈哈">
+<title>
+Git笔记 - 孙丁一的博客
+</title>
+
+
+
+        <meta property="og:title" content="Git笔记 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="你好哈哈哈哈"/>
+<meta property="og:url" content="https://sundingyi.com/git%E7%AC%94%E8%AE%B0/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/head.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.017658e6e15ec8047fb7f4c238fb4d639dee9803cd6ed7d9841172daa4bd8d4d.css" integrity="sha256-AXZY5uFeyAR/t/TCOPtNY53umAPNbtfZhBFy2qS9jU0=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">主页</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://sundingyi.com/blog/">
+                  
+                  返回 文章
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">关于</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="https://sundingyi.com/projects/">
+                  
+                  图
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">与我联系</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/git%E7%AC%94%E8%AE%B0/">Git笔记</a>
+    </h2>
+    <div class="post-data">
+        2020.4.9 |
+        
+    </div>
+    
+    
+    
+    <p>
+        Tag:
+        
+        <a href="/tags/git">git</a>
+        
+    </p>
+    
+</div>
+
+<div class="container markdown top-pad">
+    <p>git是这个世界上目前最先进的分布式版本控制系统。
+千万不要使用Windows自带的<strong>记事本</strong>编辑任何文本文件。</p>
+<h2 id="创建版本库">创建版本库</h2>
+<p><code>mkdir</code> 是创建文件夹的命令，</p>
+<p><code>pwd</code> 显示当前路径，</p>
+<p><code>git init</code> 创建版本库。</p>
+<h2 id="把文件加入到版本库">把文件加入到版本库</h2>
+<p><code>git add</code> </p>
+<p><code>git commit -m &quot;message&quot;</code> 提交，message里为本次提交的信息，</p>
+<p><code>git status</code> 查看当前状态，</p>
+<p><code>git diff</code> 查看某一文件变化。</p>
+<h2 id="回退版本">回退版本</h2>
+<p>上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个<code>^</code>比较容易数不过来，所以写成<code>HEAD~100</code>。</p>
+<p><code>git reset</code> 回退命令</p>
+<ul>
+<li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</li>
+<li>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
+</ul>
+<p><code>git restore 文件名</code> 取消工作区的修改，</p>
+<p><code>git restore --staged 文件名</code> 取消暂存区的修改。</p>
+<h2 id="删除文件">删除文件</h2>
+<p><code>rm 文件名</code> 删除文件，</p>
+<p><code>git rm 文件名</code> 在暂存区中提交指令</p>
+<h2 id="分支">分支</h2>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
+<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<p><code>git merge --no-ff -m &quot;merge with no-ff&quot; dev</code> 不使用fast forward模式合并</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/653509/1586416044162-e264bdf1-1c34-44da-9943-b72841a1a034.png#align=left&amp;display=inline&amp;height=3501&amp;name=git%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.png&amp;originHeight=3501&amp;originWidth=1441&amp;size=570287&amp;status=done&amp;style=none&amp;width=1441" alt="git思维导图.png"></p>
+
+</div>
+<script src="https://utteranc.es/client.js"
+        repo="42Sun/blogcomment"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+		</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2020 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.e6934e69d06bb8a213134f4c1468f9478bb7755e786dfb60e3c5a917c5335805.js" integrity="sha256-5pNOadBruKITE09MFGj5R4u3dV54bftg48WpF8UzWAU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+        
+        
+        
+        
+    </body>
+</html>
