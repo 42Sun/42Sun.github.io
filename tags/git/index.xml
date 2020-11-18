@@ -13,10 +13,10 @@
     
     <item>
       <title>Git笔记</title>
-      <link>https://sundingyi.com/blog/84292b5b/</link>
+      <link>https://sundingyi.com/blog/7/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://sundingyi.com/blog/84292b5b/</guid>
+      <guid>https://sundingyi.com/blog/7/</guid>
       <description>git是这个世界上目前最先进的分布式版本控制系统。 千万不要使用Windows自带的记事本编辑任何文本文件。
 创建版本库 mkdir 是创建文件夹的命令，
 pwd 显示当前路径，

@@ -13,10 +13,10 @@
     
     <item>
       <title>字符串和常用数据结构</title>
-      <link>https://sundingyi.com/blog/ae27874a/</link>
+      <link>https://sundingyi.com/blog/11/</link>
       <pubDate>Sun, 28 Jun 2020 18:28:15 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/ae27874a/</guid>
+      <guid>https://sundingyi.com/blog/11/</guid>
       <description>字符串 字符串是由零个或多个字符组成的有限序列。在Python中，用&#39;&#39;或&amp;quot;&amp;quot;将一个或多个字符包含起来就可以表示一个字符串。
 转义符号 使用转义符号\可以将它后面的字母不再表示原本的意思。在\后面还可以跟一个八进制或者十六进制数来表示字符，例如\141和\x61都代表小写字母a，前者是八进制的表示法，后者是十六进制的表示法。也可以在\后面跟Unicode字符编码来表示字符。
 如果不希望转义，可以在字符串前面加r
@@ -27,10 +27,10 @@ a, b = 5, 10 print(f&amp;#39;{a} * {b} = {a * b}&amp;#39;) str1 = &amp;#39;hello
     
     <item>
       <title>函数和模块</title>
-      <link>https://sundingyi.com/blog/e7215b2c/</link>
+      <link>https://sundingyi.com/blog/10/</link>
       <pubDate>Sun, 28 Jun 2020 15:53:03 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/e7215b2c/</guid>
+      <guid>https://sundingyi.com/blog/10/</guid>
       <description>函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。
 定义函数 使用def关键字来定义函数，函数的命名和变量的命名相同，即下划线命名法。 并且需要return回一个值作为函数执行结果。
 &amp;#34;&amp;#34;&amp;#34; 输入M和N计算C(M,N) 阶乘运算 &amp;#34;&amp;#34;&amp;#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&amp;#39;请输入m：&amp;#39;)) n = int(input(&amp;#39;请输入n：&amp;#39;)) print(fac(m) // fac(n) // fac(m - n)) 可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
@@ -41,10 +41,10 @@ if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如�
     
     <item>
       <title>Python基础</title>
-      <link>https://sundingyi.com/blog/7565156f/</link>
+      <link>https://sundingyi.com/blog/9/</link>
       <pubDate>Sat, 27 Jun 2020 14:19:44 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/7565156f/</guid>
+      <guid>https://sundingyi.com/blog/9/</guid>
       <description>Python历史  1989年圣诞节：Guido von Rossum开始写Python语言的编译器。 1991年2月：第一个Python编译器（同时也是解释器）诞生，它是用C语言实现的（后面），可以调用C语言的库函数。在最早的版本中，Python已经提供了对“类”，“函数”，“异常处理”等构造块的支持，还有对列表、字典等核心数据类型，同时支持以模块为基础来构造应用程序。 1994年1月：Python 1.0正式发布。 2000年10月16日：Python 2.0发布，增加了完整的垃圾回收，提供了对Unicode的支持。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。 2008年12月3日：Python 3.0发布，它并不完全兼容之前的Python代码，不过因为目前还有不少公司在项目和运维中使用Python 2.x版本，所以Python 3.x的很多新特性后来也被移植到Python 2.6/2.7版本中。  更详细的历史：《Python简史》
  变量  整形：Python可以处理任意大小的整数，在Python3中只有int。并且支持二进制（0b开头），八进制（0o开头），十进制，十六进制（0x开头）。 浮点型：小数。浮点指的是在用科学计数法表示时，小数点是可以浮动的。支持科学计数法（1.11e2）。 字符串型：以&#39;&#39;或&amp;quot;&amp;quot;括起来。用&#39;&#39;&#39; &#39;&#39;&#39;的表示方法可以多行。 布尔型： True和 False，布尔运算亦可以得出布尔型。 复数型：如1+1j，并不常用。  给变量命名  硬性规则： 字母数字下划线组成，数字不能开头。 大小写区分 不要用关键字 PEP 8规则： 用小写字母拼写，多个单词用下划线连接。 受保护的实例属性用单个下划线开头。 私有的实例属性用两个下划线开头。  变量的转换   int()：将一个数值或字符串转换成整数，可以指定进制。
   float()：将一个字符串转换成浮点数。
