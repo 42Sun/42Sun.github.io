@@ -6,34 +6,14 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 03 Nov 2020 14:27:43 +0800</lastBuildDate>
-    
-	<atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 03 Nov 2020 14:27:43 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Practice4</title>
       <link>https://sundingyi.com/blog/18/</link>
       <pubDate>Tue, 03 Nov 2020 14:27:43 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/18/</guid>
-      <description>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。  public class C { public static void main(String[] args) { A a = new A(); a.f(); B b = new B(); b.f(); b.g(); } } class A { void f() { System.out.println(&amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;); } } class B extends A { void g() { System.out.println(&amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;); } }  按要求编写一个Java应用程序：
-（1）编写一个矩形类Rect，包含：两个protected属性：矩形的宽width；矩形的高height。
-两个构造方法：
-1．一个带有两个参数的构造方法，用于将width和height属性初化；
-2．一个不带参数的构造方法，将矩形初始化为宽和高都为10。
-两个方法：
-求矩形面积的方法area()
-求矩形周长的方法perimeter()
-（2）通过继承Rect类编写一个具有确定位置的矩形类PlainRect，其确定位置用矩形的左上角坐标来标识，包含：添加两个属性：矩形左上角坐标startX和startY。
-两个构造方法：
-带4个参数的构造方法，用于对startX、startY、width和height属性
-初始化；
-不带参数的构造方法，将矩形初始化为左上角坐标、长和宽都为0的矩形；
-添加一个方法：
-判断某个点是否在矩形内部的方法isInside(double x,double y)。如在矩形内，返回true, 否则，返回false。
-​ 提示：点在矩形类是指满足条件：
-​ x&amp;gt;=startX&amp;amp;&amp;amp;x&amp;lt;=(startX+width)&amp;amp;&amp;amp;y&amp;lt;startY&amp;amp;&amp;amp;y&amp;gt;=(startY-height)</description>
+      <description>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  public class C { public static void main(String[] args) { A a = new A(); a.f(); B b = new B(); b.f(); b.g(); } } class A { void f() { System.out.println(&amp;#34;abcdefghijklmnopqrstuvwxyz&amp;#34;); } } class B extends A { void g() { System.out.println(&amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;); } }    按要求编写一个Java应用程序：</description>
     </item>
     
     <item>
@@ -42,7 +22,7 @@
       <pubDate>Sun, 18 Oct 2020 10:16:43 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/17/</guid>
-      <description>学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；  public class Test14 { public static void main(String[] args) { NewStudent a = new NewStudent(&amp;#34;Zhang&amp;#34;, 20); a.setGrade(45, 35, 77); System.out.println(a.getAvg()); } } class Student { String name; int age; float mathGrade; float engGrade; Student(String name, int age) { this.name = name; this.age = age; } void setGrade(float mathGrade, float engGrade) { this.mathGrade = mathGrade; this.engGrade = engGrade; } float getAvg() { return (mathGrade + engGrade) / 2; } } class NewStudent extends Student { float polGrade; NewStudent(String name, int age) { super(name, age); } void setGrade(float mathGrade, float engGrade, float polGrade) { this.</description>
+      <description>学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  public class Test14 { public static void main(String[] args) { NewStudent a = new NewStudent(&amp;#34;Zhang&amp;#34;, 20); a.setGrade(45, 35, 77); System.out.println(a.getAvg()); } } class Student { String name; int age; float mathGrade; float engGrade; Student(String name, int age) { this.</description>
     </item>
     
     <item>
@@ -51,7 +31,7 @@
       <pubDate>Fri, 09 Oct 2020 13:04:36 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/16/</guid>
-      <description>public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.out.println(c); } } } } public class Test2 { public static void main(String[] args) { for (int i = 1; i &amp;lt; 6; ++i) { for (int j = 1; j &amp;lt;= i; ++j) { if (j !</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.</description>
     </item>
     
     <item>
@@ -60,7 +40,7 @@
       <pubDate>Wed, 07 Oct 2020 17:58:04 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/15/</guid>
-      <description>选择排序 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length; ++j) { if (arr[j] &amp;lt; temp) { temp = arr[j]; flag = j; } } if (i != flag) { arr[flag] = arr[i]; arr[i] = temp; } } } public static void main(String[] args) { int[] arr = {2, 5, 7, 2, 1}; P.</description>
+      <description>选择排序 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length; ++j) { if (arr[j] &amp;lt; temp) { temp = arr[j]; flag = j; } } if (i !</description>
     </item>
     
     <item>
@@ -69,7 +49,7 @@
       <pubDate>Tue, 29 Sep 2020 16:49:06 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/14/</guid>
-      <description>2020/10/4 待交 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &amp;lt; 10; ++i) { if (arr[i] &amp;gt; max) max = arr[i]; if (arr[i] &amp;lt; min) min = arr[i]; } System.</description>
+      <description>2020/10/4 待交 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &amp;lt; 10; ++i) { if (arr[i] &amp;gt; max) max = arr[i]; if (arr[i] &amp;lt; min) min = arr[i]; } System.</description>
     </item>
     
     <item>
@@ -79,7 +59,7 @@
       
       <guid>https://sundingyi.com/blog/13/</guid>
       <description>刷题的第一天！！
- 算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int a = input.nextInt(); int b = input.nextInt(); int c = input.nextInt(); if (a == b &amp;amp;&amp;amp; b == c) { System.out.println(&amp;#34;equal&amp;#34;); } else System.out.println(&amp;#34;not equal&amp;#34;); } } //1.1.5 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.</description>
+ 算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int a = input.nextInt(); int b = input.nextInt(); int c = input.nextInt(); if (a == b &amp;amp;&amp;amp; b == c) { System.out.println(&amp;#34;equal&amp;#34;); } else System.</description>
     </item>
     
     <item>
@@ -107,9 +87,9 @@
       <description>字符串 字符串是由零个或多个字符组成的有限序列。在Python中，用&#39;&#39;或&amp;quot;&amp;quot;将一个或多个字符包含起来就可以表示一个字符串。
 转义符号 使用转义符号\可以将它后面的字母不再表示原本的意思。在\后面还可以跟一个八进制或者十六进制数来表示字符，例如\141和\x61都代表小写字母a，前者是八进制的表示法，后者是十六进制的表示法。也可以在\后面跟Unicode字符编码来表示字符。
 如果不希望转义，可以在字符串前面加r
-简化 a, b = 5, 10 print(&amp;#39;%d* %d= %d&amp;#39; % (a, b, a * b)) 当然，我们也可以用字符串提供的方法来完成字符串的格式，代码如下所示。
-a, b = 5, 10 print(&amp;#39;{0} * {1} = {2}&amp;#39;.format(a, b, a * b)) Python 3.6以后，格式化字符串还有更为简洁的书写方式，就是在字符串前加上字母f，我们可以使用下面的语法糖来简化上面的代码。
-a, b = 5, 10 print(f&amp;#39;{a} * {b} = {a * b}&amp;#39;) str1 = &amp;#39;hello, world!&amp;#39; # 通过内置函数len计算字符串的长度 print(len(str1)) # 13 # 获得字符串首字母大写的拷贝 print(str1.capitalize()) # Hello, world! # 获得字符串每个单词首字母大写的拷贝 print(str1.title()) # Hello, World! # 获得字符串变大写后的拷贝 print(str1.</description>
+简化 1 2  a, b = 5, 10 print(&amp;#39;%d* %d= %d&amp;#39; % (a, b, a * b))   当然，我们也可以用字符串提供的方法来完成字符串的格式，代码如下所示。
+1 2  a, b = 5, 10 print(&amp;#39;{0} * {1} = {2}&amp;#39;.format(a, b, a * b))   Python 3.6以后，格式化字符串还有更为简洁的书写方式，就是在字符串前加上字母f，我们可以使用下面的语法糖来简化上面的代码。
+1 2  a, b = 5, 10 print(f&amp;#39;{a} * {b} = {a * b}&amp;#39;)   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35  str1 = &amp;#39;hello, world!</description>
     </item>
     
     <item>
@@ -120,10 +100,9 @@ a, b = 5, 10 print(f&amp;#39;{a} * {b} = {a * b}&amp;#39;) str1 = &amp;#39;hello
       <guid>https://sundingyi.com/blog/10/</guid>
       <description>函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。
 定义函数 使用def关键字来定义函数，函数的命名和变量的命名相同，即下划线命名法。 并且需要return回一个值作为函数执行结果。
-&amp;#34;&amp;#34;&amp;#34; 输入M和N计算C(M,N) 阶乘运算 &amp;#34;&amp;#34;&amp;#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&amp;#39;请输入m：&amp;#39;)) n = int(input(&amp;#39;请输入n：&amp;#39;)) print(fac(m) // fac(n) // fac(m - n)) 可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
+1 2 3 4 5 6 7 8 9 10 11 12 13  &amp;#34;&amp;#34;&amp;#34; 输入M和N计算C(M,N) 阶乘运算 &amp;#34;&amp;#34;&amp;#34; def fac(num): result = 1 for i in range(1, num + 1): result *= i return result m = int(input(&amp;#39;请输入m：&amp;#39;)) n = int(input(&amp;#39;请输入n：&amp;#39;)) print(fac(m) // fac(n) // fac(m - n))    可变参数 当传入变量时如此定义def example(*name)即是一个可变参数。
 模块 为了避免函数的滥用，每个文件即是一个模块（module），使用import即可导入指定的模块。from .. import .. 如果导入的一个模块还含有可执行的代码，那么在导入这个模块的时候就会执行这些代码。
-if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如此，则只会在单纯执行此模块时才会运行。导入并不会执行
-函数的重命名 import example as exa</description>
+1  if __name__ = &amp;#39;__main__&amp;#39;:   如果被导入的模块中含有如此，则只会在单纯执行此模块时才会运行。导入并不会执行</description>
     </item>
     
     <item>
@@ -139,7 +118,7 @@ if __name__ = &amp;#39;__main__&amp;#39;: 如果被导入的模块中含有如�
   chr()：将整数转换成该编码对应的字符串（一个字符）。
   ord()：将字符串（一个字符）转换成对应的编码（整数）。
   分支结构 if 关键词有if,elif,else
-#英制单位英寸和公制单位厘米互换 value = float(input(&amp;#39;输入长度：&amp;#39;)) unit = input(&amp;#39;输入单位：&amp;#39;) if unit == &amp;#39;in&amp;#39; or unit == &amp;#39;英寸&amp;#39;: print(str(value) + &amp;#39;英寸=&amp;#39; + str(value * 2.</description>
+1 2 3 4 5 6 7 8 9 10 11 12  #英制单位英寸和公制单位厘米互换 value = float(input(&amp;#39;输入长度：&amp;#39;)) unit = input(&amp;#39;输入单位：&amp;#39;) if unit == &amp;#39;in&amp;#39; or unit == &amp;#39;英寸&amp;#39;: print(str(value) + &amp;#39;英寸=&amp;#39; + str(value * 2.</description>
     </item>
     
     <item>
