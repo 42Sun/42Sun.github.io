@@ -6,7 +6,27 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 03 Nov 2020 14:27:43 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Nov 2020 00:41:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OneNote的两个讨厌问题解决</title>
+      <link>https://sundingyi.com/blog/19/</link>
+      <pubDate>Sat, 21 Nov 2020 00:41:07 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/19/</guid>
+      <description>强大的微软在开开心心的周五晚上毁了我的心情😠
+OneNote的录音（音频）播放在蓝牙耳机下无法工作 问题复现 我的蓝牙耳机有两个连接模式：Hans-Free模式的音质很差，似乎是为通话调用麦克风而准备的？所以我一直用在立体声模式。
+在此模式下，我是可以正常录音的。但是在播放录音的过程中会出现：解决方法 当我尝试我之前的录音文件的时候发现，也会出现这种情况，我在中文的微软反馈论坛上搜索完全没找到答案。当时完全没有想到会是由耳机引发的原因，所以一股脑地在调试系统，甚至动了想重装系统的想法&amp;hellip;
+之后我尝试用英文进行搜索，查找了好几页之后终于找到了解决办法：解决方法是调整蓝牙耳机的连接模式，根本治标不治本。希望微软能早日修复这个bug，而不是让用户在洪水了的时候自建救生船。
+OneNote的中英文字体问题 起因是我看到了这个讨论：瞬间感觉很开心，这个问题已经遇到了好多年了吧，微软也一直没有解决，可能是原因OneNote作为一个不那么盈利的项目来说，其bug并没有那么高的优先级修复（或者懒）。
+但是在我亲自体验了一下之后发现并未得到解决啊，依旧会出现Calibri字体恶心人。记得我当时遇到这个问题的时候也寻找了很多解决办法，发现并没有特别有效的，甚至把字体替换掉这种洪水给自己包一层纸的做法都出现了！
+唉，本来我都已经习惯了这个问题，被突然这个一提又想起来了，好难受。于是又重蹈覆辙做了几年前的同样之功，得到了同样的方案：写完一整页之后重新设置一遍字体。
+不知道我多少年以后打开OneNote才会没有鬼畜一样的中英文字体。</description>
+    </item>
+    
     <item>
       <title>Practice4</title>
       <link>https://sundingyi.com/blog/18/</link>
@@ -85,7 +105,7 @@
       
       <guid>https://sundingyi.com/blog/11/</guid>
       <description>字符串 字符串是由零个或多个字符组成的有限序列。在Python中，用&#39;&#39;或&amp;quot;&amp;quot;将一个或多个字符包含起来就可以表示一个字符串。
-转义符号 使用**转义符号\**可以将它后面的字母不再表示原本的意思。在\后面还可以跟一个八进制或者十六进制数来表示字符，例如\141和\x61都代表小写字母a，前者是八进制的表示法，后者是十六进制的表示法。也可以在\后面跟Unicode字符编码来表示字符。
+转义符号 使用转义符号\可以将它后面的字母不再表示原本的意思。在\后面还可以跟一个八进制或者十六进制数来表示字符，例如\141和\x61都代表小写字母a，前者是八进制的表示法，后者是十六进制的表示法。也可以在\后面跟Unicode字符编码来表示字符。
 如果不希望转义，可以在字符串前面加r
 简化 1 2  a, b = 5, 10 print(&amp;#39;%d* %d= %d&amp;#39; % (a, b, a * b))   当然，我们也可以用字符串提供的方法来完成字符串的格式，代码如下所示。
 1 2  a, b = 5, 10 print(&amp;#39;{0} * {1} = {2}&amp;#39;.format(a, b, a * b))   Python 3.6以后，格式化字符串还有更为简洁的书写方式，就是在字符串前加上字母f，我们可以使用下面的语法糖来简化上面的代码。

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debug on 孙丁一的博客</title>
+    <link>https://sundingyi.com/tags/debug/</link>
+    <description>Recent content in debug on 孙丁一的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 21 Nov 2020 00:41:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://sundingyi.com/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OneNote的两个讨厌问题解决</title>
+      <link>https://sundingyi.com/blog/19/</link>
+      <pubDate>Sat, 21 Nov 2020 00:41:07 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/19/</guid>
+      <description>强大的微软在开开心心的周五晚上毁了我的心情😠
+OneNote的录音（音频）播放在蓝牙耳机下无法工作 问题复现 我的蓝牙耳机有两个连接模式：Hans-Free模式的音质很差，似乎是为通话调用麦克风而准备的？所以我一直用在立体声模式。
+在此模式下，我是可以正常录音的。但是在播放录音的过程中会出现：解决方法 当我尝试我之前的录音文件的时候发现，也会出现这种情况，我在中文的微软反馈论坛上搜索完全没找到答案。当时完全没有想到会是由耳机引发的原因，所以一股脑地在调试系统，甚至动了想重装系统的想法&amp;hellip;
+之后我尝试用英文进行搜索，查找了好几页之后终于找到了解决办法：解决方法是调整蓝牙耳机的连接模式，根本治标不治本。希望微软能早日修复这个bug，而不是让用户在洪水了的时候自建救生船。
+OneNote的中英文字体问题 起因是我看到了这个讨论：瞬间感觉很开心，这个问题已经遇到了好多年了吧，微软也一直没有解决，可能是原因OneNote作为一个不那么盈利的项目来说，其bug并没有那么高的优先级修复（或者懒）。
+但是在我亲自体验了一下之后发现并未得到解决啊，依旧会出现Calibri字体恶心人。记得我当时遇到这个问题的时候也寻找了很多解决办法，发现并没有特别有效的，甚至把字体替换掉这种洪水给自己包一层纸的做法都出现了！
+唉，本来我都已经习惯了这个问题，被突然这个一提又想起来了，好难受。于是又重蹈覆辙做了几年前的同样之功，得到了同样的方案：写完一整页之后重新设置一遍字体。
+不知道我多少年以后打开OneNote才会没有鬼畜一样的中英文字体。</description>
+    </item>
+    
+  </channel>
+</rss>
