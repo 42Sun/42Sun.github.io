@@ -6,10 +6,19 @@
     <description>Recent content in 代码 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 03 Nov 2020 14:27:43 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2020 18:51:45 +0800</lastBuildDate>
     
 	<atom:link href="https://sundingyi.com/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java中关于String的常用方法</title>
+      <link>https://sundingyi.com/blog/20/</link>
+      <pubDate>Sat, 21 Nov 2020 18:51:45 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/20/</guid>
+      <description>String和char[]之间常用 方法 描述 public String(char[] value) 把传入的字符数组变为字符串 public String(char[] value, int offset, int count) offset表示开始的位置，count表示个数 public char charAt(int</description>
+    </item>
     
     <item>
       <title>Practice4</title>
