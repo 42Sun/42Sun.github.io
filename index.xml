@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Nov 2020 18:22:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 18:38:32 +0800</lastBuildDate>
     
 	<atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>TSP问题简单讨论</title>
+      <link>https://sundingyi.com/blog/22/</link>
+      <pubDate>Mon, 30 Nov 2020 18:38:32 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/22/</guid>
+      <description>（本文为latex转markdown生成） 图在计算机中如何表示 邻接表 邻接表是一个链表的集合，链表的表头表示一个节点。比较适合存储稀疏的图。 例</description>
     </item>
     
     <item>
