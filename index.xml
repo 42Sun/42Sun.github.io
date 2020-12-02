@@ -6,11 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Nov 2020 18:38:32 +0800</lastBuildDate>
-    
-	<atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Dec 2020 15:22:59 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -26,6 +22,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sundingyi.com/projects/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://sundingyi.com/blog/222/</link>
+      <pubDate>Wed, 02 Dec 2020 15:22:59 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/222/</guid>
       <description></description>
     </item>
     

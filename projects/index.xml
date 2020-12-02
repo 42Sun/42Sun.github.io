@@ -5,11 +5,7 @@
     <link>https://sundingyi.com/projects/</link>
     <description>Recent content in 图 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    
-	<atom:link href="https://sundingyi.com/projects/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-cn</language><atom:link href="https://sundingyi.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>

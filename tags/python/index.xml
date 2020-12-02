@@ -6,11 +6,7 @@
     <description>Recent content in python on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Jun 2020 18:28:15 +0800</lastBuildDate>
-    
-	<atom:link href="https://sundingyi.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 28 Jun 2020 18:28:15 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>字符串和常用数据结构</title>
       <link>https://sundingyi.com/blog/11/</link>
