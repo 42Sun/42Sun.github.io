@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 02 Dec 2020 21:49:15 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 21:25:46 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,24 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Java多线程基础</title>
+      <link>https://sundingyi.com/24/</link>
+      <pubDate>Fri, 04 Dec 2020 21:25:46 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/24/</guid>
+      <description>Java 支持多线程开发。在进行并发访问处理时可得到更高的处理性能。 进程：DOS 采用单进程处理，最大的特点就是同一个时间，只运行一个程序。Windo</description>
+    </item>
+    
+    <item>
+      <title>Java多线程基础</title>
+      <link>https://sundingyi.com/blog/24/</link>
+      <pubDate>Fri, 04 Dec 2020 21:25:46 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/24/</guid>
+      <description>Java 支持多线程开发。在进行并发访问处理时可得到更高的处理性能。 进程：DOS 采用单进程处理，最大的特点就是同一个时间，只运行一个程序。Windo</description>
     </item>
     
     <item>
