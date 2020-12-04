@@ -58,7 +58,7 @@
       <pubDate>Mon, 30 Nov 2020 18:22:36 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/21/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
+      <description>interface ILink&amp;lt;E&amp;gt; { public void add(E e); public int size(); public boolean isEmpty(); public Object[] toArray(); public E get(int index); public void set(int index, E data); public boolean contains(E data); public void remove(E data); public void clean(); } class LinkImpl&amp;lt;E&amp;gt; implements ILink&amp;lt;E&amp;gt; { private class Node { private E data; private Node next; public Node(E data) { this.data = data; } public void addNode(Node newNode) { if (this.next == null)</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@
       <pubDate>Fri, 09 Oct 2020 13:04:36 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/16/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c :</description>
+      <description>public class Test1 { public static void main(String[] args) { int[][] a = new int[][] { {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5} }; for (int[] b : a) { for (int c : b) { System.out.println(c); } } } } public class Test2 { public static void main(String[] args) { for</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@
       <pubDate>Wed, 07 Oct 2020 17:58:04 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/15/</guid>
-      <description>选择排序 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length;</description>
+      <description>选择排序 public class P { public static void selectionSort(int[] arr) { for (int i = 0; i &amp;lt; arr.length - 1; ++i) { int temp = arr[i]; int flag = i; for (int j = i + 1; j &amp;lt; arr.length; ++j) { if (arr[j] &amp;lt; temp) { temp = arr[j]; flag = j; } } if (i != flag) { arr[flag] = arr[i]; arr[i] = temp;</description>
     </item>
     
     <item>
@@ -121,7 +121,7 @@
       <pubDate>Tue, 29 Sep 2020 16:49:06 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/14/</guid>
-      <description>2020/10/4 待交 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int</description>
+      <description>2020/10/4 待交 //9 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int[] arr = new int[10]; for (int i = 0; i &amp;lt; 10; ++i) { arr[i] = input.nextInt(); } int max = arr[0]; int min = arr[0]; for (int i = 0; i &amp;lt; 10; ++i) { if (arr[i] &amp;gt; max) max = arr[i]; if (arr[i] &amp;lt; min) min</description>
     </item>
     
     <item>
@@ -130,7 +130,7 @@
       <pubDate>Mon, 28 Sep 2020 20:23:42 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/13/</guid>
-      <description>刷题的第一天！！ 算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input =</description>
+      <description>刷题的第一天！！ 算法（第4版）作者: 塞奇威克 (Robert Sedgewick) / 韦恩 (Kevin Wayne) 第一章课后习题 //1.1.3 import java.util.Scanner; public class Test { public static void main(String[] args) { Scanner input = new Scanner(System.in); int a = input.nextInt(); int b = input.nextInt(); int c = input.nextInt(); if (a == b</description>
     </item>
     
     <item>
