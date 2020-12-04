@@ -25,14 +25,5 @@
       <description>第一次接触语雀是在去年，当时在找一个靠谱的在线笔记编辑平台，听闻是阿里出品的，后来实际接触感觉还不错。支持Markdown很舒服。 同步语雀的</description>
     </item>
     
-    <item>
-      <title>DNS污染？</title>
-      <link>https://sundingyi.com/blog/2/</link>
-      <pubDate>Mon, 28 Oct 2019 21:59:00 +0800</pubDate>
-      
-      <guid>https://sundingyi.com/blog/2/</guid>
-      <description>这个站刚刚开放了3天，把我折腾的不行，刚刚又发现了点不对的地方，访问网站的时候某些json不能正确的加载导致动画不会出现。 (index):52 Failed to find a valid digest in the</description>
-    </item>
-    
   </channel>
 </rss>

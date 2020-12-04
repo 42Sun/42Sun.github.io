@@ -16,5 +16,59 @@
       <description>Java 支持多线程开发。在进行并发访问处理时可得到更高的处理性能。 进程：DOS 采用单进程处理，最大的特点就是同一个时间，只运行一个程序。Windo</description>
     </item>
     
+    <item>
+      <title>TSP问题简单讨论</title>
+      <link>https://sundingyi.com/blog/22/</link>
+      <pubDate>Mon, 30 Nov 2020 18:38:32 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/22/</guid>
+      <description>（本文为latex转markdown生成） 图在计算机中如何表示 邻接表 邻接表是一个链表的集合，链表的表头表示一个节点。比较适合存储稀疏的图。 例</description>
+    </item>
+    
+    <item>
+      <title>Java中关于String的常用方法</title>
+      <link>https://sundingyi.com/blog/20/</link>
+      <pubDate>Sat, 21 Nov 2020 18:51:45 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/20/</guid>
+      <description>String和char[]之间常用 方法 描述 public String(char[] value) 把传入的字符数组变为字符串 public String(char[] value, int offset, int count) offset表示开始的位置，count表示个数 public char charAt(int</description>
+    </item>
+    
+    <item>
+      <title>字符串和常用数据结构</title>
+      <link>https://sundingyi.com/blog/11/</link>
+      <pubDate>Sun, 28 Jun 2020 18:28:15 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/11/</guid>
+      <description>字符串 字符串是由零个或多个字符组成的有限序列。在Python中，用&#39;&#39;或&amp;quot;&amp;quot;将一个或多个字符包含起来就可以表示一个字符串</description>
+    </item>
+    
+    <item>
+      <title>函数和模块</title>
+      <link>https://sundingyi.com/blog/10/</link>
+      <pubDate>Sun, 28 Jun 2020 15:53:03 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/10/</guid>
+      <description>函数 将某一个功能封装到函数中。需要这个功能的时候只需要调用这个函数就可以了。 可以不传入参数。 定义函数 使用def关键字来定义函数，函数的命名和</description>
+    </item>
+    
+    <item>
+      <title>Python基础</title>
+      <link>https://sundingyi.com/blog/9/</link>
+      <pubDate>Sat, 27 Jun 2020 14:19:44 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/9/</guid>
+      <description>Python历史 1989年圣诞节：Guido von Rossum开始写Python语言的编译器。 1991年2月：第一个Python编译器（同时也是</description>
+    </item>
+    
+    <item>
+      <title>Git笔记</title>
+      <link>https://sundingyi.com/blog/7/</link>
+      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sundingyi.com/blog/7/</guid>
+      <description>git是这个世界上目前最先进的分布式版本控制系统。 千万不要使用Windows自带的记事本编辑任何文本文件。 创建版本库 mkdir 是创建文件夹的命令， pwd</description>
+    </item>
+    
   </channel>
 </rss>
