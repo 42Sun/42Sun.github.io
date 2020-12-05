@@ -6,7 +6,16 @@
     <description>Recent content in Java on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 04 Dec 2020 21:25:46 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Dec 2020 19:17:37 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多线程常用操作方法</title>
+      <link>https://sundingyi.com/blog/25/</link>
+      <pubDate>Sat, 05 Dec 2020 19:17:37 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/25/</guid>
+      <description>多线程的常用方法大多都在 Thread 类中定义了。 线程的命名与取得 多线程的运行状态是不确定的，如果想要获取到某一个特定的线程，就需要通过线程的名字来进行</description>
+    </item>
+    
     <item>
       <title>Java 多线程基础</title>
       <link>https://sundingyi.com/blog/24/</link>
