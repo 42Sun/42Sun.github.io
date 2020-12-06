@@ -67,7 +67,7 @@
       <pubDate>Mon, 30 Nov 2020 18:38:32 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/22/</guid>
-      <description>（本文为latex转markdown生成） 图在计算机中如何表示 邻接表 邻接表是一个链表的集合，链表的表头表示一个节点。比较适合存储稀疏的图。 例</description>
+      <description>（本文为latex转markdown生成） 图在计算机中如何表示 ==================== 邻接表 邻接表是一个链表的集合，链表的表头表示一个节点。比较适合存储稀疏的图。</description>
     </item>
     
     <item>

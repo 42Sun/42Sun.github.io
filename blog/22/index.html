@@ -147,7 +147,7 @@ T S P问题简单讨论 - 孙丁一的博客
     </h2>
     <div class="post-data">
         2020.11.30 ・ 
-        共 3030 字，您可能需要 7 分钟阅读
+        共 3031 字，您可能需要 7 分钟阅读
         
     </div>
     
@@ -182,22 +182,23 @@ T S P问题简单讨论 - 孙丁一的博客
 <div class="container markdown top-pad">
     <p>（本文为latex转markdown生成）</p>
 
-<h1 id="图在计算机中如何表示" class="anchor-link"><a href="#%e5%9b%be%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%ad%e5%a6%82%e4%bd%95%e8%a1%a8%e7%a4%ba">图在计算机中如何表示</a></h1>
+<h2 id="图在计算机中如何表示" class="anchor-link"><a href="#%e5%9b%be%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%ad%e5%a6%82%e4%bd%95%e8%a1%a8%e7%a4%ba">图在计算机中如何表示</a></h2>
+<p>====================</p>
 
-<h2 id="邻接表" class="anchor-link"><a href="#%e9%82%bb%e6%8e%a5%e8%a1%a8">邻接表</a></h2>
+<h3 id="邻接表" class="anchor-link"><a href="#%e9%82%bb%e6%8e%a5%e8%a1%a8">邻接表</a></h3>
 <p>邻接表是一个链表的集合，链表的表头表示一个节点。比较适合存储稀疏的图。</p>
 <p>例如，其中1到3有一条边，其权值为3，则表示为</p>
 <p><img src="https://tvax4.sinaimg.cn/large/a8eb46baly1gl7drtcoqwj204w06v746.jpg" alt="image"></p>
 <p>邻接表有边就记录，没边就不记录，这样很节省存储空间，不过邻接表也有缺点，当图比较稠密的时候，图中的边就特别多，链表中的元素也就特别多。链表上有除了数据域还有一个指针，相比邻接矩阵，这个指针完全是浪费空间的，它没有存储任何与图有关的内容。所以对于稠密图，邻接表的性能较低。</p>
 
-<h2 id="邻接矩阵" class="anchor-link"><a href="#%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5">邻接矩阵</a></h2>
+<h3 id="邻接矩阵" class="anchor-link"><a href="#%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5">邻接矩阵</a></h3>
 <p>邻接矩阵是一个方阵，行和列的两组表头都是所有顶点。适合表示稠密的图，在这里讨论无向图。</p>
 <p>比如说，一个图有1，2，3，4，5这些节点，那么就在行表头，列表头记1，2，3，4，5；再将各边的权值记录在表中。实际在计算机中存储时，我们通常会用一个二维数组来表示。</p>
 <p>例如，同上。其中1到3有一条边，其权值为3，则在数组中的[0][2]赋值为3，如</p>
 <p><img src="https://tva4.sinaimg.cn/large/a8eb46baly1gl7dshmhl1j208307ut8p.jpg" alt="image"></p>
 <p>一般来说，我们使用权值来表示两个点之间的距离，如果两个点之间没有边，那么这两个点之间的距离可以视作无穷大。但在实际应用中，通常用一个很大的常量表示。</p>
 
-<h1 id="tsp的暴力穷举解法" class="anchor-link"><a href="#tsp%e7%9a%84%e6%9a%b4%e5%8a%9b%e7%a9%b7%e4%b8%be%e8%a7%a3%e6%b3%95">TSP的暴力穷举解法</a></h1>
+<h2 id="tsp的暴力穷举解法" class="anchor-link"><a href="#tsp%e7%9a%84%e6%9a%b4%e5%8a%9b%e7%a9%b7%e4%b8%be%e8%a7%a3%e6%b3%95">TSP的暴力穷举解法</a></h2>
 <p>对于n个节点来说有n!个选择，计算出每条路径的权值和，并选其中最小的路径作为最佳路径。</p>
 <p>解法：</p>
 <ol>
@@ -212,15 +213,15 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h1 id="图上最小生成树问题" class="anchor-link"><a href="#%e5%9b%be%e4%b8%8a%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e9%97%ae%e9%a2%98">图上最小生成树问题</a></h1>
+<h2 id="图上最小生成树问题" class="anchor-link"><a href="#%e5%9b%be%e4%b8%8a%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e9%97%ae%e9%a2%98">图上最小生成树问题</a></h2>
 <blockquote>
 <p>已知：边带权的连通图。</p>
 <p>目标：找到一颗包含所有顶点的树，其权重最小。</p>
 </blockquote>
 
-<h2 id="邻域搜索" class="anchor-link"><a href="#%e9%82%bb%e5%9f%9f%e6%90%9c%e7%b4%a2">邻域搜索</a></h2>
+<h3 id="邻域搜索" class="anchor-link"><a href="#%e9%82%bb%e5%9f%9f%e6%90%9c%e7%b4%a2">邻域搜索</a></h3>
 
-<h3 id="叙述" class="anchor-link"><a href="#%e5%8f%99%e8%bf%b0">叙述</a></h3>
+<h4 id="叙述" class="anchor-link"><a href="#%e5%8f%99%e8%bf%b0">叙述</a></h4>
 <p>选择权值最小的边，加入到生成树中，不断迭代。从某一个顶点开始，不断扩展覆盖到连通图的所有节点。</p>
 <ol>
 <li>
@@ -234,7 +235,7 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h3 id="证明" class="anchor-link"><a href="#%e8%af%81%e6%98%8e">证明</a></h3>
+<h4 id="证明" class="anchor-link"><a href="#%e8%af%81%e6%98%8e">证明</a></h4>
 <p>使用归纳法进行可行性，最优性的证明。</p>
 <ol>
 <li>
@@ -248,9 +249,9 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h2 id="贪婪算法" class="anchor-link"><a href="#%e8%b4%aa%e5%a9%aa%e7%ae%97%e6%b3%95">贪婪算法</a></h2>
+<h3 id="贪婪算法" class="anchor-link"><a href="#%e8%b4%aa%e5%a9%aa%e7%ae%97%e6%b3%95">贪婪算法</a></h3>
 
-<h3 id="叙述-1" class="anchor-link"><a href="#%e5%8f%99%e8%bf%b0-1">叙述</a></h3>
+<h4 id="叙述-1" class="anchor-link"><a href="#%e5%8f%99%e8%bf%b0-1">叙述</a></h4>
 <p>初始最小生成树的边数为0，每次迭代都选择一条可行的边加入到树中。</p>
 <ol>
 <li>
@@ -264,7 +265,7 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h3 id="证明-1" class="anchor-link"><a href="#%e8%af%81%e6%98%8e-1">证明</a></h3>
+<h4 id="证明-1" class="anchor-link"><a href="#%e8%af%81%e6%98%8e-1">证明</a></h4>
 <p>使用反证法进行可行性，最优性的证明。</p>
 <ol>
 <li>
@@ -278,9 +279,9 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h1 id="利用最小生成树的结果找旅行路径" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e7%9a%84%e7%bb%93%e6%9e%9c%e6%89%be%e6%97%85%e8%a1%8c%e8%b7%af%e5%be%84">利用最小生成树的结果找旅行路径</a></h1>
+<h2 id="利用最小生成树的结果找旅行路径" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e7%9a%84%e7%bb%93%e6%9e%9c%e6%89%be%e6%97%85%e8%a1%8c%e8%b7%af%e5%be%84">利用最小生成树的结果找旅行路径</a></h2>
 
-<h2 id="邻域搜索的扩展" class="anchor-link"><a href="#%e9%82%bb%e5%9f%9f%e6%90%9c%e7%b4%a2%e7%9a%84%e6%89%a9%e5%b1%95">邻域搜索的扩展</a></h2>
+<h3 id="邻域搜索的扩展" class="anchor-link"><a href="#%e9%82%bb%e5%9f%9f%e6%90%9c%e7%b4%a2%e7%9a%84%e6%89%a9%e5%b1%95">邻域搜索的扩展</a></h3>
 <ol>
 <li>
 <p>确定起点</p>
@@ -293,7 +294,7 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h2 id="贪婪算法的扩展" class="anchor-link"><a href="#%e8%b4%aa%e5%a9%aa%e7%ae%97%e6%b3%95%e7%9a%84%e6%89%a9%e5%b1%95">贪婪算法的扩展</a></h2>
+<h3 id="贪婪算法的扩展" class="anchor-link"><a href="#%e8%b4%aa%e5%a9%aa%e7%ae%97%e6%b3%95%e7%9a%84%e6%89%a9%e5%b1%95">贪婪算法的扩展</a></h3>
 <ol>
 <li>
 <p>把所有边进行从小到大的排序。</p>
@@ -306,9 +307,9 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h1 id="利用最小生成树的结果找旅行路径-1" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e7%9a%84%e7%bb%93%e6%9e%9c%e6%89%be%e6%97%85%e8%a1%8c%e8%b7%af%e5%be%84-1">利用最小生成树的结果找旅行路径</a></h1>
+<h2 id="利用最小生成树的结果找旅行路径-1" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91%e7%9a%84%e7%bb%93%e6%9e%9c%e6%89%be%e6%97%85%e8%a1%8c%e8%b7%af%e5%be%84-1">利用最小生成树的结果找旅行路径</a></h2>
 
-<h2 id="3" class="anchor-link"><a href="#3">图顶点的深度优先搜索算法</a></h2>
+<h3 id="图顶点的深度优先搜索算法" class="anchor-link"><a href="#%e5%9b%be%e9%a1%b6%e7%82%b9%e7%9a%84%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2%e7%ae%97%e6%b3%95">图顶点的深度优先搜索算法</a></h3>
 <ol>
 <li>
 <p>确定顶点V，作为起始点，并标记为已经访问过。</p>
@@ -321,7 +322,7 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h1 id="遗传算法找最短路径" class="anchor-link"><a href="#%e9%81%97%e4%bc%a0%e7%ae%97%e6%b3%95%e6%89%be%e6%9c%80%e7%9f%ad%e8%b7%af%e5%be%84">遗传算法找最短路径</a></h1>
+<h2 id="遗传算法找最短路径" class="anchor-link"><a href="#%e9%81%97%e4%bc%a0%e7%ae%97%e6%b3%95%e6%89%be%e6%9c%80%e7%9f%ad%e8%b7%af%e5%be%84">遗传算法找最短路径</a></h2>
 <blockquote>
 <p>遗传算法将“优胜劣汰，适者生存”的生物进化原理引入优化参数形成的编码串联群体中，按所选择的适应度函数并通过遗传中的复制、交叉及变异对个体进行筛选，使适应度高的个体被保留下来，组成新的群体，新的群体既继承了上一代的信息，又优于上一代。这样周而复始，群体中个体适应度不断提高，直到满足一定的条件。遗传算法的算法简单，可并行处理，并能到全局最优解。</p>
 </blockquote>
@@ -363,9 +364,9 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h1 id="总结" class="anchor-link"><a href="#%e6%80%bb%e7%bb%93">总结</a></h1>
+<h2 id="总结" class="anchor-link"><a href="#%e6%80%bb%e7%bb%93">总结</a></h2>
 
-<h2 id="最小生成树" class="anchor-link"><a href="#%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91">最小生成树</a></h2>
+<h3 id="最小生成树" class="anchor-link"><a href="#%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91">最小生成树</a></h3>
 <ol>
 <li>
 <p>对于最小生成树的Prim算法，记一共有v个顶点，则时间复杂度为$O(v^2)$。</p>
@@ -378,11 +379,11 @@ T S P问题简单讨论 - 孙丁一的博客
 </li>
 </ol>
 
-<h2 id="旅行商问题" class="anchor-link"><a href="#%e6%97%85%e8%a1%8c%e5%95%86%e9%97%ae%e9%a2%98">旅行商问题</a></h2>
+<h3 id="旅行商问题" class="anchor-link"><a href="#%e6%97%85%e8%a1%8c%e5%95%86%e9%97%ae%e9%a2%98">旅行商问题</a></h3>
 <p>Prim算法和Kruskal算法扩展后不是最优解，两者为近似算法，是近似解。</p>
 <p>近似算法所得出的近似解与实际最优解的近似比为1到2之间。</p>
 
-<h2 id="代码" class="anchor-link"><a href="#%e4%bb%a3%e7%a0%81">代码</a></h2>
+<h3 id="代码" class="anchor-link"><a href="#%e4%bb%a3%e7%a0%81">代码</a></h3>
 <p>例题图：</p>
 <p><img src="https://tva2.sinaimg.cn/large/a8eb46baly1gl7dudksktj20r00l8jrn.jpg" alt="屏幕截图 2020-11-08 174816"></p>
 <table>
