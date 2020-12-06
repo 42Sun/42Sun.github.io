@@ -147,7 +147,7 @@
     </h2>
     <div class="post-data">
         2020.12.6 ・ 
-        共 1236 字，您可能需要 3 分钟阅读
+        共 1248 字，您可能需要 3 分钟阅读
         
     </div>
     
@@ -225,7 +225,7 @@
 <h3 id="处理" class="anchor-link"><a href="#%e5%a4%84%e7%90%86">处理</a></h3>
 <p>同步问题产生的主要原因是都在对同一数据进行处理的时候，在其他因素的影响下，会产生不希望的后果，解决这一问题的关键是”锁“：当某一个线程执行操作的时候，其他的线程在外等待。</p>
 <p><img src="https://tvax1.sinaimg.cn/large/a8eb46baly1gle74ev83bj20p60bkgr8.jpg" alt="image-20201206151952838"></p>
-<p>如果想在程序之中实现锁的功能，就可以使用 <code>synchcronized</code> 关键字，利用此关键字可以定义同步方法或同步代码块，在同步代码块的操作里只允许一个线程执行。</p>
+<p>如果想在程序之中实现锁的功能，就可以使用<code>synchcronized</code>关键字，利用此关键字可以定义同步方法或同步代码块，在同步代码块的操作里只允许一个线程执行。</p>
 
 <h4 id="利用同步代码块进行处理" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e8%bf%9b%e8%a1%8c%e5%a4%84%e7%90%86">利用同步代码块进行处理</a></h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">synchcronized<span style="color:#666">(</span>同步对象<span style="color:#666">)</span> <span style="color:#666">{</span>

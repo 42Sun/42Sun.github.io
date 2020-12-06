@@ -147,7 +147,7 @@
     </h2>
     <div class="post-data">
         2020.12.5 ・ 
-        共 2092 字，您可能需要 5 分钟阅读
+        共 2110 字，您可能需要 5 分钟阅读
         
     </div>
     
@@ -196,7 +196,7 @@
 <li>取得名字：<code>public final String getName()</code></li>
 </ul>
 <p>线程名字不建议修改、重名。</p>
-<p>所有的线程对象都要执行 <code>run()</code> ，那么可以考虑获取当前线程，在 Thread 类中提供有此方法 <code>public static Thread currenThread()</code></p>
+<p>所有的线程对象都要执行<code>run()</code>，那么可以考虑获取当前线程，在 Thread 类中提供有此方法<code>public static Thread currenThread()</code></p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
     System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">());</span>
@@ -211,7 +211,7 @@
 </span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 无名字也能自动命名为一个不重复的名字
 </span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
 <span style="color:#666">}</span>
-</code></pre></div><p>当直接通过线程对象执行 <code>run()</code> 时：<code>mt.run()</code> 观察结果会发现此时线程名字为 main，所以得出结论，主方法也是一个线程。 每当使用 java 命令运行程序的时候就表示启动了一个 JVM 进程，一台电脑上只可以同时启动一个，所以每一个 JVM 进程都会有其各自的线程。在开发中，主线程可创建出若干的子线程，目的是可以将一些复杂逻辑交由子线程处理。</p>
+</code></pre></div><p>当直接通过线程对象执行<code>run()</code>时：<code>mt.run()</code>观察结果会发现此时线程名字为 main，所以得出结论，主方法也是一个线程。 每当使用 java 命令运行程序的时候就表示启动了一个 JVM 进程，一台电脑上只可以同时启动一个，所以每一个 JVM 进程都会有其各自的线程。在开发中，主线程可创建出若干的子线程，目的是可以将一些复杂逻辑交由子线程处理。</p>
 
 <h2 id="线程的休眠" class="anchor-link"><a href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e4%bc%91%e7%9c%a0">线程的休眠</a></h2>
 <p>如果说现在希望某一个线程可以暂缓执行一次，那么就可以使用休眠处理。在 Thread 中定义的休眠方法：</p>
@@ -383,7 +383,7 @@
 <span style="color:#666">}</span>
 </code></pre></div>
 <h2 id="线程的礼让" class="anchor-link"><a href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e7%a4%bc%e8%ae%a9">线程的礼让</a></h2>
-<p>先将资源让出去，让别的线程先执行。可以使用 Thread 中的 <code>public static void yield()</code></p>
+<p>先将资源让出去，让别的线程先执行。可以使用 Thread 中的<code>public static void yield()</code></p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">throws</span> Exception <span style="color:#666">{</span>
     Thread thread <span style="color:#666">=</span>

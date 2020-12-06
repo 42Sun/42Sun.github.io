@@ -147,7 +147,7 @@ Java 多线程基础 - 孙丁一的博客
     </h2>
     <div class="post-data">
         2020.12.4 ・ 
-        共 1968 字，您可能需要 4 分钟阅读
+        共 2037 字，您可能需要 5 分钟阅读
         
     </div>
     
@@ -195,7 +195,7 @@ Java 多线程基础 - 孙丁一的博客
 <h2 id="thread-类" class="anchor-link"><a href="#thread-%e7%b1%bb">Thread 类</a></h2>
 
 <h3 id="继承-thread-类实现多线程" class="anchor-link"><a href="#%e7%bb%a7%e6%89%bf-thread-%e7%b1%bb%e5%ae%9e%e7%8e%b0%e5%a4%9a%e7%ba%bf%e7%a8%8b">继承 Thread 类实现多线程</a></h3>
-<p><code>java.lang.Thread</code> 类为实现多线程类的父类，但并不是实现了这个类就能够实现多线程处理。因为还需要覆写Thread类中 <code>public void run()</code>。</p>
+<p><code>java.lang.Thread</code> 类为实现多线程类的父类，但并不是实现了这个类就能够实现多线程处理。因为还需要覆写Thread类中<code>public void run()</code>。</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">extends</span> Thread <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> String title<span style="color:#666">;</span>
 
@@ -210,7 +210,7 @@ Java 多线程基础 - 孙丁一的博客
     <span style="color:#666">}</span>
   <span style="color:#666">}</span>
 <span style="color:#666">}</span>
-</code></pre></div><p>多线程要执行的方法都应该在 <code>run()</code> 中表明，但是 <code>run()</code> 是不能被直接调用的，要启动多线程必须使用 <code>start()</code>.</p>
+</code></pre></div><p>多线程要执行的方法都应该在<code>run()</code> 中表明，但是<code>run()</code>是不能被直接调用的，要启动多线程必须使用<code>start()</code>.</p>
 <p>假如主函数如此定义：</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
@@ -250,7 +250,7 @@ C, i =6
 C, i =7
 C, i =8
 C, i =9
-</code></pre><p>使用 <code>start()</code> 时：</p>
+</code></pre><p>使用<code>start()</code>时：</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
     <span style="color:#007020;font-weight:bold">new</span> MyThread<span style="color:#666">(</span><span style="color:#4070a0">&#34;A&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
@@ -324,7 +324,7 @@ C, i =9
 <span style="color:#666">}</span>
 
 <span style="color:#007020;font-weight:bold">private</span> <span style="color:#007020;font-weight:bold">native</span> <span style="color:#902000">void</span> <span style="color:#06287e">start0</span><span style="color:#666">();</span>
-</code></pre></div><p>其中的 <code>start0()</code> 使用了JNI技术(Java Native Interface), 但是Java开发过程之中并不推荐这样使用。Thread类所提供的 <code>start0()</code> 就表示此方法依赖于不同的操作系统来实现。<img src="https://tva1.sinaimg.cn/large/a8eb46baly1glc59txt8sj20tr0c2myd.jpg" alt="未命名绘图"></p>
+</code></pre></div><p>其中的<code>start0()</code>使用了JNI技术(Java Native Interface), 但是Java开发过程之中并不推荐这样使用。Thread类所提供的<code>start0()</code>就表示此方法依赖于不同的操作系统来实现。<img src="https://tva1.sinaimg.cn/large/a8eb46baly1glc59txt8sj20tr0c2myd.jpg" alt="未命名绘图"></p>
 
 <h2 id="runnable接口" class="anchor-link"><a href="#runnable%e6%8e%a5%e5%8f%a3">Runnable接口</a></h2>
 <p>继承Thread受限于单继承，因此有第二种形式提供多线程实现：<code>java.lang.Runnable</code>接口，此接口是一个函数式接口，只有一个<code>run()</code>，因此可以使用lambda表达式操作。</p>
@@ -450,17 +450,17 @@ C, i =9
 <h3 id="callable-与-runnable-的区别" class="anchor-link"><a href="#callable-%e4%b8%8e-runnable-%e7%9a%84%e5%8c%ba%e5%88%ab">Callable 与 Runnable 的区别</a></h3>
 <ol>
 <li>Runnable是在 JDK 1.0 的时候提出的多线程的实现接口，Callable是在 JDK 1.5 提出的。</li>
-<li>Runnable 只有一个 <code>run()</code>  没有返回值。</li>
-<li>Callable 有 <code>call()</code> ，有返回值。</li>
+<li>Runnable 只有一个<code>run()</code>没有返回值。</li>
+<li>Callable 有<code>call()</code>，有返回值。</li>
 </ol>
 
 <h2 id="多线程的运行状态" class="anchor-link"><a href="#%e5%a4%9a%e7%ba%bf%e7%a8%8b%e7%9a%84%e8%bf%90%e8%a1%8c%e7%8a%b6%e6%80%81">多线程的运行状态</a></h2>
-<p>多线程开发过程：定义线程主体类，实现接口，通过 Thread 对象，调用主体对象。并不意味调用了 <code>start()</code> 线程就会运行，因为线程有一套自己的运行状态。</p>
+<p>多线程开发过程：定义线程主体类，实现接口，通过 Thread 对象，调用主体对象。并不意味调用了<code>start()</code>线程就会运行，因为线程有一套自己的运行状态。</p>
 <p><img src="https://tva2.sinaimg.cn/large/a8eb46baly1glc5au7s1dj20hk05zjsx.jpg" alt="image-20201204212107828"></p>
 <ol>
-<li>任何一个线程的对象都应该使用 Thread 进行封装，线程通过 <code>start()</code> 启动，启动之后进入就绪状态，并没有马上执行。</li>
-<li>进入到就绪状态之后，就等待调度，调度成功则 <code>run()</code> 。但不能一直执行，中间需要产生一些暂停的状态，例如：某些线程执行一段之间之后就需要让出资源。而后就进入到阻塞状态，当阻塞接触之后则回到就绪。</li>
-<li><code>run()</code> 执行完毕之后，该线程的主要任务就执行结束，进入到停止状态。</li>
+<li>任何一个线程的对象都应该使用 Thread 进行封装，线程通过<code>start()</code>启动，启动之后进入就绪状态，并没有马上执行。</li>
+<li>进入到就绪状态之后，就等待调度，调度成功则<code>run()</code>。但不能一直执行，中间需要产生一些暂停的状态，例如：某些线程执行一段之间之后就需要让出资源。而后就进入到阻塞状态，当阻塞接触之后则回到就绪。</li>
+<li><code>run()</code>执行完毕之后，该线程的主要任务就执行结束，进入到停止状态。</li>
 </ol>
 
 </div>
