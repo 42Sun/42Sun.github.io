@@ -6,7 +6,16 @@
     <description>Recent content in 多线程 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Dec 2020 19:17:37 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Dec 2020 16:04:14 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多线程同步与死锁</title>
+      <link>https://sundingyi.com/blog/26/</link>
+      <pubDate>Sun, 06 Dec 2020 16:04:14 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/26/</guid>
+      <description>线程同步 在多线程的处理过程之中，可以利用 Runnable 描述多个线程操作的资源，在在描述这些资源的时候，如果处理不当就会产生数据的错误操作。 引出 一个简单的</description>
+    </item>
+    
     <item>
       <title>多线程常用操作方法</title>
       <link>https://sundingyi.com/blog/25/</link>

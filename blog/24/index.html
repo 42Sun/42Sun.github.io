@@ -355,7 +355,6 @@ C, i =9
     threadC<span style="color:#666">.</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 启动多线程
 </span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
 <span style="color:#666">}</span>
-
 </code></pre></div><p>也可以利用lambda表达式进行定义：</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
@@ -412,7 +411,6 @@ C, i =9
 </span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 第三个线程启动
 </span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
 <span style="color:#666">}</span>
-
 </code></pre></div><p>分析本程序执行结构：</p>
 <p><img src="https://tva2.sinaimg.cn/large/a8eb46baly1glc5aem4olj20fq09y74m.jpg" alt="未命名绘图"></p>
 
@@ -448,7 +446,6 @@ C, i =9
     System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;线程返回数据&#34;</span> <span style="color:#666">+</span> task<span style="color:#666">.</span><span style="color:#4070a0">get</span><span style="color:#666">());</span>
   <span style="color:#666">}</span>
 <span style="color:#666">}</span>
-
 </code></pre></div>
 <h3 id="callable-与-runnable-的区别" class="anchor-link"><a href="#callable-%e4%b8%8e-runnable-%e7%9a%84%e5%8c%ba%e5%88%ab">Callable 与 Runnable 的区别</a></h3>
 <ol>
