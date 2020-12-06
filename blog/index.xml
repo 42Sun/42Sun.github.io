@@ -6,16 +6,7 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Dec 2020 20:03:24 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>图片测试</title>
-      <link>https://sundingyi.com/blog/27/</link>
-      <pubDate>Sun, 06 Dec 2020 20:03:24 +0800</pubDate>
-      
-      <guid>https://sundingyi.com/blog/27/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 06 Dec 2020 16:04:14 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>多线程同步与死锁</title>
       <link>https://sundingyi.com/blog/26/</link>
