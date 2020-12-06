@@ -147,7 +147,7 @@
     </h2>
     <div class="post-data">
         2020.12.6 ・ 
-        共 1245 字，您可能需要 3 分钟阅读
+        共 1225 字，您可能需要 3 分钟阅读
         
     </div>
     
@@ -192,35 +192,35 @@
 
 <h3 id="引出" class="anchor-link"><a href="#%e5%bc%95%e5%87%ba">引出</a></h3>
 <p>一个简单的卖票程序，创建若干个线程对象来实现。</p>
-<pre><code>class MyThread implements Runnable {
-  private int ticket = 10;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> ticket <span style="color:#666">=</span> 10<span style="color:#666">;</span>
 
-  public void run() {
-    while (true) {
-      if (this.ticket &gt; 0) {
-        try {
-          Thread.sleep(100); // 模拟网络延迟
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-        System.out.println(Thread.currentThread().getName() + &quot;票数:&quot; + this.ticket--);
-      } else {
-        System.out.println(&quot;票没了&quot;);
-        break;
-      }
-    }
-  }
-}
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">true</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span> <span style="color:#666">&gt;</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// 模拟网络延迟
+</span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;票数:&#34;</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span><span style="color:#666">--);</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+        System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;票没了&#34;</span><span style="color:#666">);</span>
+        <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
 
-public class Test {
-  public static void main(String[] args) {
-    MyThread mt = new MyThread();
-    new Thread(mt, &quot;A&quot;).start();
-    new Thread(mt, &quot;B&quot;).start();
-    new Thread(mt, &quot;C&quot;).start();
-  }
-}
-</code></pre><p>创建三个线程对象，这三个对象会进行五张票的出售。此时会出现问题，线程并不同步。</p>
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    MyThread mt <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MyThread<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;A&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;B&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;C&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>创建三个线程对象，这三个对象会进行五张票的出售。此时会出现问题，线程并不同步。</p>
 
 <h3 id="处理" class="anchor-link"><a href="#%e5%a4%84%e7%90%86">处理</a></h3>
 <p>同步问题产生的主要原因是都在对同一数据进行处理的时候，在其他因素的影响下，会产生不希望的后果，解决这一问题的关键是”锁“：当某一个线程执行操作的时候，其他的线程在外等待。</p>
@@ -228,119 +228,119 @@ public class Test {
 <p>如果想在程序之中实现锁的功能，就可以使用 <code>synchcronized</code> 关键字，利用此关键字可以定义同步方法或同步代码块，在同步代码块的操作里只允许一个线程执行。</p>
 
 <h4 id="利用同步代码块进行处理" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e8%bf%9b%e8%a1%8c%e5%a4%84%e7%90%86">利用同步代码块进行处理</a></h4>
-<pre><code>synchcronized(同步对象) {
-  同步代码操作;
-}
-</code></pre><p>一般进行同步对象处理的时候，可以采用当前对象进行同步。</p>
-<pre><code>class MyThread implements Runnable {
-  private int ticket = 10;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">synchcronized<span style="color:#666">(</span>同步对象<span style="color:#666">)</span> <span style="color:#666">{</span>
+  同步代码操作<span style="color:#666">;</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>一般进行同步对象处理的时候，可以采用当前对象进行同步。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> ticket <span style="color:#666">=</span> 10<span style="color:#666">;</span>
 
-  public void run() {
-    while (true) {
-      synchronized (this) { // 每一次只允许一个线程进行访问
-        if (this.ticket &gt; 0) {
-          try {
-            Thread.sleep(100); // 模拟网络延迟
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
-          System.out.println(Thread.currentThread().getName() + &quot;票数:&quot; + this.ticket--);
-        } else {
-          System.out.println(&quot;票没了&quot;);
-          break;
-        }
-      }
-    }
-  }
-}
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">true</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">)</span> <span style="color:#666">{</span> <span style="color:#60a0b0;font-style:italic">// 每一次只允许一个线程进行访问
+</span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span> <span style="color:#666">&gt;</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+          <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+            Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// 模拟网络延迟
+</span><span style="color:#60a0b0;font-style:italic"></span>          <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+            e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+          <span style="color:#666">}</span>
+          System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;票数:&#34;</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span><span style="color:#666">--);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+          System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;票没了&#34;</span><span style="color:#666">);</span>
+          <span style="color:#007020;font-weight:bold">break</span><span style="color:#666">;</span>
+        <span style="color:#666">}</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
 
-public class Test {
-  public static void main(String[] args) {
-    MyThread mt = new MyThread();
-    new Thread(mt, &quot;A&quot;).start();
-    new Thread(mt, &quot;B&quot;).start();
-    new Thread(mt, &quot;C&quot;).start();
-  }
-}
-</code></pre><p>加入同步处理之后，程序整体的执行性能会下降，同步会造成性能降低，异步才会达到性能的提升。</p>
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    MyThread mt <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MyThread<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;A&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;B&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;C&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>加入同步处理之后，程序整体的执行性能会下降，同步会造成性能降低，异步才会达到性能的提升。</p>
 
 <h4 id="利用同步方法解决" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e6%96%b9%e6%b3%95%e8%a7%a3%e5%86%b3">利用同步方法解决</a></h4>
 <p>只需要在方法定义上使用 <code>synchronized</code> 关键字即可。</p>
-<pre><code>class MyThread implements Runnable {
-  private int ticket = 10;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> ticket <span style="color:#666">=</span> 10<span style="color:#666">;</span>
 
-  public synchronized void sell() {
-    if (this.ticket &gt; 0) {
-      try {
-        Thread.sleep(100); // 模拟网络延迟
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-      System.out.println(Thread.currentThread().getName() + &quot;票数:&quot; + this.ticket--);
-    } else {
-      System.out.println(&quot;票没了&quot;);
-    }
-  }
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">sell</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span> <span style="color:#666">&gt;</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// 模拟网络延迟
+</span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+      System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;票数:&#34;</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span><span style="color:#666">--);</span>
+    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+      System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;票没了&#34;</span><span style="color:#666">);</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
 
-  public void run() {
-    while (this.ticket &gt; 0) {
-      this.sell();
-    }
-  }
-}
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">ticket</span> <span style="color:#666">&gt;</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">sell</span><span style="color:#666">();</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
 
-public class Test {
-  public static void main(String[] args) {
-    MyThread mt = new MyThread();
-    new Thread(mt, &quot;A&quot;).start();
-    new Thread(mt, &quot;B&quot;).start();
-    new Thread(mt, &quot;C&quot;).start();
-  }
-}
-</code></pre><p>java 类库中会发现，系统中许多类的采用的同步处理采用的都是同步方法。</p>
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    MyThread mt <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> MyThread<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;A&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;B&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>mt<span style="color:#666">,</span> <span style="color:#4070a0">&#34;C&#34;</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>java 类库中会发现，系统中许多类的采用的同步处理采用的都是同步方法。</p>
 
 <h2 id="线程死锁" class="anchor-link"><a href="#%e7%ba%bf%e7%a8%8b%e6%ad%bb%e9%94%81">线程死锁</a></h2>
 <p>死锁是在进行多线程同步的处理之中有可能产生的一种问题。指的是若干个线程彼此互相等待的状态。</p>
-<pre><code>class Person {
-  public synchronized void say(Person2 p2) {
-    System.out.println(&quot;Person类提示&quot;);
-    p2.get();
-  }
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">say</span><span style="color:#666">(</span>Person2 p2<span style="color:#666">)</span> <span style="color:#666">{</span>
+    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Person类提示&#34;</span><span style="color:#666">);</span>
+    p2<span style="color:#666">.</span><span style="color:#4070a0">get</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
 
-  public synchronized void get() {
-    System.out.println(&quot;P1得到&quot;);
-  }
-}
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">get</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;P1得到&#34;</span><span style="color:#666">);</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
 
-class Person2 {
-  public synchronized void say(Person p) {
-    System.out.println(&quot;Person2类提示&quot;);
-    p.get();
-  }
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person2</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">say</span><span style="color:#666">(</span>Person p<span style="color:#666">)</span> <span style="color:#666">{</span>
+    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Person2类提示&#34;</span><span style="color:#666">);</span>
+    p<span style="color:#666">.</span><span style="color:#4070a0">get</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
 
-  public synchronized void get() {
-    System.out.println(&quot;P2得到&quot;);
-  }
-}
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">get</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;P2得到&#34;</span><span style="color:#666">);</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
 
-public class Test implements Runnable {
-  private Person p = new Person();
-  private Person2 p2 = new Person2();
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Person p <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Person<span style="color:#666">();</span>
+  <span style="color:#007020;font-weight:bold">private</span> Person2 p2 <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Person2<span style="color:#666">();</span>
 
-  public static void main(String[] args) {
-    new Test();
-  }
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">new</span> Test<span style="color:#666">();</span>
+  <span style="color:#666">}</span>
 
-  public void run() {
-    p.say(p2);
-  }
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    p<span style="color:#666">.</span><span style="color:#4070a0">say</span><span style="color:#666">(</span>p2<span style="color:#666">);</span>
+  <span style="color:#666">}</span>
 
-  public Test() {
-    new Thread(this).start();
-    p2.say(p);
-  }
-}
-</code></pre><p>造成死锁的主要原因是因为彼此都在互相等待。死锁是开发中出现的不确定状态，如果代码处理不当则会不定期出现死锁，属于正常开发中的调试问题。</p>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Test</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    p2<span style="color:#666">.</span><span style="color:#4070a0">say</span><span style="color:#666">(</span>p<span style="color:#666">);</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>造成死锁的主要原因是因为彼此都在互相等待。死锁是开发中出现的不确定状态，如果代码处理不当则会不定期出现死锁，属于正常开发中的调试问题。</p>
 <p>若干个线程访问统一资源时要使用同步处理，不当处理的时候就会出现死锁。</p>
 
 </div>
