@@ -39,7 +39,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.941d414b5f8f2724f88888d5432c631eb46bc5e459c7009914db5bc605643532.css" integrity="sha256-lB1BS1&#43;PJyT4iIjVQyxjHrRrxeRZxwCZFNtbxgVkNTI=" crossorigin="anonymous" media="screen">
+<link rel="stylesheet" href="/css/main.min.19658200c5316c6556b0c000f3b81dbf94a9b6691ae657023cdeffba8363a692.css" integrity="sha256-GWWCAMUxbGVWsMAA87gdv5Sptmka5lcCPN7/uoNjppI=" crossorigin="anonymous" media="screen">
 
 
 
@@ -147,7 +147,7 @@
     </h2>
     <div class="post-data">
         2020.12.6 ・ 
-        共 1225 字，您可能需要 3 分钟阅读
+        共 1236 字，您可能需要 3 分钟阅读
         
     </div>
     
@@ -265,7 +265,7 @@
 </code></pre></div><p>加入同步处理之后，程序整体的执行性能会下降，同步会造成性能降低，异步才会达到性能的提升。</p>
 
 <h4 id="利用同步方法解决" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e6%96%b9%e6%b3%95%e8%a7%a3%e5%86%b3">利用同步方法解决</a></h4>
-<p>只需要在方法定义上使用 <code>synchronized</code> 关键字即可。</p>
+<p>只需要在方法定义上使用<code>synchronized</code>关键字即可。</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyThread</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
   <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> ticket <span style="color:#666">=</span> 10<span style="color:#666">;</span>
 
