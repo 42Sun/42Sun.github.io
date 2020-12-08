@@ -441,79 +441,79 @@ T S P问题简单讨论 - 孙丁一的博客
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
 
 
-<span style="color:#60a0b0;font-style:italic"># 邻域搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">prim</span>(array, first):
-    <span style="color:#60a0b0;font-style:italic"># a为已访问过的城市列表</span>
-    a <span style="color:#666">=</span> [first]
-    length <span style="color:#666">=</span> <span style="color:#40a070">0</span>
-    n <span style="color:#666">=</span> <span style="color:#007020">len</span>(array)
-    array_copy <span style="color:#666">=</span> [[<span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(n)] <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(n)]
-    <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, n):
-        <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, n):
-            array_copy[i][j] <span style="color:#666">=</span> array[i][j]
-    copy <span style="color:#666">=</span> [array_copy[first]]
-    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">len</span>(a) <span style="color:#666">&lt;</span> n:
-        <span style="color:#60a0b0;font-style:italic"># 下一个去的城市</span>
-        new_to <span style="color:#666">=</span> np<span style="color:#666">.</span>argmin(copy[<span style="color:#666">-</span><span style="color:#40a070">1</span>]) <span style="color:#666">%</span> n
-        a<span style="color:#666">.</span>append(new_to)
-        copy <span style="color:#666">+=</span> [array_copy[new_to]]
-        <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, <span style="color:#007020">len</span>(copy)):
-            <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> a:
-                copy[i][j] <span style="color:#666">=</span> <span style="color:#40a070">100</span>
-    a<span style="color:#666">.</span>append(first)
-    <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, n):
-        length <span style="color:#666">+=</span> array[a[i]][a[i <span style="color:#666">+</span> <span style="color:#40a070">1</span>]]
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;Prim结果为 &#34;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>([i <span style="color:#666">+</span> <span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> a]) <span style="color:#666">+</span> <span style="color:#4070a0">&#34;长度 &#34;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(length))
+<span style="color:#6272a4"># 邻域搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">prim</span>(array, first):
+    <span style="color:#6272a4"># a为已访问过的城市列表</span>
+    a <span style="color:#ff79c6">=</span> [first]
+    length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+    n <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">len</span>(array)
+    array_copy <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(n)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(n)]
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
+        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
+            array_copy[i][j] <span style="color:#ff79c6">=</span> array[i][j]
+    copy <span style="color:#ff79c6">=</span> [array_copy[first]]
+    <span style="color:#ff79c6">while</span> <span style="color:#8be9fd;font-style:italic">len</span>(a) <span style="color:#ff79c6">&lt;</span> n:
+        <span style="color:#6272a4"># 下一个去的城市</span>
+        new_to <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>argmin(copy[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]) <span style="color:#ff79c6">%</span> n
+        a<span style="color:#ff79c6">.</span>append(new_to)
+        copy <span style="color:#ff79c6">+=</span> [array_copy[new_to]]
+        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(copy)):
+            <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> a:
+                copy[i][j] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+    a<span style="color:#ff79c6">.</span>append(first)
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
+        length <span style="color:#ff79c6">+=</span> array[a[i]][a[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>]]
+    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;Prim结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>([i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> a]) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
 
 
-<span style="color:#60a0b0;font-style:italic"># 贪婪搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
-<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">krul</span>(array, first):
-    n <span style="color:#666">=</span> <span style="color:#007020">len</span>(array)
-    length <span style="color:#666">=</span> <span style="color:#40a070">0</span>
-    copy <span style="color:#666">=</span> [[<span style="color:#40a070">0</span> <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(n)] <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(n)]
-    <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, <span style="color:#40a070">5</span>):
-        <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, <span style="color:#40a070">5</span>):
-            copy[i][j] <span style="color:#666">=</span> array[i][j]
-    a <span style="color:#666">=</span> []
+<span style="color:#6272a4"># 贪婪搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">krul</span>(array, first):
+    n <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">len</span>(array)
+    length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+    copy <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(n)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(n)]
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">5</span>):
+        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">5</span>):
+            copy[i][j] <span style="color:#ff79c6">=</span> array[i][j]
+    a <span style="color:#ff79c6">=</span> []
 
-    <span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">len</span>(a) <span style="color:#666">&lt;</span> n:
-        new_to <span style="color:#666">=</span> np<span style="color:#666">.</span>argmin(copy) <span style="color:#666">%</span> n
-        new_from <span style="color:#666">=</span> (np<span style="color:#666">.</span>argmin(copy) <span style="color:#666">-</span> new_to) <span style="color:#666">//</span> n
-        copy[new_from][new_to] <span style="color:#666">=</span> <span style="color:#40a070">100</span>
-        copy[new_to][new_from] <span style="color:#666">=</span> <span style="color:#40a070">100</span>
-        <span style="color:#007020;font-weight:bold">if</span> new_to <span style="color:#007020;font-weight:bold">not</span> <span style="color:#007020;font-weight:bold">in</span> a <span style="color:#007020;font-weight:bold">and</span> new_from <span style="color:#007020;font-weight:bold">not</span> <span style="color:#007020;font-weight:bold">in</span> a:
-            a<span style="color:#666">.</span>append(new_from)
-            a<span style="color:#666">.</span>append(new_to)
-        <span style="color:#007020;font-weight:bold">if</span> new_to <span style="color:#007020;font-weight:bold">in</span> a <span style="color:#007020;font-weight:bold">and</span> new_from <span style="color:#007020;font-weight:bold">not</span> <span style="color:#007020;font-weight:bold">in</span> a:
-            a<span style="color:#666">.</span>append(new_from)
-        <span style="color:#007020;font-weight:bold">if</span> new_to <span style="color:#007020;font-weight:bold">not</span> <span style="color:#007020;font-weight:bold">in</span> a <span style="color:#007020;font-weight:bold">and</span> new_from <span style="color:#007020;font-weight:bold">in</span> a:
-            a<span style="color:#666">.</span>append(new_to)
-    result <span style="color:#666">=</span> [i <span style="color:#666">+</span> <span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> a]
-    copy_result <span style="color:#666">=</span> result[:]
-    <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> copy_result:
-        <span style="color:#007020;font-weight:bold">if</span> i <span style="color:#666">!=</span> (first <span style="color:#666">+</span> <span style="color:#40a070">1</span>):
-            result<span style="color:#666">.</span>pop(<span style="color:#40a070">0</span>)
-            result<span style="color:#666">.</span>append(i)
-        <span style="color:#007020;font-weight:bold">else</span>:
-            <span style="color:#007020;font-weight:bold">break</span>
-    result<span style="color:#666">.</span>append(first <span style="color:#666">+</span> <span style="color:#40a070">1</span>)
+    <span style="color:#ff79c6">while</span> <span style="color:#8be9fd;font-style:italic">len</span>(a) <span style="color:#ff79c6">&lt;</span> n:
+        new_to <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>argmin(copy) <span style="color:#ff79c6">%</span> n
+        new_from <span style="color:#ff79c6">=</span> (np<span style="color:#ff79c6">.</span>argmin(copy) <span style="color:#ff79c6">-</span> new_to) <span style="color:#ff79c6">//</span> n
+        copy[new_from][new_to] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+        copy[new_to][new_from] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+        <span style="color:#ff79c6">if</span> new_to <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> a <span style="color:#ff79c6">and</span> new_from <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> a:
+            a<span style="color:#ff79c6">.</span>append(new_from)
+            a<span style="color:#ff79c6">.</span>append(new_to)
+        <span style="color:#ff79c6">if</span> new_to <span style="color:#ff79c6">in</span> a <span style="color:#ff79c6">and</span> new_from <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> a:
+            a<span style="color:#ff79c6">.</span>append(new_from)
+        <span style="color:#ff79c6">if</span> new_to <span style="color:#ff79c6">not</span> <span style="color:#ff79c6">in</span> a <span style="color:#ff79c6">and</span> new_from <span style="color:#ff79c6">in</span> a:
+            a<span style="color:#ff79c6">.</span>append(new_to)
+    result <span style="color:#ff79c6">=</span> [i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> a]
+    copy_result <span style="color:#ff79c6">=</span> result[:]
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> copy_result:
+        <span style="color:#ff79c6">if</span> i <span style="color:#ff79c6">!=</span> (first <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>):
+            result<span style="color:#ff79c6">.</span>pop(<span style="color:#bd93f9">0</span>)
+            result<span style="color:#ff79c6">.</span>append(i)
+        <span style="color:#ff79c6">else</span>:
+            <span style="color:#ff79c6">break</span>
+    result<span style="color:#ff79c6">.</span>append(first <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>)
 
-    <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">0</span>, n):
-        length <span style="color:#666">+=</span> array[result[i] <span style="color:#666">-</span> <span style="color:#40a070">1</span>][result[i <span style="color:#666">+</span> <span style="color:#40a070">1</span>] <span style="color:#666">-</span> <span style="color:#40a070">1</span>]
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;Kruskal结果为 &#34;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(result) <span style="color:#666">+</span> <span style="color:#4070a0">&#34;长度 &#34;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(length))
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
+        length <span style="color:#ff79c6">+=</span> array[result[i] <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>][result[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
+    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;Kruskal结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(result) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
 
 
-<span style="color:#007020;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#4070a0">&#39;__main__&#39;</span>:
-    array <span style="color:#666">=</span> [[<span style="color:#40a070">100</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">5</span>, <span style="color:#40a070">5</span>, <span style="color:#40a070">3</span>],
-             [<span style="color:#40a070">3</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>],
-             [<span style="color:#40a070">5</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>],
-             [<span style="color:#40a070">5</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">100</span>, <span style="color:#40a070">4</span>],
-             [<span style="color:#40a070">3</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">4</span>, <span style="color:#40a070">100</span>]]
-    prim(array, <span style="color:#40a070">1</span>)
-    krul(array, <span style="color:#40a070">1</span>)
+<span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
+    array <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">3</span>],
+             [<span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>],
+             [<span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>],
+             [<span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">4</span>],
+             [<span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">4</span>, <span style="color:#bd93f9">100</span>]]
+    prim(array, <span style="color:#bd93f9">1</span>)
+    krul(array, <span style="color:#bd93f9">1</span>)
 
 
 </code></pre></div><p>运行结果：</p>

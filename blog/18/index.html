@@ -183,27 +183,27 @@ Practice4 - 孙丁一的博客
     <ol>
 <li>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">C</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    A a <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> A<span style="color:#666">();</span>
-    a<span style="color:#666">.</span><span style="color:#4070a0">f</span><span style="color:#666">();</span>
-    B b <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> B<span style="color:#666">();</span>
-    b<span style="color:#666">.</span><span style="color:#4070a0">f</span><span style="color:#666">();</span>
-    b<span style="color:#666">.</span><span style="color:#4070a0">g</span><span style="color:#666">();</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">C</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    A a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> A<span style="color:#ff79c6">();</span>
+    a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">f</span><span style="color:#ff79c6">();</span>
+    B b <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> B<span style="color:#ff79c6">();</span>
+    b<span style="color:#ff79c6">.</span><span style="color:#50fa7b">f</span><span style="color:#ff79c6">();</span>
+    b<span style="color:#ff79c6">.</span><span style="color:#50fa7b">g</span><span style="color:#ff79c6">();</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">A</span> <span style="color:#666">{</span>
-  <span style="color:#902000">void</span> <span style="color:#06287e">f</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;abcdefghijklmnopqrstuvwxyz&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">A</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">f</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;abcdefghijklmnopqrstuvwxyz&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">B</span> <span style="color:#007020;font-weight:bold">extends</span> A <span style="color:#666">{</span>
-  <span style="color:#902000">void</span> <span style="color:#06287e">g</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">B</span> <span style="color:#8be9fd;font-style:italic">extends</span> A <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">g</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div><ol start="2">
 <li>
 <p>按要求编写一个Java应用程序：</p>
@@ -227,213 +227,213 @@ Practice4 - 孙丁一的博客
 <p>创建一个左上角坐标为（10，10），长为20，宽为10的矩形对象；计算并打印输出矩形的面积和周长；判断点(25.5，13)是否在矩形内，并打印输出相关信息。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test2</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    PlainRect p <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> PlainRect<span style="color:#666">(</span>10<span style="color:#666">,</span> 20<span style="color:#666">,</span> 10<span style="color:#666">,</span> 10<span style="color:#666">);</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>p<span style="color:#666">.</span><span style="color:#4070a0">area</span><span style="color:#666">());</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>p<span style="color:#666">.</span><span style="color:#4070a0">perimeter</span><span style="color:#666">());</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>p<span style="color:#666">.</span><span style="color:#4070a0">isInside</span><span style="color:#666">(</span>25<span style="color:#666">.</span><span style="color:#4070a0">5</span><span style="color:#666">,</span> 13<span style="color:#666">)</span> <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">)</span> System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;在内部&#34;</span><span style="color:#666">);</span>
-    <span style="color:#007020;font-weight:bold">else</span> System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;不在内部&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test2</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    PlainRect p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> PlainRect<span style="color:#ff79c6">(</span>10<span style="color:#ff79c6">,</span> 20<span style="color:#ff79c6">,</span> 10<span style="color:#ff79c6">,</span> 10<span style="color:#ff79c6">);</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">area</span><span style="color:#ff79c6">());</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">perimeter</span><span style="color:#ff79c6">());</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isInside</span><span style="color:#ff79c6">(</span>25<span style="color:#ff79c6">.</span><span style="color:#50fa7b">5</span><span style="color:#ff79c6">,</span> 13<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;在内部&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">else</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;不在内部&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Rect</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#902000">double</span> width<span style="color:#666">;</span>
-  <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#902000">double</span> height<span style="color:#666">;</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Rect</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">protected</span> <span style="color:#8be9fd">double</span> width<span style="color:#ff79c6">;</span>
+  <span style="color:#8be9fd;font-style:italic">protected</span> <span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">;</span>
 
-  Rect<span style="color:#666">(</span><span style="color:#902000">double</span> w<span style="color:#666">,</span> <span style="color:#902000">double</span> h<span style="color:#666">)</span> <span style="color:#666">{</span>
-    width <span style="color:#666">=</span> w<span style="color:#666">;</span>
-    height <span style="color:#666">=</span> h<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  Rect<span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> w<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">double</span> h<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    width <span style="color:#ff79c6">=</span> w<span style="color:#ff79c6">;</span>
+    height <span style="color:#ff79c6">=</span> h<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  Rect<span style="color:#666">()</span> <span style="color:#666">{</span>
-    width <span style="color:#666">=</span> 10<span style="color:#666">;</span>
-    height <span style="color:#666">=</span> 10<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  Rect<span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    width <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
+    height <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#902000">double</span> <span style="color:#06287e">area</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> width <span style="color:#666">*</span> height<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd">double</span> <span style="color:#50fa7b">area</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> width <span style="color:#ff79c6">*</span> height<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#902000">double</span> <span style="color:#06287e">perimeter</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">(</span>width <span style="color:#666">+</span> height<span style="color:#666">)</span> <span style="color:#666">*</span> 2<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd">double</span> <span style="color:#50fa7b">perimeter</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">(</span>width <span style="color:#ff79c6">+</span> height<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">*</span> 2<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">PlainRect</span> <span style="color:#007020;font-weight:bold">extends</span> Rect <span style="color:#666">{</span>
-  <span style="color:#902000">double</span> startX<span style="color:#666">;</span>
-  <span style="color:#902000">double</span> startY<span style="color:#666">;</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">PlainRect</span> <span style="color:#8be9fd;font-style:italic">extends</span> Rect <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">double</span> startX<span style="color:#ff79c6">;</span>
+  <span style="color:#8be9fd">double</span> startY<span style="color:#ff79c6">;</span>
 
-  PlainRect<span style="color:#666">(</span><span style="color:#902000">double</span> w<span style="color:#666">,</span> <span style="color:#902000">double</span> h<span style="color:#666">,</span> <span style="color:#902000">double</span> x<span style="color:#666">,</span> <span style="color:#902000">double</span> y<span style="color:#666">)</span> <span style="color:#666">{</span>
-    width <span style="color:#666">=</span> w<span style="color:#666">;</span>
-    height <span style="color:#666">=</span> h<span style="color:#666">;</span>
-    startX <span style="color:#666">=</span> x<span style="color:#666">;</span>
-    startY <span style="color:#666">=</span> y<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  PlainRect<span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> w<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">double</span> h<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">double</span> x<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">double</span> y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    width <span style="color:#ff79c6">=</span> w<span style="color:#ff79c6">;</span>
+    height <span style="color:#ff79c6">=</span> h<span style="color:#ff79c6">;</span>
+    startX <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">;</span>
+    startY <span style="color:#ff79c6">=</span> y<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  PlainRect<span style="color:#666">()</span> <span style="color:#666">{</span>
-    width <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    height <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    startX <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    startY <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  PlainRect<span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    width <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    height <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    startX <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    startY <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#902000">boolean</span> <span style="color:#06287e">isInside</span><span style="color:#666">(</span><span style="color:#902000">double</span> x<span style="color:#666">,</span> <span style="color:#902000">double</span> y<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">&gt;=</span> startX <span style="color:#666">&amp;&amp;</span> x <span style="color:#666">&lt;=</span> <span style="color:#666">(</span>startX <span style="color:#666">+</span> width<span style="color:#666">)</span> <span style="color:#666">&amp;&amp;</span> y <span style="color:#666">&lt;</span> startY <span style="color:#666">&amp;&amp;</span> y <span style="color:#666">&gt;=</span> <span style="color:#666">(</span>startY <span style="color:#666">-</span> height<span style="color:#666">))</span> <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">false</span><span style="color:#666">;</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isInside</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> x<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">double</span> y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">&gt;=</span> startX <span style="color:#ff79c6">&amp;&amp;</span> x <span style="color:#ff79c6">&lt;=</span> <span style="color:#ff79c6">(</span>startX <span style="color:#ff79c6">+</span> width<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> y <span style="color:#ff79c6">&lt;</span> startY <span style="color:#ff79c6">&amp;&amp;</span> y <span style="color:#ff79c6">&gt;=</span> <span style="color:#ff79c6">(</span>startY <span style="color:#ff79c6">-</span> height<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div><p>1．按要求编写Java程序：</p>
 <p>（1）编写一个接口：InterfaceA，只含有一个方法int method(int n)；</p>
 <p>（2）编写一个类：ClassA来实现接口InterfaceA，实现int method(int n)接口方法时，要求计算1到n的和；</p>
 <p>（3）编写另一个类：ClassB来实现接口InterfaceA，实现int method(int n)接口方法时，要求计算n的阶乘（n!）；</p>
 <p>（4）编写测试类E，在测试类E的main方法中使用接口回调的形式来测试实现接口的类。</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">E</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    InterfaceA a<span style="color:#666">;</span>
-    a <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> ClassA<span style="color:#666">();</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>a<span style="color:#666">.</span><span style="color:#4070a0">method</span><span style="color:#666">(</span>3<span style="color:#666">));</span>
-    a <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> ClassB<span style="color:#666">();</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>a<span style="color:#666">.</span><span style="color:#4070a0">method</span><span style="color:#666">(</span>3<span style="color:#666">));</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">E</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    InterfaceA a<span style="color:#ff79c6">;</span>
+    a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ClassA<span style="color:#ff79c6">();</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">method</span><span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">));</span>
+    a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ClassB<span style="color:#ff79c6">();</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">method</span><span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">));</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">InterfaceA</span> <span style="color:#666">{</span>
-  <span style="color:#902000">int</span> <span style="color:#06287e">method</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">);</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">InterfaceA</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">);</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ClassA</span> <span style="color:#007020;font-weight:bold">implements</span> InterfaceA <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">method</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#902000">int</span> result <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> temp <span style="color:#666">=</span> 1<span style="color:#666">;</span> temp <span style="color:#666">&lt;=</span> n<span style="color:#666">;</span> <span style="color:#666">++</span>temp<span style="color:#666">)</span> <span style="color:#666">{</span>
-      result <span style="color:#666">+=</span> temp<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    <span style="color:#007020;font-weight:bold">return</span> result<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ClassA</span> <span style="color:#8be9fd;font-style:italic">implements</span> InterfaceA <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> temp <span style="color:#ff79c6">&lt;=</span> n<span style="color:#ff79c6">;</span> <span style="color:#ff79c6">++</span>temp<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      result <span style="color:#ff79c6">+=</span> temp<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ClassB</span> <span style="color:#007020;font-weight:bold">implements</span> InterfaceA <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">method</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>n <span style="color:#666">==</span> 1 <span style="color:#666">||</span> n <span style="color:#666">==</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">return</span> 1<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    <span style="color:#902000">int</span> result <span style="color:#666">=</span> 1<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> temp <span style="color:#666">=</span> 1<span style="color:#666">;</span> temp <span style="color:#666">&lt;=</span> n<span style="color:#666">;</span> <span style="color:#666">++</span>temp<span style="color:#666">)</span> <span style="color:#666">{</span>
-      result <span style="color:#666">*=</span> temp<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    <span style="color:#007020;font-weight:bold">return</span> result<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ClassB</span> <span style="color:#8be9fd;font-style:italic">implements</span> InterfaceA <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">==</span> 1 <span style="color:#ff79c6">||</span> n <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span> 1<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> temp <span style="color:#ff79c6">&lt;=</span> n<span style="color:#ff79c6">;</span> <span style="color:#ff79c6">++</span>temp<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      result <span style="color:#ff79c6">*=</span> temp<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div><p>2.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Adventure</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    Hero hb <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Hero<span style="color:#666">(</span><span style="color:#4070a0">&#34;haha&#34;</span><span style="color:#666">);</span>
-    hb<span style="color:#666">.</span><span style="color:#4070a0">swim</span><span style="color:#666">();</span>
-    hb<span style="color:#666">.</span><span style="color:#4070a0">fight</span><span style="color:#666">();</span>
-    hb<span style="color:#666">.</span><span style="color:#4070a0">fly</span><span style="color:#666">();</span>
-    Canfly cf <span style="color:#666">=</span> hb<span style="color:#666">;</span>
-    cf<span style="color:#666">.</span><span style="color:#4070a0">fly</span><span style="color:#666">();</span>
-    CanSwim cs <span style="color:#666">=</span> hb<span style="color:#666">;</span>
-    cs<span style="color:#666">.</span><span style="color:#4070a0">swim</span><span style="color:#666">();</span>
-    ActionCharacter ac <span style="color:#666">=</span> hb<span style="color:#666">;</span>
-    ac<span style="color:#666">.</span><span style="color:#4070a0">fight</span><span style="color:#666">();</span>
-    ac<span style="color:#666">.</span><span style="color:#4070a0">speak</span><span style="color:#666">();</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Adventure</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    Hero hb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Hero<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">);</span>
+    hb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">swim</span><span style="color:#ff79c6">();</span>
+    hb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fight</span><span style="color:#ff79c6">();</span>
+    hb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+    Canfly cf <span style="color:#ff79c6">=</span> hb<span style="color:#ff79c6">;</span>
+    cf<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+    CanSwim cs <span style="color:#ff79c6">=</span> hb<span style="color:#ff79c6">;</span>
+    cs<span style="color:#ff79c6">.</span><span style="color:#50fa7b">swim</span><span style="color:#ff79c6">();</span>
+    ActionCharacter ac <span style="color:#ff79c6">=</span> hb<span style="color:#ff79c6">;</span>
+    ac<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fight</span><span style="color:#ff79c6">();</span>
+    ac<span style="color:#ff79c6">.</span><span style="color:#50fa7b">speak</span><span style="color:#ff79c6">();</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">CanSwim</span> <span style="color:#666">{</span>
-  <span style="color:#902000">void</span> <span style="color:#06287e">swim</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">CanSwim</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">swim</span><span style="color:#ff79c6">();</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Canfly</span> <span style="color:#666">{</span>
-  <span style="color:#902000">void</span> <span style="color:#06287e">fly</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Canfly</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">();</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">abstract</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ActionCharacter</span> <span style="color:#666">{</span>
-  <span style="color:#902000">void</span> <span style="color:#06287e">fight</span><span style="color:#666">()</span> <span style="color:#666">{}</span>
+<span style="color:#8be9fd;font-style:italic">abstract</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">ActionCharacter</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fight</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{}</span>
 
-  <span style="color:#902000">void</span> <span style="color:#06287e">speak</span><span style="color:#666">()</span> <span style="color:#666">{}</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">speak</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Hero</span> <span style="color:#007020;font-weight:bold">extends</span> ActionCharacter <span style="color:#007020;font-weight:bold">implements</span> Canfly<span style="color:#666">,</span> CanSwim <span style="color:#666">{</span>
-  String name<span style="color:#666">;</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Hero</span> <span style="color:#8be9fd;font-style:italic">extends</span> ActionCharacter <span style="color:#8be9fd;font-style:italic">implements</span> Canfly<span style="color:#ff79c6">,</span> CanSwim <span style="color:#ff79c6">{</span>
+  String name<span style="color:#ff79c6">;</span>
 
-  Hero<span style="color:#666">(</span>String name<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> name<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  Hero<span style="color:#ff79c6">(</span>String name<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">name</span> <span style="color:#ff79c6">=</span> name<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;飞&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fly</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;飞&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">swim</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;游泳&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">swim</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;游泳&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">fight</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;打架&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">fight</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;打架&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">speak</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>name <span style="color:#666">+</span> <span style="color:#4070a0">&#34;说话&#34;</span><span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">speak</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;说话&#34;</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div><p>3．利用接口做参数，写个计算器，能完成+-*/运算</p>
 <p>（1）定义一个接口Compute含有一个方法int computer(int n,int m);</p>
 <p>（2）设计四个类分别实现此接口，完成+-*/运算</p>
 <p>（3）设计一个类UseCompute，含有方法：public void useCom(Compute com, int one, int two)</p>
 <p>此方法要求能够：1．用传递过来的对象调用computer方法完成运算  2．输出运算的结果</p>
 <p>（4）设计一个测试类，调用UseCompute中的方法useCom来完成+-*/运算</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    Computer c <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Plus<span style="color:#666">();</span>
-    UseCompute u <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> UseCompute<span style="color:#666">();</span>
-    u<span style="color:#666">.</span><span style="color:#4070a0">useCom</span><span style="color:#666">(</span>c<span style="color:#666">,</span> 2<span style="color:#666">,</span> 3<span style="color:#666">);</span>
-    c <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Minus<span style="color:#666">();</span>
-    u <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> UseCompute<span style="color:#666">();</span>
-    u<span style="color:#666">.</span><span style="color:#4070a0">useCom</span><span style="color:#666">(</span>c<span style="color:#666">,</span> 2<span style="color:#666">,</span> 3<span style="color:#666">);</span>
-    c <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Multiplication<span style="color:#666">();</span>
-    u <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> UseCompute<span style="color:#666">();</span>
-    u<span style="color:#666">.</span><span style="color:#4070a0">useCom</span><span style="color:#666">(</span>c<span style="color:#666">,</span> 2<span style="color:#666">,</span> 3<span style="color:#666">);</span>
-    c <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Division<span style="color:#666">();</span>
-    u <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> UseCompute<span style="color:#666">();</span>
-    u<span style="color:#666">.</span><span style="color:#4070a0">useCom</span><span style="color:#666">(</span>c<span style="color:#666">,</span> 2<span style="color:#666">,</span> 3<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    Computer c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Plus<span style="color:#ff79c6">();</span>
+    UseCompute u <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> UseCompute<span style="color:#ff79c6">();</span>
+    u<span style="color:#ff79c6">.</span><span style="color:#50fa7b">useCom</span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">,</span> 2<span style="color:#ff79c6">,</span> 3<span style="color:#ff79c6">);</span>
+    c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Minus<span style="color:#ff79c6">();</span>
+    u <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> UseCompute<span style="color:#ff79c6">();</span>
+    u<span style="color:#ff79c6">.</span><span style="color:#50fa7b">useCom</span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">,</span> 2<span style="color:#ff79c6">,</span> 3<span style="color:#ff79c6">);</span>
+    c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Multiplication<span style="color:#ff79c6">();</span>
+    u <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> UseCompute<span style="color:#ff79c6">();</span>
+    u<span style="color:#ff79c6">.</span><span style="color:#50fa7b">useCom</span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">,</span> 2<span style="color:#ff79c6">,</span> 3<span style="color:#ff79c6">);</span>
+    c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Division<span style="color:#ff79c6">();</span>
+    u <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> UseCompute<span style="color:#ff79c6">();</span>
+    u<span style="color:#ff79c6">.</span><span style="color:#50fa7b">useCom</span><span style="color:#ff79c6">(</span>c<span style="color:#ff79c6">,</span> 2<span style="color:#ff79c6">,</span> 3<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Computer</span> <span style="color:#666">{</span>
-  <span style="color:#902000">int</span> <span style="color:#06287e">computer</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">,</span> <span style="color:#902000">int</span> m<span style="color:#666">);</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Computer</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">);</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Plus</span> <span style="color:#007020;font-weight:bold">implements</span> Computer <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">computer</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">,</span> <span style="color:#902000">int</span> m<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">(</span>n <span style="color:#666">+</span> m<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Plus</span> <span style="color:#8be9fd;font-style:italic">implements</span> Computer <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">+</span> m<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Minus</span> <span style="color:#007020;font-weight:bold">implements</span> Computer <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">computer</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">,</span> <span style="color:#902000">int</span> m<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">(</span>n <span style="color:#666">-</span> m<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Minus</span> <span style="color:#8be9fd;font-style:italic">implements</span> Computer <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">-</span> m<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Multiplication</span> <span style="color:#007020;font-weight:bold">implements</span> Computer <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">computer</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">,</span> <span style="color:#902000">int</span> m<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">(</span>n <span style="color:#666">*</span> m<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Multiplication</span> <span style="color:#8be9fd;font-style:italic">implements</span> Computer <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">*</span> m<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Division</span> <span style="color:#007020;font-weight:bold">implements</span> Computer <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">computer</span><span style="color:#666">(</span><span style="color:#902000">int</span> n<span style="color:#666">,</span> <span style="color:#902000">int</span> m<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">(</span>n <span style="color:#666">/</span> m<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Division</span> <span style="color:#8be9fd;font-style:italic">implements</span> Computer <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">/</span> m<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">UseCompute</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">useCom</span><span style="color:#666">(</span>Computer com<span style="color:#666">,</span> <span style="color:#902000">int</span> one<span style="color:#666">,</span> <span style="color:#902000">int</span> two<span style="color:#666">)</span> <span style="color:#666">{</span>
-    System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>com<span style="color:#666">.</span><span style="color:#4070a0">computer</span><span style="color:#666">(</span>one<span style="color:#666">,</span> two<span style="color:#666">));</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">UseCompute</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">useCom</span><span style="color:#ff79c6">(</span>Computer com<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> one<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> two<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>com<span style="color:#ff79c6">.</span><span style="color:#50fa7b">computer</span><span style="color:#ff79c6">(</span>one<span style="color:#ff79c6">,</span> two<span style="color:#ff79c6">));</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
 </code></pre></div>
 </div>

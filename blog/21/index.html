@@ -180,169 +180,169 @@
 </div>
 
 <div class="container markdown top-pad">
-    <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">ILink</span><span style="color:#666">&lt;</span>E<span style="color:#666">&gt;</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">add</span><span style="color:#666">(</span>E e<span style="color:#666">);</span>
+    <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">ILink</span><span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>E e<span style="color:#ff79c6">);</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">size</span><span style="color:#666">();</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">boolean</span> <span style="color:#06287e">isEmpty</span><span style="color:#666">();</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">();</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> Object<span style="color:#666">[]</span> <span style="color:#06287e">toArray</span><span style="color:#666">();</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> Object<span style="color:#ff79c6">[]</span> <span style="color:#50fa7b">toArray</span><span style="color:#ff79c6">();</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> E <span style="color:#06287e">get</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">);</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> E <span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">);</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">set</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">,</span> E data<span style="color:#666">);</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">set</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span> E data<span style="color:#ff79c6">);</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">boolean</span> <span style="color:#06287e">contains</span><span style="color:#666">(</span>E data<span style="color:#666">);</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">contains</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">);</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">remove</span><span style="color:#666">(</span>E data<span style="color:#666">);</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">);</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">clean</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">clean</span><span style="color:#ff79c6">();</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">LinkImpl</span><span style="color:#666">&lt;</span>E<span style="color:#666">&gt;</span> <span style="color:#007020;font-weight:bold">implements</span> ILink<span style="color:#666">&lt;</span>E<span style="color:#666">&gt;</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Node</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">private</span> E data<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">private</span> Node next<span style="color:#666">;</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">LinkImpl</span><span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">implements</span> ILink<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Node</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">private</span> E data<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd;font-style:italic">private</span> Node next<span style="color:#ff79c6">;</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Node</span><span style="color:#666">(</span>E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span> <span style="color:#666">=</span> data<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">Node</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span> <span style="color:#ff79c6">=</span> data<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">addNode</span><span style="color:#666">(</span>Node newNode<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">=</span> newNode<span style="color:#666">;</span>
-      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">addNode</span><span style="color:#666">(</span>newNode<span style="color:#666">);</span>
-      <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">addNode</span><span style="color:#ff79c6">(</span>Node newNode<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> newNode<span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">addNode</span><span style="color:#ff79c6">(</span>newNode<span style="color:#ff79c6">);</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">toArrayNode</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-      LinkImpl<span style="color:#666">.</span><span style="color:#4070a0">this</span><span style="color:#666">.</span><span style="color:#4070a0">returnData</span><span style="color:#666">[</span>foot<span style="color:#666">++]</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span><span style="color:#666">;</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">toArrayNode</span><span style="color:#666">();</span>
-      <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">toArrayNode</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+      LinkImpl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">returnData</span><span style="color:#ff79c6">[</span>foot<span style="color:#ff79c6">++]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">toArrayNode</span><span style="color:#ff79c6">();</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> E <span style="color:#06287e">getNode</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>LinkImpl<span style="color:#666">.</span><span style="color:#4070a0">this</span><span style="color:#666">.</span><span style="color:#4070a0">foot</span><span style="color:#666">++</span> <span style="color:#666">==</span> index<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span><span style="color:#666">;</span>
-      <span style="color:#666">}</span>
-      <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">getNode</span><span style="color:#666">(</span>index<span style="color:#666">);</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> E <span style="color:#50fa7b">getNode</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>LinkImpl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">foot</span><span style="color:#ff79c6">++</span> <span style="color:#ff79c6">==</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span>
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">getNode</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">setNode</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">,</span> E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>LinkImpl<span style="color:#666">.</span><span style="color:#4070a0">this</span><span style="color:#666">.</span><span style="color:#4070a0">foot</span><span style="color:#666">++</span> <span style="color:#666">==</span> index<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span> <span style="color:#666">=</span> data<span style="color:#666">;</span>
-      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">setNode</span><span style="color:#666">(</span>index<span style="color:#666">,</span> data<span style="color:#666">);</span>
-      <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setNode</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span> E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>LinkImpl<span style="color:#ff79c6">.</span><span style="color:#50fa7b">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">foot</span><span style="color:#ff79c6">++</span> <span style="color:#ff79c6">==</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span> <span style="color:#ff79c6">=</span> data<span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">setNode</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">,</span> data<span style="color:#ff79c6">);</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">boolean</span> <span style="color:#06287e">containsNode</span><span style="color:#666">(</span>E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span><span style="color:#666">.</span><span style="color:#4070a0">equals</span><span style="color:#666">(</span>data<span style="color:#666">))</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
-      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-          <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">false</span><span style="color:#666">;</span>
-        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-          <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">containsNode</span><span style="color:#666">(</span>data<span style="color:#666">);</span>
-        <span style="color:#666">}</span>
-      <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">containsNode</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+          <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+          <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">containsNode</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">removeNode</span><span style="color:#666">(</span>Node previous<span style="color:#666">,</span> E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">data</span><span style="color:#666">.</span><span style="color:#4070a0">equals</span><span style="color:#666">(</span>data<span style="color:#666">))</span> <span style="color:#666">{</span>
-        previous<span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">;</span>
-      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span> <span style="color:#666">!=</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-          <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">removeNode</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">,</span> data<span style="color:#666">);</span>
-        <span style="color:#666">}</span>
-      <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
-  <span style="color:#666">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">removeNode</span><span style="color:#ff79c6">(</span>Node previous<span style="color:#ff79c6">,</span> E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+        previous<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+          <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">removeNode</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">,</span> data<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">private</span> Node root<span style="color:#666">;</span>
-  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> count<span style="color:#666">;</span>
-  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">int</span> foot<span style="color:#666">;</span>
-  <span style="color:#007020;font-weight:bold">private</span> Object<span style="color:#666">[]</span> returnData<span style="color:#666">;</span>
+  <span style="color:#8be9fd;font-style:italic">private</span> Node root<span style="color:#ff79c6">;</span>
+  <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> count<span style="color:#ff79c6">;</span>
+  <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> foot<span style="color:#ff79c6">;</span>
+  <span style="color:#8be9fd;font-style:italic">private</span> Object<span style="color:#ff79c6">[]</span> returnData<span style="color:#ff79c6">;</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">int</span> <span style="color:#06287e">size</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">boolean</span> <span style="color:#06287e">isEmpty</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span> <span style="color:#666">==</span> 0<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">add</span><span style="color:#666">(</span>E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>data <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">return</span><span style="color:#666">;</span>
-    <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>data <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
 
-    Node newNode <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Node<span style="color:#666">(</span>data<span style="color:#666">);</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span> <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span> <span style="color:#666">=</span> newNode<span style="color:#666">;</span>
-    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">addNode</span><span style="color:#666">(</span>newNode<span style="color:#666">);</span>
-    <span style="color:#666">}</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">++;</span>
-  <span style="color:#666">}</span>
+    Node newNode <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Node<span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span> <span style="color:#ff79c6">=</span> newNode<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">addNode</span><span style="color:#ff79c6">(</span>newNode<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">++;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> Object<span style="color:#666">[]</span> <span style="color:#06287e">toArray</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>isEmpty<span style="color:#666">())</span> <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">foot</span> <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">returnData</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Object<span style="color:#666">[</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">];</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">toArrayNode</span><span style="color:#666">();</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">returnData</span><span style="color:#666">;</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> Object<span style="color:#ff79c6">[]</span> <span style="color:#50fa7b">toArray</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>isEmpty<span style="color:#ff79c6">())</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">foot</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">returnData</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Object<span style="color:#ff79c6">[</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">];</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">toArrayNode</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">returnData</span><span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> E <span style="color:#06287e">get</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>index <span style="color:#666">&gt;=</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">foot</span> <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">getNode</span><span style="color:#666">(</span>index<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> E <span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>index <span style="color:#ff79c6">&gt;=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">foot</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">getNode</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">set</span><span style="color:#666">(</span><span style="color:#902000">int</span> index<span style="color:#666">,</span> E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>index <span style="color:#666">&gt;=</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">return</span><span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">foot</span> <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">setNode</span><span style="color:#666">(</span>index<span style="color:#666">,</span> data<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">set</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span> E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>index <span style="color:#ff79c6">&gt;=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">foot</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">setNode</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">,</span> data<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">boolean</span> <span style="color:#06287e">contains</span><span style="color:#666">(</span>E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>data <span style="color:#666">==</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">)</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">false</span><span style="color:#666">;</span>
-    <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">contains</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>data <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
 
-    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">containsNode</span><span style="color:#666">(</span>data<span style="color:#666">);</span>
-  <span style="color:#666">}</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">containsNode</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">remove</span><span style="color:#666">(</span>E data<span style="color:#666">)</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">contains</span><span style="color:#666">(</span>data<span style="color:#666">))</span> <span style="color:#666">{</span>
-      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">data</span><span style="color:#666">.</span><span style="color:#4070a0">equals</span><span style="color:#666">(</span>data<span style="color:#666">))</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">;</span>
-      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
-        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">.</span><span style="color:#4070a0">next</span><span style="color:#666">.</span><span style="color:#4070a0">removeNode</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span><span style="color:#666">,</span> data<span style="color:#666">);</span>
-      <span style="color:#666">}</span>
-      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span><span style="color:#666">--;</span>
-    <span style="color:#666">}</span>
-  <span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>E data<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">contains</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>data<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">removeNode</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span><span style="color:#ff79c6">,</span> data<span style="color:#ff79c6">);</span>
+      <span style="color:#ff79c6">}</span>
+      <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span><span style="color:#ff79c6">--;</span>
+    <span style="color:#ff79c6">}</span>
+  <span style="color:#ff79c6">}</span>
 
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">clean</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">root</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">null</span><span style="color:#666">;</span>
-    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">count</span> <span style="color:#666">=</span> 0<span style="color:#666">;</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">clean</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">root</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
-  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-    ILink<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span> all <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> LinkImpl<span style="color:#666">&lt;&gt;();</span>
-  <span style="color:#666">}</span>
-<span style="color:#666">}</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    ILink<span style="color:#ff79c6">&lt;</span>String<span style="color:#ff79c6">&gt;</span> all <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkImpl<span style="color:#ff79c6">&lt;&gt;();</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div>
 </div>
 <script src="https://utteranc.es/client.js"

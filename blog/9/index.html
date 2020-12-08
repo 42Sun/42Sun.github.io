@@ -239,18 +239,18 @@ Python基础 - 孙丁一的博客
 
 <h3 id="if" class="anchor-link"><a href="#if">if</a></h3>
 <p>关键词有<code>if</code>,<code>elif</code>,<code>else</code></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#英制单位英寸和公制单位厘米互换</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#英制单位英寸和公制单位厘米互换</span>
 
-value <span style="color:#666">=</span> <span style="color:#007020">float</span>(<span style="color:#007020">input</span>(<span style="color:#4070a0">&#39;输入长度：&#39;</span>))
-unit <span style="color:#666">=</span> <span style="color:#007020">input</span>(<span style="color:#4070a0">&#39;输入单位：&#39;</span>)
-<span style="color:#007020;font-weight:bold">if</span> unit <span style="color:#666">==</span> <span style="color:#4070a0">&#39;in&#39;</span> <span style="color:#007020;font-weight:bold">or</span> unit <span style="color:#666">==</span> <span style="color:#4070a0">&#39;英寸&#39;</span>:
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#007020">str</span>(value) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;英寸=&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(value <span style="color:#666">*</span> <span style="color:#40a070">2.54</span>) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;厘米&#39;</span>)
-<span style="color:#60a0b0;font-style:italic"># if unit == &#39;in&#39; or unit == &#39;英寸&#39;:</span>
-<span style="color:#60a0b0;font-style:italic">#     print(&#39;%f英寸=%f厘米&#39; %(value, value * 2.54))</span>
-<span style="color:#007020;font-weight:bold">elif</span> unit <span style="color:#666">==</span> <span style="color:#4070a0">&#39;cm&#39;</span> <span style="color:#007020;font-weight:bold">or</span> unit <span style="color:#666">==</span> <span style="color:#4070a0">&#39;厘米&#39;</span>:
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#007020">str</span>(value) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;厘米=&#39;</span> <span style="color:#666">+</span> <span style="color:#007020">str</span>(value <span style="color:#666">/</span> <span style="color:#40a070">2.54</span>) <span style="color:#666">+</span> <span style="color:#4070a0">&#39;英寸&#39;</span>)
-<span style="color:#007020;font-weight:bold">else</span>:
-    <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;请输入正确的格式&#39;</span>)
+value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">float</span>(<span style="color:#8be9fd;font-style:italic">input</span>(<span style="color:#f1fa8c">&#39;输入长度：&#39;</span>))
+unit <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">input</span>(<span style="color:#f1fa8c">&#39;输入单位：&#39;</span>)
+<span style="color:#ff79c6">if</span> unit <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;in&#39;</span> <span style="color:#ff79c6">or</span> unit <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;英寸&#39;</span>:
+    <span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">str</span>(value) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;英寸=&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(value <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2.54</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;厘米&#39;</span>)
+<span style="color:#6272a4"># if unit == &#39;in&#39; or unit == &#39;英寸&#39;:</span>
+<span style="color:#6272a4">#     print(&#39;%f英寸=%f厘米&#39; %(value, value * 2.54))</span>
+<span style="color:#ff79c6">elif</span> unit <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;cm&#39;</span> <span style="color:#ff79c6">or</span> unit <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;厘米&#39;</span>:
+    <span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">str</span>(value) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;厘米=&#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(value <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2.54</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;英寸&#39;</span>)
+<span style="color:#ff79c6">else</span>:
+    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;请输入正确的格式&#39;</span>)
 </code></pre></div>
 <h2 id="循环结构" class="anchor-link"><a href="#%e5%be%aa%e7%8e%af%e7%bb%93%e6%9e%84">循环结构</a></h2>
 
@@ -269,34 +269,34 @@ unit <span style="color:#666">=</span> <span style="color:#007020">input</span>(
 <p><code>range(100, 0, -2)</code>：可以用来产生100到1的偶数，其中-2是步长，即每次数字递减的值。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic"># 用for循环实现1~100之间的偶数求和</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># 用for循环实现1~100之间的偶数求和</span>
 
-<span style="color:#007020">sum</span> <span style="color:#666">=</span> <span style="color:#40a070">0</span>
-<span style="color:#007020;font-weight:bold">for</span> i <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">2</span>, <span style="color:#40a070">101</span>, <span style="color:#40a070">2</span>):
-    <span style="color:#007020">sum</span> <span style="color:#666">+=</span> i
-<span style="color:#007020;font-weight:bold">print</span>(<span style="color:#007020">sum</span>)
+<span style="color:#8be9fd;font-style:italic">sum</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">101</span>, <span style="color:#bd93f9">2</span>):
+    <span style="color:#8be9fd;font-style:italic">sum</span> <span style="color:#ff79c6">+=</span> i
+<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">sum</span>)
 </code></pre></div>
 <h3 id="while" class="anchor-link"><a href="#while">while</a></h3>
 <p>适用于不知道要循环多少次的条件</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#4070a0">&#39;&#39;&#39;计算机出一个1到100之间的随机数，玩家输入自己猜的数字，
-</span><span style="color:#4070a0">计算机给出对应的提示信息（大一点、小一点或猜对了），
-</span><span style="color:#4070a0">如果玩家猜中了数字，计算机提示用户一共猜了多少次，游戏结束，否则游戏继续。
-</span><span style="color:#4070a0">&#39;&#39;&#39;</span> 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f1fa8c">&#39;&#39;&#39;计算机出一个1到100之间的随机数，玩家输入自己猜的数字，
+</span><span style="color:#f1fa8c">计算机给出对应的提示信息（大一点、小一点或猜对了），
+</span><span style="color:#f1fa8c">如果玩家猜中了数字，计算机提示用户一共猜了多少次，游戏结束，否则游戏继续。
+</span><span style="color:#f1fa8c">&#39;&#39;&#39;</span> 
 
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">random</span>
-answer <span style="color:#666">=</span> random<span style="color:#666">.</span>randint(<span style="color:#40a070">1</span>, <span style="color:#40a070">100</span>)
-click <span style="color:#666">=</span> <span style="color:#40a070">0</span>
-<span style="color:#007020;font-weight:bold">print</span>(answer)
-<span style="color:#007020;font-weight:bold">while</span> True:
-    click <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
-    guest <span style="color:#666">=</span> <span style="color:#007020">int</span>(<span style="color:#007020">input</span>(<span style="color:#4070a0">&#39;请输入:&#39;</span>))
-    <span style="color:#007020;font-weight:bold">if</span> guest <span style="color:#666">&lt;</span> answer:
-        <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;太小了&#39;</span>)
-    <span style="color:#007020;font-weight:bold">elif</span> guest <span style="color:#666">&gt;</span> answer:
-        <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;太大了&#39;</span>)
-    <span style="color:#007020;font-weight:bold">else</span>:
-        <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#39;输入正确&#39;</span>)
-        <span style="color:#007020;font-weight:bold">break</span>
+<span style="color:#ff79c6">import</span> random
+answer <span style="color:#ff79c6">=</span> random<span style="color:#ff79c6">.</span>randint(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">100</span>)
+click <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+<span style="color:#ff79c6">print</span>(answer)
+<span style="color:#ff79c6">while</span> True:
+    click <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+    guest <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>(<span style="color:#f1fa8c">&#39;请输入:&#39;</span>))
+    <span style="color:#ff79c6">if</span> guest <span style="color:#ff79c6">&lt;</span> answer:
+        <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;太小了&#39;</span>)
+    <span style="color:#ff79c6">elif</span> guest <span style="color:#ff79c6">&gt;</span> answer:
+        <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;太大了&#39;</span>)
+    <span style="color:#ff79c6">else</span>:
+        <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;输入正确&#39;</span>)
+        <span style="color:#ff79c6">break</span>
 </code></pre></div>
 </div>
 <script src="https://utteranc.es/client.js"
