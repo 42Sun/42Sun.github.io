@@ -6,7 +6,25 @@
     <description>Recent content in 多线程 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Dec 2020 16:04:14 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Dec 2020 10:41:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>深入多线程</title>
+      <link>https://sundingyi.com/blog/28/</link>
+      <pubDate>Tue, 08 Dec 2020 10:41:47 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/28/</guid>
+      <description>停止线程 在多线程的操作之中，大多数情况下使用的是Thread的start()，如果对于多线程需要进行停止处理，Thread提供有stop()</description>
+    </item>
+    
+    <item>
+      <title>生产者消费者基本模型</title>
+      <link>https://sundingyi.com/blog/27/</link>
+      <pubDate>Tue, 08 Dec 2020 10:41:38 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/27/</guid>
+      <description>模型概述 在多线程开发之中，最为著名的案例就是生产者与消费者操作。 流程 生产者负责信息内容的生产。 每当生产者完成一项完整的信息之后，消费者则取走</description>
+    </item>
+    
     <item>
       <title>多线程同步与死锁</title>
       <link>https://sundingyi.com/blog/26/</link>

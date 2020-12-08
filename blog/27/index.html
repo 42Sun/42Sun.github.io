@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+生产者消费者基本模型 - 孙丁一的博客
+</title>
+
+
+
+        <meta property="og:title" content="生产者消费者基本模型 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/27/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/head.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.86a04f812daf293be4eac709e3f3842ad952be44ff0badc0d631d11a86efedfe.css" integrity="sha256-hqBPgS2vKTvk6scJ4/OEKtlSvkT/C63A1jHRGobv7f4=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://doc.sundingyi.com/">
+                
+                文档
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://drive.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/27/">生产者消费者基本模型</a>
+    </h2>
+    <div class="post-data">
+        2020.12.8 ・ 
+        共 1323 字，您可能需要 3 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B">
+             多线程</a>,
+         
+           <a href="/tags/java">
+             Java</a>,
+         
+           <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">
+             学习笔记</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="模型概述" class="anchor-link"><a href="#%e6%a8%a1%e5%9e%8b%e6%a6%82%e8%bf%b0">模型概述</a></h2>
+<p>在多线程开发之中，最为著名的案例就是生产者与消费者操作。</p>
+
+<h3 id="流程" class="anchor-link"><a href="#%e6%b5%81%e7%a8%8b">流程</a></h3>
+<ol>
+<li>生产者负责信息内容的生产。</li>
+<li>每当生产者完成一项完整的信息之后，消费者则取走信息。</li>
+<li>如果生产者没有结束，那么消费者应该等待它生产完成；如果消费者还没有对信息进行消费，那么生产者则应该等待消费者消费完成后再生产。</li>
+</ol>
+
+<h3 id="实现" class="anchor-link"><a href="#%e5%ae%9e%e7%8e%b0">实现</a></h3>
+<p>将生产者与消费者定义为两个独立的线程类对象，对于现在生产的数据，举例为如下组成。</p>
+<ol>
+<li><code>title = t1 , content = c1;</code></li>
+<li><code>title = t2,  content = c2;</code></li>
+</ol>
+<p>生产者与消费者是两个独立的线程，那么这两个独立的线程之间就需要有一个数据保存的集中点。</p>
+<p><img src="image-20201208090422979.png" alt="image-20201208090422979"></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Producer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Producer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">%</span> 2 <span style="color:#666">==</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">setTitle</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t1&#34;</span><span style="color:#666">);</span>
+        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">setContent</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;c1&#34;</span><span style="color:#666">);</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">setTitle</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t2&#34;</span><span style="color:#666">);</span>
+        <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">setContent</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;c2&#34;</span><span style="color:#666">);</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Consumer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Consumer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>10<span style="color:#666">);</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+      System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">getTitle</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">getContent</span><span style="color:#666">());</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Message</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> String title<span style="color:#666">;</span>
+  <span style="color:#007020;font-weight:bold">private</span> String content<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">setTitle</span><span style="color:#666">(</span>String title<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">title</span> <span style="color:#666">=</span> title<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">setContent</span><span style="color:#666">(</span>String content<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">content</span> <span style="color:#666">=</span> content<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> String <span style="color:#06287e">getTitle</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">return</span> title<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> String <span style="color:#06287e">getContent</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">return</span> content<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    Message msg <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Message<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Producer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 生产者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Consumer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 消费者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>根据以上代码执行，有两个重要问题。</p>
+<ol>
+<li>数据不同步。</li>
+<li>期望结果是生产一个取走一个，但是发现有重复生产，重复取出的现象存在。</li>
+</ol>
+
+<h2 id="解决同步问题" class="anchor-link"><a href="#%e8%a7%a3%e5%86%b3%e5%90%8c%e6%ad%a5%e9%97%ae%e9%a2%98">解决同步问题</a></h2>
+<p>要想解决数据同步，最简单的做法是使用<code>Synchronized</code>关键字，于是同步处理就可以在<code>Message</code>类中完成。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Producer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Producer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">%</span> 2 <span style="color:#666">==</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">set</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t1&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;c1&#34;</span><span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">set</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t2&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;c2&#34;</span><span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Consumer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Consumer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>10<span style="color:#666">);</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">get</span><span style="color:#666">());</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Message</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> String title<span style="color:#666">;</span>
+  <span style="color:#007020;font-weight:bold">private</span> String content<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">set</span><span style="color:#666">(</span>String title<span style="color:#666">,</span> String content<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">title</span> <span style="color:#666">=</span> title<span style="color:#666">;</span>
+    Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">content</span> <span style="color:#666">=</span> content<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> String <span style="color:#06287e">get</span><span style="color:#666">()</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+    <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">title</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;--&#34;</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">content</span><span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    Message msg <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Message<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Producer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 生产者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Consumer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 消费者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>此时已经解决同步，但是数据重复仍然存在。</p>
+
+<h2 id="解决数据重复" class="anchor-link"><a href="#%e8%a7%a3%e5%86%b3%e6%95%b0%e6%8d%ae%e9%87%8d%e5%a4%8d">解决数据重复</a></h2>
+
+<h3 id="使用等待与唤醒机制" class="anchor-link"><a href="#%e4%bd%bf%e7%94%a8%e7%ad%89%e5%be%85%e4%b8%8e%e5%94%a4%e9%86%92%e6%9c%ba%e5%88%b6">使用等待与唤醒机制</a></h3>
+<p>要想解决生产者与消费者的数据重复问题，最好的解决方案就是使用等待与唤醒机制，主要依靠<code>Object</code>中的方法进行处理。</p>
+<ul>
+<li>等待
+<ul>
+<li>一直等到死<code>public final void wait() throws InterruptedException;</code></li>
+<li>设置等待时间
+<ul>
+<li><code>public final void wait(long timeout) throws InterruptedException;</code></li>
+<li><code>public final void wait(long timeout, int nanos) throws InterruptedException;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>唤醒
+<ul>
+<li>唤醒第一个等待线程<code>public final void notify()</code></li>
+<li>唤醒全部等待线程<code>public final void notifyAll()</code></li>
+</ul>
+</li>
+</ul>
+<p>此时，如果有若干个等待线程的话，那么<code>notify()</code>表示唤醒的是第一个等待线程，其他的继续等待；<code>notifyAll()</code>表示的是唤醒所有等待线程，哪个现成的优先级高就有可能先执行。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Producer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Producer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>x <span style="color:#666">%</span> 2 <span style="color:#666">==</span> 0<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">set</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t1&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;c1&#34;</span><span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">else</span> <span style="color:#666">{</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+        <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+          <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">set</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;t2&#34;</span><span style="color:#666">,</span> <span style="color:#4070a0">&#34;c2&#34;</span><span style="color:#666">);</span>
+        <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+          e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+        <span style="color:#666">}</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Consumer</span> <span style="color:#007020;font-weight:bold">implements</span> Runnable <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> Message msg<span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#06287e">Consumer</span><span style="color:#666">(</span>Message msg<span style="color:#666">)</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span> <span style="color:#666">=</span> msg<span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#902000">void</span> <span style="color:#06287e">run</span><span style="color:#666">()</span> <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 100<span style="color:#666">;</span> x<span style="color:#666">++)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>10<span style="color:#666">);</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+      <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+        System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">msg</span><span style="color:#666">.</span><span style="color:#4070a0">get</span><span style="color:#666">());</span>
+      <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+        e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+      <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Message</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">private</span> String title<span style="color:#666">;</span>
+  <span style="color:#007020;font-weight:bold">private</span> String content<span style="color:#666">;</span>
+  <span style="color:#007020;font-weight:bold">private</span> <span style="color:#902000">boolean</span> flag <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
+  <span style="color:#60a0b0;font-style:italic">// flag = true 允许生产不允许消费
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#60a0b0;font-style:italic">// flag = false 允许消费不允许生产
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> <span style="color:#902000">void</span> <span style="color:#06287e">set</span><span style="color:#666">(</span>String title<span style="color:#666">,</span> String content<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(!</span>flag<span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">.</span><span style="color:#4070a0">wait</span><span style="color:#666">();</span>
+    <span style="color:#666">}</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">title</span> <span style="color:#666">=</span> title<span style="color:#666">;</span>
+    Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">content</span> <span style="color:#666">=</span> content<span style="color:#666">;</span>
+    <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">flag</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">false</span><span style="color:#666">;</span> <span style="color:#60a0b0;font-style:italic">// 已经生产过了
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">.</span><span style="color:#4070a0">notify</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">synchronized</span> String <span style="color:#06287e">get</span><span style="color:#666">()</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span><span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">flag</span><span style="color:#666">)</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">.</span><span style="color:#4070a0">wait</span><span style="color:#666">();</span>
+    <span style="color:#666">}</span>
+    Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>100<span style="color:#666">);</span>
+    <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">return</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">title</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;--&#34;</span> <span style="color:#666">+</span> <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">content</span><span style="color:#666">;</span>
+    <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">finally</span> <span style="color:#666">{</span>
+      <span style="color:#007020;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#4070a0">flag</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
+      <span style="color:#007020;font-weight:bold">super</span><span style="color:#666">.</span><span style="color:#4070a0">notify</span><span style="color:#666">();</span>
+    <span style="color:#666">}</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+    Message msg <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> Message<span style="color:#666">();</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Producer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 生产者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span><span style="color:#007020;font-weight:bold">new</span> Consumer<span style="color:#666">(</span>msg<span style="color:#666">)).</span><span style="color:#4070a0">start</span><span style="color:#666">();</span> <span style="color:#60a0b0;font-style:italic">// 消费者线程
+</span><span style="color:#60a0b0;font-style:italic"></span>  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>此为多线程开发之中最原始的处理方案，全部手动实现。</p>
+
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2020 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

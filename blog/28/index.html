@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+深入多线程 - 孙丁一的博客
+</title>
+
+
+
+        <meta property="og:title" content="深入多线程 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/28/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/head.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.86a04f812daf293be4eac709e3f3842ad952be44ff0badc0d631d11a86efedfe.css" integrity="sha256-hqBPgS2vKTvk6scJ4/OEKtlSvkT/C63A1jHRGobv7f4=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://doc.sundingyi.com/">
+                
+                文档
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://drive.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/28/">深入多线程</a>
+    </h2>
+    <div class="post-data">
+        2020.12.8 ・ 
+        共 840 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B">
+             多线程</a>,
+         
+           <a href="/tags/java">
+             Java</a>,
+         
+           <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">
+             学习笔记</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="停止线程" class="anchor-link"><a href="#%e5%81%9c%e6%ad%a2%e7%ba%bf%e7%a8%8b">停止线程</a></h2>
+<p>在多线程的操作之中，大多数情况下使用的是<code>Thread</code>的<code>start()</code>，如果对于多线程需要进行停止处理，<code>Thread</code>提供有<code>stop()</code>，但是其在 JDK 1.2开始就不被推荐使用了。要想停止线程，则需要选择一种柔和的形式。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">boolean</span> flag <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>
+            <span style="color:#666">()</span> <span style="color:#666">-&gt;</span> <span style="color:#666">{</span>
+              <span style="color:#902000">long</span> num <span style="color:#666">=</span> 0<span style="color:#666">;</span>
+              <span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">(</span>flag<span style="color:#666">)</span> <span style="color:#666">{</span>
+                <span style="color:#007020;font-weight:bold">try</span> <span style="color:#666">{</span>
+                  Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>50<span style="color:#666">);</span>
+                <span style="color:#666">}</span> <span style="color:#007020;font-weight:bold">catch</span> <span style="color:#666">(</span>InterruptedException e<span style="color:#666">)</span> <span style="color:#666">{</span>
+                  e<span style="color:#666">.</span><span style="color:#4070a0">printStackTrace</span><span style="color:#666">();</span>
+                <span style="color:#666">}</span>
+                System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;运行中 num = &#34;</span> <span style="color:#666">+</span> num<span style="color:#666">++);</span>
+              <span style="color:#666">}</span>
+            <span style="color:#666">},</span>
+            <span style="color:#4070a0">&#34;执行线程&#34;</span><span style="color:#666">)</span>
+        <span style="color:#666">.</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    Thread<span style="color:#666">.</span><span style="color:#4070a0">sleep</span><span style="color:#666">(</span>200<span style="color:#666">);</span>
+    flag <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">false</span><span style="color:#666">;</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>万一有其他的线程控制 flag 的内容，对于线程的停止并不是立刻停止的，而是通过判断 flag 的值来完成的。</p>
+
+<h2 id="守护线程" class="anchor-link"><a href="#%e5%ae%88%e6%8a%a4%e7%ba%bf%e7%a8%8b">守护线程</a></h2>
+<p>只能是为一个活着的线程进行守护，死了的线程不会守护。如果主线程的程序或者其他线程还在执行的时候，那么守护线程将一直存在，并且运行在后台。</p>
+<p>在<code>Thread</code>中提供有如下的守护线程操作方法。</p>
+<ul>
+<li>设置为守护线程：<code>public final void setDaemon(boolean on)</code></li>
+<li>判断是否为守护线程：<code>public final boolean isDaemon()</code></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Test</span> <span style="color:#666">{</span>
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">boolean</span> flag <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">true</span><span style="color:#666">;</span>
+
+  <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#007020;font-weight:bold">throws</span> InterruptedException <span style="color:#666">{</span>
+    Thread userThraed <span style="color:#666">=</span>
+        <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>
+            <span style="color:#666">()</span> <span style="color:#666">-&gt;</span> <span style="color:#666">{</span>
+              <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> 10<span style="color:#666">;</span> x<span style="color:#666">++)</span>
+                System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;运行中 x = &#34;</span> <span style="color:#666">+</span> x<span style="color:#666">);</span>
+            <span style="color:#666">},</span>
+            <span style="color:#4070a0">&#34;用户线程&#34;</span><span style="color:#666">);</span>
+    Thread daemonThread <span style="color:#666">=</span>
+        <span style="color:#007020;font-weight:bold">new</span> Thread<span style="color:#666">(</span>
+            <span style="color:#666">()</span> <span style="color:#666">-&gt;</span> <span style="color:#666">{</span>
+              <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#902000">int</span> x <span style="color:#666">=</span> 0<span style="color:#666">;</span> x <span style="color:#666">&lt;</span> Integer<span style="color:#666">.</span><span style="color:#4070a0">MAX_VALUE</span><span style="color:#666">;</span> x<span style="color:#666">++)</span>
+                System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span>Thread<span style="color:#666">.</span><span style="color:#4070a0">currentThread</span><span style="color:#666">().</span><span style="color:#4070a0">getName</span><span style="color:#666">()</span> <span style="color:#666">+</span> <span style="color:#4070a0">&#34;运行中 x = &#34;</span> <span style="color:#666">+</span> x<span style="color:#666">);</span>
+            <span style="color:#666">},</span>
+            <span style="color:#4070a0">&#34;守护线程&#34;</span><span style="color:#666">);</span>
+    daemonThread<span style="color:#666">.</span><span style="color:#4070a0">setDaemon</span><span style="color:#666">(</span><span style="color:#007020;font-weight:bold">true</span><span style="color:#666">);</span> <span style="color:#60a0b0;font-style:italic">// 设置为守护线程，随着整体程序而存在。
+</span><span style="color:#60a0b0;font-style:italic"></span>    userThraed<span style="color:#666">.</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+    daemonThread<span style="color:#666">.</span><span style="color:#4070a0">start</span><span style="color:#666">();</span>
+  <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><p>在整个 JVM 中，最大的守护线程就是 GC 线程。程序执行完毕，GC 线程也将消失。</p>
+
+<h2 id="volatile-关键字" class="anchor-link"><a href="#volatile-%e5%85%b3%e9%94%ae%e5%ad%97">Volatile 关键字</a></h2>
+<p>在多线程定义之中，Volatile 主要是在属性定义上使用的，表示该属性为直接数据操作，而不进行副本的复制处理。</p>
+<p>**注意：**此属性并不是描述同步的。</p>
+<p><img src="image-20201208103252588.png" alt="image-20201208103252588"></p>
+<p>在正常进行变量处理时往往会经历如下步骤。</p>
+<ol>
+<li>获取变量原有的数据内容副本。</li>
+<li>为变量进行数学计算。</li>
+<li>将计算后的变量保存到原始空间之中。</li>
+</ol>
+<p>如果一个属性上追加了<code>Volatile</code>，则表示不使用副本，直接操作原变量。</p>
+
+<h3 id="volatile与synchronized区别" class="anchor-link"><a href="#volatile%e4%b8%8esynchronized%e5%8c%ba%e5%88%ab"><code>volatile</code>与<code>synchronized</code>区别：</a></h3>
+<ol>
+<li><code>volatile</code>主要在属性上使用，<code>synchronized</code>是在代码块、方法上使用的。</li>
+<li><code>volatile</code>无法描述同步的处理，它只是一种直接内存的处理，避免了副本的操作 。<code>synchronize</code>是实现同步的。</li>
+</ol>
+
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2020 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
