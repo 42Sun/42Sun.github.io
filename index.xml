@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 08 Dec 2020 10:41:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Dec 2020 22:06:53 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Java常用基础类库</title>
+      <link>https://sundingyi.com/blog/29/</link>
+      <pubDate>Thu, 10 Dec 2020 22:06:53 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/29/</guid>
+      <description>StringBuffer 类 每一个字符串的常量都属于一个 String 类的匿名对象，不可更改。 String 有两个常量池：静态常量池、运行时常量池。 String 类对象实例化建议使用直接赋值的方式完成</description>
     </item>
     
     <item>
