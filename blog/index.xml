@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Dec 2020 22:06:53 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 17:32:13 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java 正则表达式</title>
+      <link>https://sundingyi.com/blog/30/</link>
+      <pubDate>Sat, 12 Dec 2020 17:32:13 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/30/</guid>
+      <description>字符串是一个非常万能的类型，它不仅仅可以进行修改，还可以向各个数据类型进行转换，用户输入的信息基本上都用字符串接收。于是在向其他数据类型转换</description>
+    </item>
+    
     <item>
       <title>Java 常用基础类库</title>
       <link>https://sundingyi.com/blog/29/</link>
