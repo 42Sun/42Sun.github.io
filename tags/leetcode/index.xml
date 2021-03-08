@@ -6,32 +6,14 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 08 Mar 2021 16:22:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Mar 2021 08:43:45 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>每日LeetCode 3</title>
-      <link>https://sundingyi.com/blog/36/</link>
-      <pubDate>Mon, 08 Mar 2021 16:22:47 +0800</pubDate>
-      
-      <guid>https://sundingyi.com/blog/36/</guid>
-      <description>题目 给你一个 m x n 的整数网格 accounts ，其中 accounts[i][j] 是第 i 位客户在第 j 家银行托管的资产数量。返回最富有客户所拥有的 资产总量 。 客户的 资产总量 就是他们在各家银</description>
-    </item>
-    
-    <item>
-      <title>每日LeetCode 2</title>
-      <link>https://sundingyi.com/blog/35/</link>
-      <pubDate>Mon, 08 Mar 2021 16:11:32 +0800</pubDate>
-      
-      <guid>https://sundingyi.com/blog/35/</guid>
-      <description>题目 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。 请返回 nums 的动态和。 示例</description>
-    </item>
-    
-    <item>
-      <title>每日LeetCode 1</title>
+      <title>每日LeetCode 1-8</title>
       <link>https://sundingyi.com/blog/34/</link>
       <pubDate>Mon, 08 Mar 2021 08:43:45 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/34/</guid>
-      <description>题目 给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。 如果反转后整数超过 32 位的有符号整数的范围，就返回 0。 假设环境不允许存储 64 位</description>
+      <description>1 给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。 如果反转后整数超过 32 位的有符号整数的范围 [−231, 231 − 1] ，就返回 0。 假设环</description>
     </item>
     
   </channel>

@@ -10,13 +10,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-每日 Leet Code 1 - 孙丁一的博客
+每日 Leet Code 1 8 - 孙丁一的博客
 </title>
 
 
 
         
-        <meta property="og:title" content="每日LeetCode 1 - 孙丁一的博客" />
+        <meta property="og:title" content="每日LeetCode 1-8 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
 <meta property="og:url" content="https://sundingyi.com/blog/34/"/>
@@ -146,18 +146,18 @@
                 
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
-        <a href="https://sundingyi.com/blog/34/">每日LeetCode 1</a>
+        <a href="https://sundingyi.com/blog/34/">每日LeetCode 1-8</a>
     </h2>
     <div class="post-data">
         2021.3.8 ・ 
-        共 202 字，您可能需要 1 分钟阅读
+        共 1695 字，您可能需要 4 分钟阅读
         
     </div>
     
     <div class="blog-share">
         分享:
         
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%201%20https%3a%2f%2fsundingyi.com%2fblog%2f34%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%201-8%20https%3a%2f%2fsundingyi.com%2fblog%2f34%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fab fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
@@ -169,7 +169,7 @@
         </a>
         
         
-        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f34%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%201" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f34%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%201-8" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
             <i class="fab fa-pinterest-p"></i>
             <span class="hidden">Pinterest</span>
         </a>
@@ -206,28 +206,23 @@
 
 <div class="container markdown top-pad">
     
-<h2 id="题目" class="anchor-link"><a href="#%e9%a2%98%e7%9b%ae">题目</a></h2>
-<blockquote>
-<p>给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。 
-如果反转后整数超过 32 位的有符号整数的范围，就返回 0。
-假设环境不允许存储 64 位整数（有符号或无符号）。
-示例 1：
-输入：x = 123
+<h2 id="1" class="anchor-link"><a href="#1">1</a></h2>
+<p>给你一个 32 位的有符号整数 <code>x</code> ，返回 <code>x</code> 中每位上的数字反转后的结果。</p>
+<p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231, 231 − 1]</code> ，就返回 0。</p>
+<p><strong>假设环境不允许存储 64 位整数（有符号或无符号）。</strong></p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：x = 123
 输出：321
-示例 2：
-输入：x = -123
+</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：x = -123
 输出：-321
-示例 3：
-输入：x = 120
+</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：x = 120
 输出：21
-示例 4：
-输入：x = 0
+</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：x = 0
 输出：0
-来源：力扣（LeetCode）</p>
-</blockquote>
-
-<h2 id="解" class="anchor-link"><a href="#%e8%a7%a3">解</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">reverse</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
       <span style="color:#8be9fd">long</span> temp <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
       <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">!=</span> 0<span style="color:#ff79c6">){</span>
@@ -242,6 +237,209 @@
         <span style="color:#ff79c6">return</span> 0<span style="color:#ff79c6">;</span>
       <span style="color:#ff79c6">}</span>
     <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="2" class="anchor-link"><a href="#2">2</a></h2>
+<p>给你一个数组 <code>nums</code> 。数组「动态和」的计算公式为：<code>runningSum[i] = sum(nums[0]…nums[i])</code> 。</p>
+<p>请返回 <code>nums</code> 的动态和。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [1,2,3,4]
+输出：[1,3,6,10]
+解释：动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
+</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：nums = [1,1,1,1,1]
+输出：[1,2,3,4,5]
+解释：动态和计算过程为 [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1] 。
+</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：nums = [3,1,2,10,1]
+输出：[3,4,6,16,17]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#50fa7b">runningSum</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+      <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> result <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+      result<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> nums <span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">];</span>
+      <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> N<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+        result<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> result<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">];</span>
+      <span style="color:#ff79c6">}</span>
+
+      <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="3" class="anchor-link"><a href="#3">3</a></h2>
+<p>给你一个 <code>m x n</code> 的整数网格 <code>accounts</code> ，其中 <code>accounts[i][j]</code> 是第 <code>i</code> 位客户在第 <code>j</code> 家银行托管的资产数量。返回最富有客户所拥有的 <strong>资产总量</strong> 。</p>
+<p>客户的 <strong>资产总量</strong> 就是他们在各家银行托管的资产数量之和。最富有客户就是 <strong>资产总量</strong> 最大的客户。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：accounts = [[1,2,3],[3,2,1]]
+输出：6
+解释：
+第 1 位客户的资产总量 = 1 + 2 + 3 = 6
+第 2 位客户的资产总量 = 3 + 2 + 1 = 6
+两位客户都是最富有的，资产总量都是 6 ，所以返回 6 。
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">maximumWealth</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> accounts<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> sum <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>accounts<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">];</span>
+      <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> accounts<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++){</span>
+
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> accounts<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++){</span>
+          sum<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+=</span> accounts<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+
+      <span style="color:#ff79c6">}</span>
+      <span style="color:#8be9fd">int</span> max <span style="color:#ff79c6">=</span> sum<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">];</span>
+      <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1 <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> sum<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>sum<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;</span> max<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+          max <span style="color:#ff79c6">=</span> sum<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+      <span style="color:#ff79c6">}</span>
+
+      <span style="color:#ff79c6">return</span> max<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="4" class="anchor-link"><a href="#4">4</a></h2>
+<p>字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串&quot;abcdefg&quot;和数字2，该函数将返回左旋转两位得到的结果&quot;cdefgab&quot;。</p>
+<p>示例 1：</p>
+<p>输入: s = &ldquo;abcdefg&rdquo;, k = 2
+输出: &ldquo;cdefgab&rdquo;
+示例 2：</p>
+<p>输入: s = &ldquo;lrloseumgh&rdquo;, k = 6
+输出: &ldquo;umghlrlose&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">reverseLeftWords</span><span style="color:#ff79c6">(</span>String s<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">return</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">substring</span><span style="color:#ff79c6">(</span>n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">substring</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> n<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="5" class="anchor-link"><a href="#5">5</a></h2>
+<p>实现一种算法，删除单向链表中间的某个节点（即不是第一个或最后一个节点），假定你只能访问该节点。</p>
+<p>示例：</p>
+<p>输入：单向链表a-&gt;b-&gt;c-&gt;d-&gt;e-&gt;f中的节点c
+结果：不返回任何数据，但该链表变为a-&gt;b-&gt;d-&gt;e-&gt;f</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * Definition for singly-linked list.
+</span><span style="color:#6272a4"> * public class ListNode {
+</span><span style="color:#6272a4"> *     int val;
+</span><span style="color:#6272a4"> *     ListNode next;
+</span><span style="color:#6272a4"> *     ListNode(int x) { val = x; }
+</span><span style="color:#6272a4"> * }
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">deleteNode</span><span style="color:#ff79c6">(</span>ListNode node<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">;</span>
+      node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="6" class="anchor-link"><a href="#6">6</a></h2>
+<p>给你一个数组 <code>items</code> ，其中 <code>items[i] = [typei, colori, namei]</code> ，描述第 <code>i</code> 件物品的类型、颜色以及名称。</p>
+<p>另给你一条由两个字符串 <code>ruleKey</code> 和 <code>ruleValue</code> 表示的检索规则。</p>
+<p>如果第 <code>i</code> 件物品能满足下述条件之一，则认为该物品与给定的检索规则 <strong>匹配</strong> ：</p>
+<ul>
+<li><code>ruleKey == &quot;type&quot;</code> 且 <code>ruleValue == typei</code> 。</li>
+<li><code>ruleKey == &quot;color&quot;</code> 且 <code>ruleValue == colori</code> 。</li>
+<li><code>ruleKey == &quot;name&quot;</code> 且 <code>ruleValue == namei</code> 。</li>
+</ul>
+<p>统计并返回 <strong>匹配检索规则的物品数量</strong> 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">countMatches</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>String<span style="color:#ff79c6">&gt;&gt;</span> items<span style="color:#ff79c6">,</span> String ruleKey<span style="color:#ff79c6">,</span> String ruleValue<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">switch</span> <span style="color:#ff79c6">(</span>ruleKey<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;type&#34;</span><span style="color:#ff79c6">:</span>
+          <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++){</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">).</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">).</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>ruleValue<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+              result <span style="color:#ff79c6">+=</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">break</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;color&#34;</span><span style="color:#ff79c6">:</span>
+          <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++){</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">).</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>1<span style="color:#ff79c6">).</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>ruleValue<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+              result <span style="color:#ff79c6">+=</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">break</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">case</span> <span style="color:#f1fa8c">&#34;name&#34;</span><span style="color:#ff79c6">:</span>
+          <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++){</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>items<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">).</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>2<span style="color:#ff79c6">).</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>ruleValue<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+              result <span style="color:#ff79c6">+=</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">}</span>
+          <span style="color:#ff79c6">break</span><span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span>
+
+      <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="7" class="anchor-link"><a href="#7">7</a></h2>
+<p>给你一个整数数组 <code>nums</code> 。</p>
+<p>如果一组数字 <code>(i,j)</code> 满足 <code>nums[i]</code> == <code>nums[j]</code> 且 <code>i</code> &lt; <code>j</code> ，就可以认为这是一组 <strong>好数对</strong> 。</p>
+<p>返回好数对的数目。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [1,2,3,1,1,3]
+输出：4
+解释：有 4 组好数对，分别是 (0,3), (0,4), (3,4), (2,5) ，下标从 0 开始
+</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：nums = [1,1,1,1]
+输出：6
+解释：数组中的每组数字都是好数对
+</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：nums = [1,2,3]
+输出：0
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">numIdenticalPairs</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+
+    <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> temp <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>100<span style="color:#ff79c6">];</span>
+    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">:</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+      temp<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">]++;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">:</span> temp<span style="color:#ff79c6">){</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">&gt;</span> 1<span style="color:#ff79c6">){</span>
+        <span style="color:#8be9fd">int</span> mul <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> i<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++){</span>
+          mul <span style="color:#ff79c6">+=</span> j<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        result <span style="color:#ff79c6">+=</span> mul<span style="color:#ff79c6">;</span>
+      <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+    
+    <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="8" class="anchor-link"><a href="#8">8</a></h2>
+<p>给你一个整数 <code>x</code> ，如果 <code>x</code> 是一个回文整数，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，<code>121</code> 是回文，而 <code>123</code> 不是。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：x = 121
+输出：true
+</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：x = -121
+输出：false
+解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+</code></pre><p><strong>示例 3：</strong></p>
+<pre><code>输入：x = 10
+输出：false
+解释：从右向左读, 为 01 。因此它不是一个回文数。
+</code></pre><p><strong>示例 4：</strong></p>
+<pre><code>输入：x = -101
+输出：false
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isPalindrome</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">)</span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd">boolean</span> result <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+    String str <span style="color:#ff79c6">=</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">);</span>
+    <span style="color:#8be9fd">char</span><span style="color:#ff79c6">[]</span> ch <span style="color:#ff79c6">=</span> str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toCharArray</span><span style="color:#ff79c6">();</span>
+
+    <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> ch<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">/</span> 2<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+      <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>ch<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> ch<span style="color:#ff79c6">[</span>ch<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> i <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">])</span>
+        result <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+  <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div>
 </div>
