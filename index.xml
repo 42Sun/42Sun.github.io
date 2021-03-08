@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 04 Feb 2021 17:20:06 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Mar 2021 08:43:45 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 1</title>
+      <link>https://sundingyi.com/blog/34/</link>
+      <pubDate>Mon, 08 Mar 2021 08:43:45 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/34/</guid>
+      <description>题目 给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。 如果反转后整数超过 32 位的有符号整数的范围，就返回 0。 假设环境不允许存储 64 位</description>
     </item>
     
     <item>
