@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Mar 2021 21:06:51 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 16:23:32 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 36</title>
+      <link>https://sundingyi.com/blog/47/</link>
+      <pubDate>Tue, 23 Mar 2021 16:23:32 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/47/</guid>
+      <description>36 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 *a，b，c ，*使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。 **注</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 35</title>
       <link>https://sundingyi.com/blog/46/</link>
