@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Mar 2021 17:55:31 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 17:27:12 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 38</title>
+      <link>https://sundingyi.com/blog/49/</link>
+      <pubDate>Thu, 25 Mar 2021 17:27:12 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/49/</guid>
+      <description>38 给定一个正整数，返回它在 Excel 表中相对应的列名称。 例如， 1 -&amp;gt; A 2 -&amp;gt; B 3 -&amp;gt; C ... 26 -&amp;gt; Z 27 -&amp;gt; AA 28 -&amp;gt; AB ... 示例 1: 输入: 1 输出: &amp;quot;A&amp;quot; class Solution { public String convertToTitle(int columnNumber) { StringBuilder ans = new</description>
     </item>
     
     <item>
