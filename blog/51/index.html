@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 45 48 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 45-48 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/51/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/51/">每日LeetCode 45-48</a>
+    </h2>
+    <div class="post-data">
+        2021.3.27 ・ 
+        共 660 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    <div class="blog-share">
+        分享:
+        
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%2045-48%20https%3a%2f%2fsundingyi.com%2fblog%2f51%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsundingyi.com%2fblog%2f51%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fab fa-facebook-f"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+        
+        
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f51%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%2045-48" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+            <i class="fab fa-pinterest-p"></i>
+            <span class="hidden">Pinterest</span>
+        </a>
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="45" class="anchor-link"><a href="#45">45</a></h2>
+<p>统计所有小于非负整数 <em><code>n</code></em> 的质数的数量。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：n = 10
+输出：4
+解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。
+</code></pre><p>埃氏筛法：要得到自然数n以内的全部素数，必须把不大于根号n的所有素数的倍数剔除，剩下的就是素数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">countPrimes</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">boolean</span><span style="color:#ff79c6">[]</span> isPrim <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span><span style="color:#ff79c6">[</span>n<span style="color:#ff79c6">];</span>
+        Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fill</span><span style="color:#ff79c6">(</span>isPrim<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">*</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>isPrim<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> i <span style="color:#ff79c6">*</span> i<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">+=</span> i<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    isPrim<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span>i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>isPrim<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">++;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="46" class="anchor-link"><a href="#46">46</a></h2>
+<p>反转一个单链表。</p>
+<p><strong>示例:</strong></p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">reverseList</span><span style="color:#ff79c6">(</span>ListNode head<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        ListNode pre <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        ListNode cur <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">;</span>
+        ListNode temp <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>cur <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            temp <span style="color:#ff79c6">=</span> cur<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            cur<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> pre<span style="color:#ff79c6">;</span>
+            pre <span style="color:#ff79c6">=</span> cur<span style="color:#ff79c6">;</span>
+            cur <span style="color:#ff79c6">=</span> temp<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> pre<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="47" class="anchor-link"><a href="#47">47</a></h2>
+<p>给定两个字符串 <em><strong>s</strong></em> 和 *<strong>t*</strong>，判断它们是否是同构的。</p>
+<p>如果 <em><strong>s</strong></em> 中的字符可以按某种映射关系替换得到 *<strong>t*</strong> ，那么这两个字符串是同构的。</p>
+<p>每个出现的字符都应当映射到另一个字符，同时不改变字符的顺序。不同字符不能映射到同一个字符上，相同字符只能映射到同一个字符上，字符可以映射到自己本身。</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入：s = &quot;egg&quot;, t = &quot;add&quot;
+输出：true
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isIsomorphic</span><span style="color:#ff79c6">(</span>String s<span style="color:#ff79c6">,</span> String t<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Map<span style="color:#ff79c6">&lt;</span>Character<span style="color:#ff79c6">,</span> Character<span style="color:#ff79c6">&gt;</span> st <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashMap<span style="color:#ff79c6">&lt;&gt;();</span>
+        Map<span style="color:#ff79c6">&lt;</span>Character<span style="color:#ff79c6">,</span> Character<span style="color:#ff79c6">&gt;</span> ts <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashMap<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#8be9fd">int</span> len <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">();</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> len<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">char</span> x <span style="color:#ff79c6">=</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            <span style="color:#8be9fd">char</span> y <span style="color:#ff79c6">=</span> t<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">((</span>st<span style="color:#ff79c6">.</span><span style="color:#50fa7b">containsKey</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> st<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">!=</span> y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">(</span>ts<span style="color:#ff79c6">.</span><span style="color:#50fa7b">containsKey</span><span style="color:#ff79c6">(</span>y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> ts<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">!=</span> x<span style="color:#ff79c6">))</span>
+                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+            st<span style="color:#ff79c6">.</span><span style="color:#50fa7b">put</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">,</span> y<span style="color:#ff79c6">);</span>
+            ts<span style="color:#ff79c6">.</span><span style="color:#50fa7b">put</span><span style="color:#ff79c6">(</span>y<span style="color:#ff79c6">,</span> x<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="48" class="anchor-link"><a href="#48">48</a></h2>
+<p>给定一个包括 <em>n</em> 个整数的数组 <code>nums</code> 和 一个目标值 <code>target</code>。找出 <code>nums</code> 中的三个整数，使得它们的和与 <code>target</code> 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
+<p><strong>示例：</strong></p>
+<pre><code>输入：nums = [-1,2,1,-4], target = 1
+输出：2
+解释：与 target 最接近的和是 2 (-1 + 2 + 1 = 2) 。
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">threeSumClosest</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sort</span><span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">);</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> nums<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> nums<span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span> start <span style="color:#ff79c6">=</span> i <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#8be9fd">int</span> end <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>start <span style="color:#ff79c6">&lt;</span> end<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#8be9fd">int</span> sum <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> nums<span style="color:#ff79c6">[</span>start<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> nums<span style="color:#ff79c6">[</span>end<span style="color:#ff79c6">];</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">abs</span><span style="color:#ff79c6">(</span>target <span style="color:#ff79c6">-</span> sum<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&lt;</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">abs</span><span style="color:#ff79c6">(</span>target <span style="color:#ff79c6">-</span> ans<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+                    ans <span style="color:#ff79c6">=</span> sum<span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>sum <span style="color:#ff79c6">&gt;</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    end<span style="color:#ff79c6">--;</span>
+                <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>sum <span style="color:#ff79c6">&lt;</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    start<span style="color:#ff79c6">++;</span>
+                <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">else</span>
+                    <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
