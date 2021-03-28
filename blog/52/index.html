@@ -10,13 +10,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-每日 Leet Code 49 53 - 孙丁一的博客
+每日 Leet Code 49 52 - 孙丁一的博客
 </title>
 
 
 
         
-        <meta property="og:title" content="每日LeetCode 49-53 - 孙丁一的博客" />
+        <meta property="og:title" content="每日LeetCode 49-52 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
 <meta property="og:url" content="https://sundingyi.com/blog/52/"/>
@@ -146,18 +146,18 @@
                 
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
-        <a href="https://sundingyi.com/blog/52/">每日LeetCode 49-53</a>
+        <a href="https://sundingyi.com/blog/52/">每日LeetCode 49-52</a>
     </h2>
     <div class="post-data">
         2021.3.28 ・ 
-        共 766 字，您可能需要 2 分钟阅读
+        共 560 字，您可能需要 2 分钟阅读
         
     </div>
     
     <div class="blog-share">
         分享:
         
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%2049-53%20https%3a%2f%2fsundingyi.com%2fblog%2f52%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%2049-52%20https%3a%2f%2fsundingyi.com%2fblog%2f52%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fab fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
@@ -169,7 +169,7 @@
         </a>
         
         
-        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f52%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%2049-53" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f52%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%2049-52" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
             <i class="fab fa-pinterest-p"></i>
             <span class="hidden">Pinterest</span>
         </a>
@@ -277,14 +277,7 @@
 <pre><code>输入：[1,8,6,2,5,4,8,3,7]
 输出：49 
 解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
-</code></pre>
-<h2 id="53" class="anchor-link"><a href="#53">53</a></h2>
-<p>给你 <code>n</code> 个非负整数 <code>a1，a2，...，a``n</code>，每个数代表坐标中的一个点 <code>(i, ai)</code> 。在坐标内画 <code>n</code> 条垂直线，垂直线 <code>i</code> 的两个端点分别为 <code>(i, ai)</code> 和 <code>(i, 0)</code> 。找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
-<p>**说明：**你不能倾斜容器。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">输入：<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">,</span>6<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">,</span>4<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">,</span>7<span style="color:#ff79c6">]</span>
-输出：49 
-解释：图中垂直线代表输入数组 <span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">,</span>6<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">,</span>4<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">,</span>7<span style="color:#ff79c6">]</span>。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">maxArea</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> height<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
         <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> height<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
