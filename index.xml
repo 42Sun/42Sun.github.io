@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Mar 2021 15:24:26 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 13:43:30 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 49-53</title>
+      <link>https://sundingyi.com/blog/52/</link>
+      <pubDate>Sun, 28 Mar 2021 13:43:30 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/52/</guid>
+      <description>49 给定一个整数数组，判断是否存在重复元素。 如果存在一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。 示例 1: 输入: [1,2,3,1]</description>
     </item>
     
     <item>
