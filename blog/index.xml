@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Mar 2021 13:43:30 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Mar 2021 11:51:04 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 53-55</title>
+      <link>https://sundingyi.com/blog/53/</link>
+      <pubDate>Mon, 29 Mar 2021 11:51:04 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/53/</guid>
+      <description>53 给定一个整数，编写一个函数来判断它是否是 2 的幂次方。 示例 1: 输入: 1 输出: true 解释: 20 = 1 class Solution { public boolean isPowerOfTwo(int n) { if (n == 0) return false; long x = (long)n; return (x &amp;amp; -x) == x; } }</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 49-52</title>
       <link>https://sundingyi.com/blog/52/</link>
