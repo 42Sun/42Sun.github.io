@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 30 Mar 2021 11:01:29 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 10:46:53 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 58-60</title>
+      <link>https://sundingyi.com/blog/55/</link>
+      <pubDate>Wed, 31 Mar 2021 10:46:53 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/55/</guid>
+      <description>58 给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。 示例: 输入: 38 输出: 2 解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由</description>
     </item>
     
     <item>
