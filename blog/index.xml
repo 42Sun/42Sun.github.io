@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Apr 2021 11:16:01 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 18:42:08 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 65-66</title>
+      <link>https://sundingyi.com/blog/57/</link>
+      <pubDate>Fri, 02 Apr 2021 18:42:08 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/57/</guid>
+      <description>65 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。 例如，一个链表有 6 个节</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 61-64</title>
       <link>https://sundingyi.com/blog/56/</link>
