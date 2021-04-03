@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Apr 2021 18:42:08 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Apr 2021 15:08:49 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 67-70</title>
+      <link>https://sundingyi.com/blog/58/</link>
+      <pubDate>Sat, 03 Apr 2021 15:08:49 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/58/</guid>
+      <description>67 如果二叉树每个节点都具有相同的值，那么该二叉树就是单值二叉树。 只有给定的树是单值二叉树时，才返回 true；否则返回 false。 输入：[1,</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 65-66</title>
       <link>https://sundingyi.com/blog/57/</link>
