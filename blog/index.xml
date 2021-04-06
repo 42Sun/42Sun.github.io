@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 05 Apr 2021 00:15:58 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 14:01:08 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 79-82</title>
+      <link>https://sundingyi.com/blog/61/</link>
+      <pubDate>Tue, 06 Apr 2021 14:01:08 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/61/</guid>
+      <description>79 给定两个字符串 s 和 t，它们只包含小写字母。 字符串 *t* 由字符串 *s* 随机重排，然后在随机位置添加一个字母。 请找出在 t 中被添加的字母。 示例 1： 输入：</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 76-78</title>
       <link>https://sundingyi.com/blog/60/</link>
