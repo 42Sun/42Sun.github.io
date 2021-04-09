@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 94 98 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 94-98 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/64/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/64/">每日LeetCode 94-98</a>
+    </h2>
+    <div class="post-data">
+        2021.4.9 ・ 
+        共 996 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    <div class="blog-share">
+        分享:
+        
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%2094-98%20https%3a%2f%2fsundingyi.com%2fblog%2f64%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsundingyi.com%2fblog%2f64%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fab fa-facebook-f"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+        
+        
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f64%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%2094-98" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+            <i class="fab fa-pinterest-p"></i>
+            <span class="hidden">Pinterest</span>
+        </a>
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="94" class="anchor-link"><a href="#94">94</a></h2>
+<p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: nums = [-1,0,3,5,9,12], target = 9
+输出: 4
+解释: 9 出现在 nums 中并且下标为 4
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">search</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;=</span> right <span style="color:#ff79c6">){</span>
+            <span style="color:#8be9fd">int</span> mid <span style="color:#ff79c6">=</span> left <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">((</span>right <span style="color:#ff79c6">-</span> left<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&gt;&gt;</span> 1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> mid<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                left <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                right <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="95" class="anchor-link"><a href="#95">95</a></h2>
+<p>给定一个 N 叉树，找到其最大深度。</p>
+<p>最大深度是指从根节点到最远叶子节点的最长路径上的节点总数。</p>
+<p>N 叉树输入按层序遍历序列化表示，每组子节点由空值分隔（请参见示例）。</p>
+<pre><code>输入：root = [1,null,3,2,4,null,5,6]
+输出：3
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">maxDepth</span><span style="color:#ff79c6">(</span>Node root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span>Node n<span style="color:#ff79c6">:</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            ans <span style="color:#ff79c6">=</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">max</span><span style="color:#ff79c6">(</span>ans<span style="color:#ff79c6">,</span> maxDepth<span style="color:#ff79c6">(</span>n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="96" class="anchor-link"><a href="#96">96</a></h2>
+<p>给定长度为 <code>2n</code> 的整数数组 <code>nums</code> ，你的任务是将这些数分成 <code>n</code> 对, 例如 <code>(a1, b1), (a2, b2), ..., (an, bn)</code> ，使得从 <code>1</code> 到 <code>n</code> 的 <code>min(ai, bi)</code> 总和最大。</p>
+<p>返回该 <strong>最大总和</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [1,4,3,2]
+输出：4
+解释：所有可能的分法（忽略元素顺序）为：
+1. (1, 4), (2, 3) -&gt; min(1, 4) + min(2, 3) = 1 + 2 = 3
+2. (1, 3), (2, 4) -&gt; min(1, 3) + min(2, 4) = 1 + 2 = 3
+3. (1, 2), (3, 4) -&gt; min(1, 2) + min(3, 4) = 1 + 3 = 4
+所以最大总和为 4
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">arrayPairSum</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sort</span><span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">);</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">+=</span> 2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            ans <span style="color:#ff79c6">+=</span> nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="97" class="anchor-link"><a href="#97">97</a></h2>
+<p>给定一个二叉树，计算 <strong>整个树</strong> 的坡度 。</p>
+<p>一个树的 <strong>节点的坡度</strong> 定义即为，该节点左子树的节点之和和右子树节点之和的 <strong>差的绝对值</strong> 。如果没有左子树的话，左子树的节点之和为 0 ；没有右子树的话也是一样。空结点的坡度是 0 。</p>
+<p><strong>整个树</strong> 的坡度就是其所有节点的坡度之和。</p>
+<pre><code>输入：root = [1,2,3]
+输出：1
+解释：
+节点 2 的坡度：|0-0| = 0（没有子节点）
+节点 3 的坡度：|0-0| = 0（没有子节点）
+节点 1 的坡度：|2-3| = 1（左子树就是左子节点，所以和是 2 ；右子树就是右子节点，所以和是 3 ）
+坡度总和：0 + 0 + 1 = 1
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">findTilt</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        get<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> get<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">);</span>
+        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> get<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">;</span>
+        ans <span style="color:#ff79c6">+=</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">abs</span><span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">-</span> right<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> left <span style="color:#ff79c6">+</span> right <span style="color:#ff79c6">+</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span> 
+</code></pre></div>
+<h2 id="98" class="anchor-link"><a href="#98">98</a></h2>
+<p>给定两个整数，被除数 <code>dividend</code> 和除数 <code>divisor</code>。将两数相除，要求不使用乘法、除法和 mod 运算符。</p>
+<p>返回被除数 <code>dividend</code> 除以除数 <code>divisor</code> 得到的商。</p>
+<p>整数除法的结果应当截去（<code>truncate</code>）其小数部分，例如：<code>truncate(8.345) = 8</code> 以及 <code>truncate(-2.7335) = -2</code></p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: dividend = 10, divisor = 3
+输出: 3
+解释: 10/3 = truncate(3.33333..) = truncate(3) = 3
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">divide</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> dividend<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> divisor<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>dividend <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>dividend <span style="color:#ff79c6">==</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MIN_VALUE</span> <span style="color:#ff79c6">&amp;&amp;</span> divisor <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MAX_VALUE</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">boolean</span> negative <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>dividend <span style="color:#ff79c6">^</span> divisor<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">long</span> a <span style="color:#ff79c6">=</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">abs</span><span style="color:#ff79c6">((</span><span style="color:#8be9fd">long</span><span style="color:#ff79c6">)</span>dividend<span style="color:#ff79c6">);</span>
+        <span style="color:#8be9fd">long</span> b <span style="color:#ff79c6">=</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">abs</span><span style="color:#ff79c6">((</span><span style="color:#8be9fd">long</span><span style="color:#ff79c6">)</span>divisor<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 31<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">--)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>b <span style="color:#ff79c6">&lt;&lt;</span> i <span style="color:#ff79c6">&lt;=</span> a<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                result <span style="color:#ff79c6">+=</span> 1 <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">;</span>
+                a <span style="color:#ff79c6">-=</span> b <span style="color:#ff79c6">&lt;&lt;</span> i<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> negative <span style="color:#ff79c6">?</span> <span style="color:#ff79c6">-</span>result <span style="color:#ff79c6">:</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

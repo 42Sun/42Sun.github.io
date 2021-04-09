@@ -150,7 +150,7 @@
     </h2>
     <div class="post-data">
         2021.4.8 ・ 
-        共 1148 字，您可能需要 3 分钟阅读
+        共 1208 字，您可能需要 3 分钟阅读
         
     </div>
     
@@ -373,33 +373,54 @@ F(n) = F(n - 1) + F(n - 2)，其中 n &gt; 1
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#50fa7b">searchRange</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#ff79c6">{</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">-</span>1 <span style="color:#ff79c6">};</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{-</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">};</span>
         <span style="color:#ff79c6">}</span>
-        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> binarySearch<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> target<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">);</span>
-        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> binarySearch<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> target<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;=</span> right <span style="color:#ff79c6">&amp;&amp;</span> right <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>left<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>right<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span>
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#ff79c6">{</span> left<span style="color:#ff79c6">,</span> right <span style="color:#ff79c6">};</span>
-        <span style="color:#ff79c6">else</span>
-            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#ff79c6">{</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">-</span>1 <span style="color:#ff79c6">};</span>
+        <span style="color:#8be9fd">int</span> first <span style="color:#ff79c6">=</span> firstSearch<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> target<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>first <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{-</span>1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">};</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> last <span style="color:#ff79c6">=</span> lastSearch<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> target<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{</span>first<span style="color:#ff79c6">,</span> last<span style="color:#ff79c6">};</span>
 
     <span style="color:#ff79c6">}</span>
-
-    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">binarySearch</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">boolean</span> low<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">firstSearch</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
         <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
-        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;=</span> right<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#8be9fd">int</span> mid <span style="color:#ff79c6">=</span> left <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">(</span>right <span style="color:#ff79c6">-</span> left<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">/</span> 2<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;</span> target <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">(</span>low <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;=</span> target<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span> mid  <span style="color:#ff79c6">=</span> left <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">(</span>right <span style="color:#ff79c6">-</span> left<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">/</span> 2<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
                 right <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
-                ans <span style="color:#ff79c6">=</span> mid<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
                 left <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
             <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                right <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
         <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
-
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>left<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span>
+            <span style="color:#ff79c6">return</span>  left<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">lastSearch</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;=</span> right<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span> mid  <span style="color:#ff79c6">=</span> left <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">(</span>right <span style="color:#ff79c6">-</span> left<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">/</span> 2<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                left <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>mid<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                left <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                right <span style="color:#ff79c6">=</span> mid <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>right <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>right<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> target<span style="color:#ff79c6">)</span>
+            <span style="color:#ff79c6">return</span>  right<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">return</span>  <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>    
 <span style="color:#ff79c6">}</span>
 </code></pre></div>
 </div>
