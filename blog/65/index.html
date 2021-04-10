@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 99 102 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 99-102 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/65/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/65/">每日LeetCode 99-102</a>
+    </h2>
+    <div class="post-data">
+        2021.4.10 ・ 
+        共 952 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    <div class="blog-share">
+        分享:
+        
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=%e6%af%8f%e6%97%a5LeetCode%2099-102%20https%3a%2f%2fsundingyi.com%2fblog%2f65%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsundingyi.com%2fblog%2f65%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fab fa-facebook-f"></i>
+            <span class="hidden">Facebook</span>
+        </a>
+        
+        
+        <a class="icon-pinterest" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fsundingyi.com%2fblog%2f65%2f&amp;description=%e6%af%8f%e6%97%a5LeetCode%2099-102" onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+            <i class="fab fa-pinterest-p"></i>
+            <span class="hidden">Pinterest</span>
+        </a>
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="99" class="anchor-link"><a href="#99">99</a></h2>
+<p>给定一个字符串来代表一个学生的出勤记录，这个记录仅包含以下三个字符：</p>
+<ol>
+<li><strong>&lsquo;A&rsquo;</strong> : Absent，缺勤</li>
+<li><strong>&lsquo;L&rsquo;</strong> : Late，迟到</li>
+<li><strong>&lsquo;P&rsquo;</strong> : Present，到场</li>
+</ol>
+<p>如果一个学生的出勤记录中不<strong>超过一个&rsquo;A'(缺勤)<strong>并且</strong>不超过两个连续的&rsquo;L'(迟到)</strong>,那么这个学生会被奖赏。</p>
+<p>你需要根据这个学生的出勤记录判断他是否会被奖赏。</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: &quot;PPALLP&quot;
+输出: True
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">checkRecord</span><span style="color:#ff79c6">(</span>String s<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> count <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;A&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                count<span style="color:#ff79c6">++;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>count <span style="color:#ff79c6">&lt;=</span> 1 <span style="color:#ff79c6">&amp;&amp;</span> s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;LLL&#34;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="100" class="anchor-link"><a href="#100">100</a></h2>
+<p>在MATLAB中，有一个非常有用的函数 <code>reshape</code>，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。</p>
+<p>给出一个由二维数组表示的矩阵，以及两个正整数<code>r</code>和<code>c</code>，分别表示想要的重构的矩阵的行数和列数。</p>
+<p>重构后的矩阵需要将原始矩阵的所有元素以相同的<strong>行遍历顺序</strong>填充。</p>
+<p>如果具有给定参数的<code>reshape</code>操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: 
+nums = 
+[[1,2],
+ [3,4]]
+r = 1, c = 4
+输出: 
+[[1,2,3,4]]
+解释:
+行遍历nums的结果是 [1,2,3,4]。新的矩阵是 1 * 4 矩阵, 用之前的元素值一行一行填充新矩阵。
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> <span style="color:#50fa7b">matrixReshape</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> r<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> c<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> y <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">*</span> y <span style="color:#ff79c6">!=</span> r <span style="color:#ff79c6">*</span> c<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> nums<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>r<span style="color:#ff79c6">][</span>c<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> x <span style="color:#ff79c6">*</span> y<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            ans<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">/</span> c<span style="color:#ff79c6">][</span>i <span style="color:#ff79c6">%</span> c<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">/</span> y<span style="color:#ff79c6">][</span>i <span style="color:#ff79c6">%</span> y<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="101" class="anchor-link"><a href="#101">101</a></h2>
+<p>给定两个非空二叉树 <strong>s</strong> 和 <strong>t</strong>，检验 <strong>s</strong> 中是否包含和 <strong>t</strong> 具有相同结构和节点值的子树。<strong>s</strong> 的一个子树包括 <strong>s</strong> 的一个节点和这个节点的所有子孙。<strong>s</strong> 也可以看做它自身的一棵子树。</p>
+<p><strong>示例 1:</strong>
+给定的树 s:</p>
+<pre><code>     3
+    / \
+   4   5
+  / \
+ 1   2
+</code></pre><p>给定的树 t：</p>
+<pre><code>   4 
+  / \
+ 1   2
+</code></pre><p>返回 <strong>true</strong>，因为 t 与 s 的一个子树拥有相同的结构和节点值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isSubtree</span><span style="color:#ff79c6">(</span>TreeNode s<span style="color:#ff79c6">,</span> TreeNode t<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>s <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>t <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> isSubtree<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">,</span> t<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">||</span> isSubtree<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">,</span> t<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">||</span> isSame<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">,</span> t<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isSame</span><span style="color:#ff79c6">(</span>TreeNode s<span style="color:#ff79c6">,</span> TreeNode t<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>s <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">&amp;</span> t <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>s <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">||</span> t <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">!=</span> t<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> isSame<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">,</span> t<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> isSame<span style="color:#ff79c6">(</span>s<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">,</span> t<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="102" class="anchor-link"><a href="#102">102</a></h2>
+<p>判断一个 9x9 的数独是否有效。只需要<strong>根据以下规则</strong>，验证已经填入的数字是否有效即可。</p>
+<ol>
+<li>数字 <code>1-9</code> 在每一行只能出现一次。</li>
+<li>数字 <code>1-9</code> 在每一列只能出现一次。</li>
+<li>数字 <code>1-9</code> 在每一个以粗实线分隔的 <code>3x3</code> 宫内只能出现一次。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isValidSudoku</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">[][]</span> board<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Set<span style="color:#ff79c6">&lt;</span>Character<span style="color:#ff79c6">&gt;[]</span> rows <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">[</span>9<span style="color:#ff79c6">];</span>
+        Set<span style="color:#ff79c6">&lt;</span>Character<span style="color:#ff79c6">&gt;[]</span> columns <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">[</span>9<span style="color:#ff79c6">];</span>
+        Set<span style="color:#ff79c6">&lt;</span>Character<span style="color:#ff79c6">&gt;[]</span> boxes <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">[</span>9<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> 9<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            rows<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+            columns<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+            boxes<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> 9<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> 9<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;.&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    <span style="color:#8be9fd">int</span> box <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">/</span> 3 <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">*</span> 3 <span style="color:#ff79c6">+</span> j <span style="color:#ff79c6">/</span> 3<span style="color:#ff79c6">;</span>
+                    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(!</span>rows<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">].</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]))</span> <span style="color:#ff79c6">{</span>
+                        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+                    <span style="color:#ff79c6">}</span>
+                    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(!</span>columns<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">].</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]))</span> <span style="color:#ff79c6">{</span>
+                        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+                    <span style="color:#ff79c6">}</span>
+                    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(!</span>boxes<span style="color:#ff79c6">[</span>box<span style="color:#ff79c6">].</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]))</span> <span style="color:#ff79c6">{</span>
+                        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+                    <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

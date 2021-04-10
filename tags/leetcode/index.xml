@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Apr 2021 20:03:17 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Apr 2021 18:52:18 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 99-102</title>
+      <link>https://sundingyi.com/blog/65/</link>
+      <pubDate>Sat, 10 Apr 2021 18:52:18 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/65/</guid>
+      <description>99 给定一个字符串来代表一个学生的出勤记录，这个记录仅包含以下三个字符： &amp;lsquo;A&amp;rsquo; : Absent，缺勤 &amp;lsquo;L&amp;rsquo; : Late，迟到 &amp;lsquo;P&amp;rsquo; : Present，到场 如果一</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 94-98</title>
       <link>https://sundingyi.com/blog/64/</link>
