@@ -10,13 +10,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-每日 Leet Code 103 105 - 孙丁一的博客
+每日 Leet Code 103 106 - 孙丁一的博客
 </title>
 
 
 
         
-        <meta property="og:title" content="每日LeetCode 103-105 - 孙丁一的博客" />
+        <meta property="og:title" content="每日LeetCode 103-106 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
 <meta property="og:url" content="https://sundingyi.com/blog/66/"/>
@@ -146,11 +146,11 @@
                 
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
-        <a href="https://sundingyi.com/blog/66/">每日LeetCode 103-105</a>
+        <a href="https://sundingyi.com/blog/66/">每日LeetCode 103-106</a>
     </h2>
     <div class="post-data">
         2021.4.11 ・ 
-        共 571 字，您可能需要 2 分钟阅读
+        共 647 字，您可能需要 2 分钟阅读
         
     </div>
     
@@ -299,6 +299,28 @@
             <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span>Node n <span style="color:#ff79c6">:</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
                 stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>n<span style="color:#ff79c6">);</span>
             <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="106" class="anchor-link"><a href="#106">106</a></h2>
+<p>给定一个二叉树，返回其节点值的 <strong>前序遍历</strong> 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">preorderTraversal</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+        Deque<span style="color:#ff79c6">&lt;</span>TreeNode<span style="color:#ff79c6">&gt;</span> stack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkedList<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(!</span>stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">||</span> root <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">);</span>
+                stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">push</span><span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">);</span>
+                root <span style="color:#ff79c6">=</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            root <span style="color:#ff79c6">=</span> stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">pop</span><span style="color:#ff79c6">();</span>
+            root <span style="color:#ff79c6">=</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">}</span>
         <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
