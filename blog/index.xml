@@ -6,7 +6,25 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 Apr 2021 14:04:46 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 19:05:10 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 115-118</title>
+      <link>https://sundingyi.com/blog/71/</link>
+      <pubDate>Fri, 16 Apr 2021 19:05:10 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/71/</guid>
+      <description>115 给定一个非空二叉树, 返回一个由每层节点平均值组成的数组。 示例 1： 输入： 3 / \ 9 20 / \ 15 7 输出：[3, 14.5, 11] 解释： 第 0 层的平均值是 3 , 第1层是</description>
+    </item>
+    
+    <item>
+      <title>Spring IOC</title>
+      <link>https://sundingyi.com/blog/70/</link>
+      <pubDate>Fri, 16 Apr 2021 18:46:00 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/70/</guid>
+      <description>Inversion of Control 控制反转 配置文件 引入配置文件的方法的参数可以多个。 在一个总的配置文件中用 &amp;lt;import resource=&amp;quot;xx.xml&amp;quot;/&amp;gt; 进行引用。 IOC 注入 set 方法注入 P 标签注入 在 Spring 2.5 之后，为了 set 注入</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 114-117</title>
       <link>https://sundingyi.com/blog/69/</link>

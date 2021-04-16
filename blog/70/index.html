@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+Spring I O C - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="Spring IOC - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/70/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/70/">Spring IOC</a>
+    </h2>
+    <div class="post-data">
+        2021.4.16 ・ 
+        共 1191 字，您可能需要 3 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/spring">
+             Spring</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    <blockquote>
+<p>Inversion of Control 控制反转</p>
+</blockquote>
+
+<h2 id="配置文件" class="anchor-link"><a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">配置文件</a></h2>
+<ol>
+<li>引入配置文件的方法的参数可以多个。</li>
+<li>在一个总的配置文件中用 <code>&lt;import resource=&quot;xx.xml&quot;/&gt;</code> 进行引用。</li>
+</ol>
+
+<h2 id="ioc-注入" class="anchor-link"><a href="#ioc-%e6%b3%a8%e5%85%a5">IOC 注入</a></h2>
+
+<h3 id="set-方法注入" class="anchor-link"><a href="#set-%e6%96%b9%e6%b3%95%e6%b3%a8%e5%85%a5">set 方法注入</a></h3>
+
+<h4 id="p-标签注入" class="anchor-link"><a href="#p-%e6%a0%87%e7%ad%be%e6%b3%a8%e5%85%a5">P 标签注入</a></h4>
+<p>在 Spring 2.5 之后，为了 set 注入的方便，引入了这个方法。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;org.example.service.UserService&#34;</span> 
+	<span style="color:#50fa7b">p:name=</span><span style="color:#f1fa8c">&#34;haha&#34;</span>
+	<span style="color:#50fa7b">p:userDao-ref=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span><span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;/bean&gt;</span>
+</code></pre></div>
+<h4 id="对于其他类对象" class="anchor-link"><a href="#%e5%af%b9%e4%ba%8e%e5%85%b6%e4%bb%96%e7%b1%bb%e5%af%b9%e8%b1%a1">对于其他类对象</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> org.example.service<span style="color:#ff79c6">;</span>
+
+<span style="color:#ff79c6">import</span> org.example.dao.UserDao<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">UserService</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">private</span> UserDao UserDao<span style="color:#ff79c6">;</span>
+    
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setUserDao</span><span style="color:#ff79c6">(</span>UserDao userDao<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        UserDao <span style="color:#ff79c6">=</span> userDao<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">test</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;UserService test()...&#34;</span><span style="color:#ff79c6">);</span>
+        UserDao<span style="color:#ff79c6">.</span><span style="color:#50fa7b">test</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">&lt;</span>bean id<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> class<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;org.example.service.UserService&#34;</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;</span>property name<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span> ref<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<span style="color:#ff79c6">&lt;/</span>bean<span style="color:#ff79c6">&gt;</span>
+<span style="color:#ff79c6">&lt;</span>bean id<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span> class<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;org.example.dao.UserDao&#34;</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;!--</span> collaborators and configuration <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">this</span> bean go here <span style="color:#ff79c6">--&gt;</span>
+<span style="color:#ff79c6">&lt;/</span>bean<span style="color:#ff79c6">&gt;</span>
+</code></pre></div><p>property 中的 name 指定的就是类中的属性名字。</p>
+
+<h4 id="对于内部属性" class="anchor-link"><a href="#%e5%af%b9%e4%ba%8e%e5%86%85%e9%83%a8%e5%b1%9e%e6%80%a7">对于内部属性</a></h4>
+<p>常用有<code>String、Integer、Map、List</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">private</span> String name<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setName</span><span style="color:#ff79c6">(</span>Stringname<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">name</span> <span style="color:#ff79c6">=</span>name<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">&lt;</span>bean id<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> class<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;org.example.service.UserService&#34;</span><span style="color:#ff79c6">&gt;</span>
+    <span style="color:#ff79c6">&lt;</span>property name<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span> ref<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span><span style="color:#ff79c6">/&gt;</span>
+    <span style="color:#ff79c6">&lt;</span>property name<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;name&#34;</span> value<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<span style="color:#ff79c6">&lt;/</span>bean<span style="color:#ff79c6">&gt;</span>
+</code></pre></div><p>即可进行使用。</p>
+
+<h3 id="构造器注入" class="anchor-link"><a href="#%e6%9e%84%e9%80%a0%e5%99%a8%e6%b3%a8%e5%85%a5">构造器注入</a></h3>
+<p>在构造的地方注入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;constructor-arg</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;构造器中的参数&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;那个参数的Bean id&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</code></pre></div><p>如果出现循环依赖，需要通过 set 注入解决。</p>
+
+<h3 id="自动注入" class="anchor-link"><a href="#%e8%87%aa%e5%8a%a8%e6%b3%a8%e5%85%a5">自动注入</a></h3>
+
+<h4 id="resource" class="anchor-link"><a href="#resource">@Resource</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#ff79c6">&lt;beans</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
+       <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
+       <span style="color:#50fa7b">xmlns:context=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/context&gt;&#34;</span>
+       <span style="color:#50fa7b">xsi:schemaLocation=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/beans/spring-beans.xsd&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context/spring-context.xsd&gt;&#34;</span><span style="color:#ff79c6">&gt;</span>
+
+<span style="color:#6272a4">&lt;!--    自动化注入--&gt;</span>
+    <span style="color:#ff79c6">&lt;context:annotation-config/&gt;</span>
+
+<span style="color:#6272a4">&lt;!--    配置bean--&gt;</span>
+    <span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;com.sundingyi.service.UserService&#34;</span><span style="color:#ff79c6">/&gt;</span>
+    <span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;com.sundingyi.dao.UserDao&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<span style="color:#ff79c6">&lt;/beans&gt;</span>
+</code></pre></div><p>在配置文件中如此书写，另外，在需要的类中添加<code>@Resource</code>关键字</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 注入 UserDao
+</span><span style="color:#6272a4"></span>    @Resource
+    <span style="color:#8be9fd;font-style:italic">private</span> UserDao userDao<span style="color:#ff79c6">;</span>
+    <span style="color:#6272a4">//set
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setUserDao</span><span style="color:#ff79c6">(</span>UserDao userDao<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">userDao</span> <span style="color:#ff79c6">=</span> userDao<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+</code></pre></div><ol>
+<li>通过 bean 中的 id 进行查找。</li>
+<li>如果没有找到，则由 class 进行检索。</li>
+<li>需要属性的类，可以提供 set 方法，也可以不提供，以后一般都不需要提供。</li>
+<li>注解也可以声明在 set 方法字段上。</li>
+<li>可以设置注解的 name 属性，值要与 bean 标签的 id 属性值一致。它的优先级大于 class。 <code>@Resource(name=&quot;userDao&quot;)</code></li>
+<li>同样可以为接口进行设置@Resource，如果这个接口只被实现了一次，那么就可以直接使用，如果这个接口被实现了多次，那么就必须指定<code>name=&quot;实现的类”</code></li>
+</ol>
+
+<h4 id="autowired" class="anchor-link"><a href="#autowired">@Autowired</a></h4>
+<ol>
+<li>默认通过类型寻找。</li>
+<li>可以提供 set 也可以不提供。</li>
+<li>可声明在属性基本或 set 级别</li>
+<li>可以添加@Qualifier ，选择 value 属性值查找 bean 对象（必须设置，且与 bean 中的 id 一致）</li>
+</ol>
+
+<h2 id="扫描器" class="anchor-link"><a href="#%e6%89%ab%e6%8f%8f%e5%99%a8">扫描器</a></h2>
+<p>bean 对象的统一管理，简化开发配置，提高开发效率。</p>
+<ol>
+<li>
+<p>设置自动化扫描范围。</p>
+</li>
+<li>
+<p>在需要被自动化实例化的类上添加注解。</p>
+<p>使用如下注解加在类上：</p>
+<p>@Repository : 用在 Dao 层</p>
+<p>@Service: 用在 Service 层</p>
+<p>@Controller: 用在 Controller 层</p>
+<p>@Component: 用在任意层</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">&lt;?</span>xml version<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span><span style="color:#ff79c6">?&gt;</span>
+<span style="color:#ff79c6">&lt;</span>beans xmlns<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
+       xmlns<span style="color:#ff79c6">:</span>xsi<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
+       xmlns<span style="color:#ff79c6">:</span>context<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/context&gt;&#34;</span>
+       xsi<span style="color:#ff79c6">:</span>schemaLocation<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/beans/spring-beans.xsd&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context/spring-context.xsd&gt;&#34;</span><span style="color:#ff79c6">&gt;</span>
+
+    <span style="color:#ff79c6">&lt;</span>context<span style="color:#ff79c6">:</span>component<span style="color:#ff79c6">-</span>scan base<span style="color:#ff79c6">-</span>package<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;包名&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<span style="color:#ff79c6">&lt;/</span>beans<span style="color:#ff79c6">&gt;</span>
+</code></pre></div>
+<h2 id="bean-的作用域" class="anchor-link"><a href="#bean-%e7%9a%84%e4%bd%9c%e7%94%a8%e5%9f%9f">bean 的作用域</a></h2>
+
+<h3 id="scope-属性" class="anchor-link"><a href="#scope-%e5%b1%9e%e6%80%a7">scope 属性</a></h3>
+<p>有两个值 singleton 和 prototype.</p>
+
+<h4 id="singleton-单例作用域" class="anchor-link"><a href="#singleton-%e5%8d%95%e4%be%8b%e4%bd%9c%e7%94%a8%e5%9f%9f">singleton 单例作用域</a></h4>
+<p>IOC 容器在启动时，会自动将所有在单例作用域中的 bean 对象实例化，并设置到单例缓存池中。</p>
+<p>当使用了<code>lazy-init=“true”</code> 时，那么就会变为只有被使用时才会被实例化。</p>
+<p>默认会被设置成<code>false</code> ，优点如下。</p>
+<ol>
+<li>可以提前发现潜在的配置问题。</li>
+<li>bean 对象在启动时就会被设置在单例缓冲池中，使用时不需要再去进行实例化，提高效率。</li>
+</ol>
+
+<h4 id="prototype-原型作用域" class="anchor-link"><a href="#prototype-%e5%8e%9f%e5%9e%8b%e4%bd%9c%e7%94%a8%e5%9f%9f">prototype 原型作用域</a></h4>
+<p>IOC 容器在启动时，不会把 prototype 设置到单例缓存池中。而是每次使用时都会实例化一个新的。</p>
+<p>用的并不多。</p>
+
+<h3 id="什么对象适合作为单例对象交给-ioc-容器实例化" class="anchor-link"><a href="#%e4%bb%80%e4%b9%88%e5%af%b9%e8%b1%a1%e9%80%82%e5%90%88%e4%bd%9c%e4%b8%ba%e5%8d%95%e4%be%8b%e5%af%b9%e8%b1%a1%e4%ba%a4%e7%bb%99-ioc-%e5%ae%b9%e5%99%a8%e5%ae%9e%e4%be%8b%e5%8c%96">什么对象适合作为单例对象？（交给 IOC 容器实例化）</a></h3>
+<p>无状态的对象。即不存在会改变当前对象状态的成员变量。一般是 Controller 层，Service 层，Dao层。实体类、工具类则不适合。</p>
+
+<h2 id="bean-的生命周期" class="anchor-link"><a href="#bean-%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f">bean 的生命周期</a></h2>
+<p>共有四个阶段：</p>
+
+<h3 id="定义" class="anchor-link"><a href="#%e5%ae%9a%e4%b9%89">定义</a></h3>
+<p>在配置文件中定义 bean, 通过 bean 标签对应 bean 对象。</p>
+
+<h3 id="初始化" class="anchor-link"><a href="#%e5%88%9d%e5%a7%8b%e5%8c%96">初始化</a></h3>
+<p>IOC 容器启动时，自动实例化 bean 对象。</p>
+
+<h3 id="使用" class="anchor-link"><a href="#%e4%bd%bf%e7%94%a8">使用</a></h3>
+<ol>
+<li>使用 BeanFactory</li>
+<li>使用 ApplicationContext</li>
+</ol>
+
+<h3 id="销毁" class="anchor-link"><a href="#%e9%94%80%e6%af%81">销毁</a></h3>
+<p>ApplicationContext 的 close()</p>
+<p>将对象实例化的控制过程，转交给一个外部容器产生。</p>
+
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
