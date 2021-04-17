@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+Spring a O P - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="SpringAOP - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/73/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/73/">SpringAOP</a>
+    </h2>
+    <div class="post-data">
+        2021.4.17 ・ 
+        共 2176 字，您可能需要 5 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/spring">
+             Spring</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    <blockquote>
+<p>Aspect Oriented Programing <strong>面向切面编程</strong></p>
+</blockquote>
+
+<h2 id="代理模式" class="anchor-link"><a href="#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f">代理模式</a></h2>
+<p>为某一个对象（委托类）准备一个代理（代理类），用来控制对这个对象的访问。</p>
+<p>两者有一个共同的父类或父接口。</p>
+<p>代理类会对请求做预处理、过滤，将请求分配给指定对象。</p>
+<ol>
+<li>代理类和委托类有相似的行为。</li>
+<li>代理类增强委托类的行为。</li>
+</ol>
+
+<h3 id="静态代理" class="anchor-link"><a href="#%e9%9d%99%e6%80%81%e4%bb%a3%e7%90%86">静态代理</a></h3>
+<p>代理三要素：以结婚为例</p>
+<ol>
+<li>
+<p>有共同的行为（结婚）- 定义成接口</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+   
+<span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * 定义行为
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Marry</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">();</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div></li>
+<li>
+<p>目标角色（新人）- 实现接口</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+   
+<span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * 目标角色 实现行为
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">You</span> <span style="color:#8be9fd;font-style:italic">implements</span> Marry <span style="color:#ff79c6">{</span>
+@Override
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;you的结婚&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div></li>
+<li>
+<p>代理角色（婚庆公司） - 实现接口、用户行为的增强</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+   
+<span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * 静态代理的代理角色
+</span><span style="color:#6272a4"> * 1. 实现行为
+</span><span style="color:#6272a4"> * 2. 增强行为
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MarryCompany</span> <span style="color:#8be9fd;font-style:italic">implements</span>  Marry<span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">// 准备目标对象
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> Marry target<span style="color:#ff79c6">;</span>
+    <span style="color:#6272a4">// 通过带参构造传递目标对象
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">MarryCompany</span><span style="color:#ff79c6">(</span>Marrytarget<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">target</span> <span style="color:#ff79c6">=</span>target<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+   
+    <span style="color:#6272a4">//1
+</span><span style="color:#6272a4"></span>@Override
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 用户行为增强
+</span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;增强方法&#34;</span><span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 调用目标对象方法
+</span><span style="color:#6272a4"></span>        target<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div></li>
+</ol>
+<p>执行测试：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">StaticProxy</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 目标对象
+</span><span style="color:#6272a4"></span>        You you <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> You<span style="color:#ff79c6">();</span>
+        <span style="color:#6272a4">// 代理对象
+</span><span style="color:#6272a4"></span>        MarryCompany marryCompany <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> MarryCompany<span style="color:#ff79c6">(</span>you<span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 通过代理对象
+</span><span style="color:#6272a4"></span>        marryCompany<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h4 id="特点" class="anchor-link"><a href="#%e7%89%b9%e7%82%b9">特点</a></h4>
+<ol>
+<li>目标角色固定</li>
+<li>在应用程序之前就得知了目标角色</li>
+<li>代理对象会增强目标对象的行为</li>
+</ol>
+
+<h3 id="动态代理" class="anchor-link"><a href="#%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86">动态代理</a></h3>
+
+<h4 id="特点-1" class="anchor-link"><a href="#%e7%89%b9%e7%82%b9-1">特点</a></h4>
+<ol>
+<li>目标对象不固定。</li>
+<li>在程序运行时动态创建目标对象。</li>
+<li>代理对象会增强目标对象的行为。</li>
+</ol>
+
+<h4 id="jdk-动态代理" class="anchor-link"><a href="#jdk-%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86">JDK 动态代理</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#ff79c6">import</span> java.lang.reflect.InvocationHandler<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> java.lang.reflect.Method<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> java.lang.reflect.Proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * JDK 动态代理类
+</span><span style="color:#6272a4"> * 每一个代理类都需要实现 InvocationHandler 接口
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">JdkHandler</span> <span style="color:#8be9fd;font-style:italic">implements</span> InvocationHandler <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">// 目标对象 不固定， 创建时动态生成
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> Object target<span style="color:#ff79c6">;</span>
+    <span style="color:#6272a4">// 通过带参构造器传递目标对象
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">JdkHandler</span><span style="color:#ff79c6">(</span>Objecttarget<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">target</span> <span style="color:#ff79c6">=</span>target<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 获取代理对象
+</span><span style="color:#6272a4">     * @return
+</span><span style="color:#6272a4">     */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">getProxy</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        Object object <span style="color:#ff79c6">=</span> Proxy<span style="color:#ff79c6">.</span><span style="color:#50fa7b">newProxyInstance</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">getClass</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getClassLoader</span><span style="color:#ff79c6">(),</span> target<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getClass</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">getInterfaces</span><span style="color:#ff79c6">(),</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> object<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 调用目标对象的方法
+</span><span style="color:#6272a4">     * 增强目标对象的行为
+</span><span style="color:#6272a4">     * @param proxy调用该方法的代理实例
+</span><span style="color:#6272a4">     * @param method目标对象的方法
+</span><span style="color:#6272a4">     * @param args目标对象的方法所需要的参数
+</span><span style="color:#6272a4">     * @return
+</span><span style="color:#6272a4">     * @throws Throwable
+</span><span style="color:#6272a4">     */</span>
+@Override
+<span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>Object proxy<span style="color:#ff79c6">,</span> Method method<span style="color:#ff79c6">,</span> Object<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">throws</span> Throwable <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 用户增强行为（前后都可能会有）
+</span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;增强方法&#34;</span><span style="color:#ff79c6">);</span>
+
+        <span style="color:#6272a4">// 调用目标对象中的方法（返回 Object）
+</span><span style="color:#6272a4"></span>        Object object <span style="color:#ff79c6">=</span>method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">,</span>args<span style="color:#ff79c6">);</span>
+
+        <span style="color:#ff79c6">return</span> object<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div><p>使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">JdkHandlerTest</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 目标对象
+</span><span style="color:#6272a4"></span>        You you <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> You<span style="color:#ff79c6">();</span>
+        <span style="color:#6272a4">// 代理类
+</span><span style="color:#6272a4"></span>        JdkHandler jdkHandler <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> JdkHandler<span style="color:#ff79c6">(</span>you<span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 得到代理对象
+</span><span style="color:#6272a4"></span>        Marry marry <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>Marry<span style="color:#ff79c6">)</span> jdkHandler<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getProxy</span><span style="color:#ff79c6">();</span>
+        marry<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h4 id="cglib-动态代理" class="anchor-link"><a href="#cglib-%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86">CGLIB 动态代理</a></h4>
+<p>实现原理：<strong>继承</strong></p>
+
+<h5 id="添加依赖" class="anchor-link"><a href="#%e6%b7%bb%e5%8a%a0%e4%be%9d%e8%b5%96">添加依赖</a></h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/cglib/cglib&gt; --&gt;</span>
+<span style="color:#ff79c6">&lt;dependency&gt;</span>
+    <span style="color:#ff79c6">&lt;groupId&gt;</span>cglib<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+    <span style="color:#ff79c6">&lt;artifactId&gt;</span>cglib<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+    <span style="color:#ff79c6">&lt;version&gt;</span>3.3.0<span style="color:#ff79c6">&lt;/version&gt;</span>
+<span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h5 id="定义类" class="anchor-link"><a href="#%e5%ae%9a%e4%b9%89%e7%b1%bb">定义类</a></h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#ff79c6">import</span> com.sun.org.apache.bcel.internal.generic.NEW<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> com.sun.tracing.dtrace.ArgsAttributes<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> net.sf.cglib.proxy.Enhancer<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> net.sf.cglib.proxy.MethodInterceptor<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> net.sf.cglib.proxy.MethodProxy<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> org.aopalliance.intercept.MethodInvocation<span style="color:#ff79c6">;</span>
+
+<span style="color:#ff79c6">import</span> java.lang.reflect.Method<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">CglibInterceptor</span> <span style="color:#8be9fd;font-style:italic">implements</span> MethodInterceptor <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">// 目标对象
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> Object target<span style="color:#ff79c6">;</span>
+    <span style="color:#6272a4">// 通过构造传入目标对象
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">CglibInterceptor</span><span style="color:#ff79c6">(</span>Object target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">target</span> <span style="color:#ff79c6">=</span> target<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 获取代理对象
+</span><span style="color:#6272a4">     * @return
+</span><span style="color:#6272a4">     */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">getProxy</span><span style="color:#ff79c6">(){</span>
+        <span style="color:#6272a4">// 通过 Enhancer 中的 create() 生成一个类
+</span><span style="color:#6272a4"></span>        Enhancer enhancer <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Enhancer<span style="color:#ff79c6">();</span>
+        <span style="color:#6272a4">// 将目标类作为代理类的父类
+</span><span style="color:#6272a4"></span>        enhancer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setSuperclass</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getClass</span><span style="color:#ff79c6">());</span>
+        <span style="color:#6272a4">// 设置拦截器 回调对象为本身
+</span><span style="color:#6272a4"></span>        enhancer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setCallback</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 生成代理类对象，返回
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">return</span> enhancer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">create</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+    
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 拦截器
+</span><span style="color:#6272a4">     * 1. 目标对象的方法调用
+</span><span style="color:#6272a4">     * 2. 行为增强
+</span><span style="color:#6272a4">     * @param o cglib 动态生成的代理类的实例
+</span><span style="color:#6272a4">     * @param method 实体类中所调用的被代理的方法的引用
+</span><span style="color:#6272a4">     * @param objects 参数列表
+</span><span style="color:#6272a4">     * @param methodProxy 生成的代理类对方法的代理引用(代理对象)
+</span><span style="color:#6272a4">     * @return
+</span><span style="color:#6272a4">     * @throws Throwable
+</span><span style="color:#6272a4">     */</span>
+    @Override
+    <span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">intercept</span><span style="color:#ff79c6">(</span>Object o<span style="color:#ff79c6">,</span> Method method<span style="color:#ff79c6">,</span> Object<span style="color:#ff79c6">[]</span> objects<span style="color:#ff79c6">,</span> MethodProxy methodProxy<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">throws</span> Throwable <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 增强行为
+</span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;增强行为&#34;</span><span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 调用目标类中的方法
+</span><span style="color:#6272a4"></span>        Object object <span style="color:#ff79c6">=</span> method<span style="color:#ff79c6">.</span><span style="color:#50fa7b">invoke</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">,</span> objects<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> object<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h5 id="使用" class="anchor-link"><a href="#%e4%bd%bf%e7%94%a8">使用</a></h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">JdkHandlerTest</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span>args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 目标对象
+</span><span style="color:#6272a4"></span>        You you <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> You<span style="color:#ff79c6">();</span>
+        <span style="color:#6272a4">// 代理类
+</span><span style="color:#6272a4"></span>        CglibInterceptor cglibInterceptor <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> CglibInterceptor<span style="color:#ff79c6">(</span>you<span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 得到代理对象
+</span><span style="color:#6272a4"></span>        Marry marry <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>Marry<span style="color:#ff79c6">)</span> cglibInterceptor<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getProxy</span><span style="color:#ff79c6">();</span>
+        marry<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">();</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div><p>区别：</p>
+<ol>
+<li>JDK 实现接口，Cglib 继承</li>
+<li>JDK （目标对象存在接口时）效率高于 Cglib</li>
+<li>如果目标对象有接口实现选择 JDK ，否则选择 Cglib</li>
+</ol>
+
+<h2 id="注入依赖" class="anchor-link"><a href="#%e6%b3%a8%e5%85%a5%e4%be%9d%e8%b5%96">注入依赖</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/org.aspectj/aspectjweaver&gt; --&gt;</span>
+    <span style="color:#ff79c6">&lt;dependency&gt;</span>
+      <span style="color:#ff79c6">&lt;groupId&gt;</span>org.aspectj<span style="color:#ff79c6">&lt;/groupId&gt;</span>
+      <span style="color:#ff79c6">&lt;artifactId&gt;</span>aspectjweaver<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
+      <span style="color:#ff79c6">&lt;version&gt;</span>1.9.6<span style="color:#ff79c6">&lt;/version&gt;</span>
+    <span style="color:#ff79c6">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h2 id="修改-xml" class="anchor-link"><a href="#%e4%bf%ae%e6%94%b9-xml">修改 xml</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#ff79c6">&lt;beans</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
+       <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
+       <span style="color:#50fa7b">xmlns:aop=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/aop&gt;&#34;</span>
+       <span style="color:#50fa7b">xmlns:context=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/context&gt;&#34;</span>
+       <span style="color:#50fa7b">xsi:schemaLocation=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/beans/spring-beans.xsd&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/context/spring-context.xsd&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/aop&gt;
+</span><span style="color:#f1fa8c">       &lt;http://www.springframework.org/schema/aop/spring-aop.xsd&gt;&#34;</span><span style="color:#ff79c6">&gt;</span>
+
+    <span style="color:#ff79c6">&lt;context:component-scan</span> <span style="color:#50fa7b">base-package=</span><span style="color:#f1fa8c">&#34;com.sundingyi&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<span style="color:#6272a4">&lt;!--    配置AOP自动代理--&gt;</span>
+    <span style="color:#ff79c6">&lt;aop:aspectj-autoproxy/&gt;</span>
+<span style="color:#ff79c6">&lt;/beans&gt;</span>
+</code></pre></div>
+<h2 id="实现" class="anchor-link"><a href="#%e5%ae%9e%e7%8e%b0">实现</a></h2>
+
+<h3 id="注解实现" class="anchor-link"><a href="#%e6%b3%a8%e8%a7%a3%e5%ae%9e%e7%8e%b0">注解实现</a></h3>
+<p>切面是切入点和通知的抽象。</p>
+<p>切入点：定义拦截哪些类的哪些方法</p>
+<p>通知：定义拦截以后要做什么事情</p>
+<p>切入点表达式：</p>
+<ul>
+<li>
+<p>执行所有的 public 方法 <code>@Pointcut(&quot;execution(* com.sundingyi.service.*.*(..))&quot;)</code> 第一个 * 代表了方法的修饰范围，有三个（public private protected） 如果是一个 * 则表示所有范围。所以要这么写： <code>execution(public *(..))</code></p>
+</li>
+<li>
+<p>执行所有的set() <code>execution(* *(..))</code></p>
+</li>
+<li>
+<p>设置指定包下的任意一个类的任意方法（比如com.xxxx.service） <code>execution(* com.xxxx.service.*.*(..))</code></p>
+</li>
+<li>
+<p>设置指定包（service）及子包下的所有方法</p>
+<p><code>execution(* com.xxxx.service..*.*(..))</code></p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.aspect<span style="color:#ff79c6">;</span>
+
+<span style="color:#ff79c6">import</span> org.aspectj.lang.ProceedingJoinPoint<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> org.aspectj.lang.annotation.*<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">import</span> org.springframework.stereotype.Component<span style="color:#ff79c6">;</span>
+
+@Component<span style="color:#6272a4">// 交给 IOC 容器实例化
+</span><span style="color:#6272a4"></span>@Aspect<span style="color:#6272a4">// 声明当前类是一个切面 定义切入点和通知
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">LogCut</span> <span style="color:#ff79c6">{</span>
+
+    <span style="color:#6272a4">// 切入点
+</span><span style="color:#6272a4"></span>@Pointcut<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;execution(* com.sundingyi.service..*.*(..))&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">cut</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 声明前置通知，并将通知应用到指定的切入点上
+</span><span style="color:#6272a4">     * 目标类的方法执行前会执行该通知
+</span><span style="color:#6272a4">     */</span>
+@Before<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;cut()&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">before</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;前置通知&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 声明返回通知，并将通知应用到指定的切入点上
+</span><span style="color:#6272a4">     * 目标类的方法在无异常执行后，执行该通知。
+</span><span style="color:#6272a4">     */</span>
+@AfterReturning<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;cut()&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">afterReturn</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;返回通知&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 声明最终通知，并将通知应用到指定的切入点上
+</span><span style="color:#6272a4">     * 目标类的方法无论是有无异常执行后，该通知都会执行
+</span><span style="color:#6272a4">     */</span>
+@After<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;cut()&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">after</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;after()...&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 声明最终通知，并将通知应用到指定的切入点上
+</span><span style="color:#6272a4">     * 目标类的方法在异常时，执行该通知
+</span><span style="color:#6272a4">     */</span>
+@AfterThrowing<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;cut()&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">afterThrow</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;异常通知...&#34;</span><span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * 声明环绕通知，并将通知应用到指定的切入点上
+</span><span style="color:#6272a4">     * 目标类的方法执行前后都可以通过环绕通知定义相应的处理
+</span><span style="color:#6272a4">     * 需要通过显式调用方法，否则无法访问指定方法，pjp.proceed()
+</span><span style="color:#6272a4">     */</span>
+@Around<span style="color:#ff79c6">(</span>value <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;cut()&#34;</span><span style="color:#ff79c6">)</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> Object <span style="color:#50fa7b">around</span><span style="color:#ff79c6">(</span>ProceedingJoinPointpjp<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;环绕通知-前置通知&#34;</span><span style="color:#ff79c6">);</span>
+
+        Object object <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">try</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#6272a4">// 显式调用对应的方法
+</span><span style="color:#6272a4"></span>            object <span style="color:#ff79c6">=</span>pjp<span style="color:#ff79c6">.</span><span style="color:#50fa7b">proceed</span><span style="color:#ff79c6">();</span>
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>pjp<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getTarget</span><span style="color:#ff79c6">());</span>
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;环绕通知-返回通知&#34;</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">catch</span> <span style="color:#ff79c6">(</span>Throwablethrowable<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+throwable<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printStackTrace</span><span style="color:#ff79c6">();</span>
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;环绕通知异常通知&#34;</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">finally</span> <span style="color:#ff79c6">{</span>
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;环绕通知-最终通知&#34;</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> object<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h3 id="xml-文件实现" class="anchor-link"><a href="#xml-%e6%96%87%e4%bb%b6%e5%ae%9e%e7%8e%b0">xml 文件实现</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;aop:config&gt;</span>
+  <span style="color:#ff79c6">&lt;aop:aspect</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;time&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;timeHandler&#34;</span><span style="color:#ff79c6">&gt;</span>
+      <span style="color:#ff79c6">&lt;aop:pointcut</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;addAllMethod&#34;</span> <span style="color:#50fa7b">expression=</span><span style="color:#f1fa8c">&#34;execution(* com.xrq.aop.HelloWorld.*(..))&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;aop:before</span> <span style="color:#50fa7b">method=</span><span style="color:#f1fa8c">&#34;printTime&#34;</span> <span style="color:#50fa7b">pointcut-ref=</span><span style="color:#f1fa8c">&#34;addAllMethod&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+      <span style="color:#ff79c6">&lt;aop:after</span> <span style="color:#50fa7b">method=</span><span style="color:#f1fa8c">&#34;printTime&#34;</span> <span style="color:#50fa7b">pointcut-ref=</span><span style="color:#f1fa8c">&#34;addAllMethod&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+  <span style="color:#ff79c6">&lt;/aop:aspect&gt;</span>
+<span style="color:#ff79c6">&lt;/aop:config&gt;</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
