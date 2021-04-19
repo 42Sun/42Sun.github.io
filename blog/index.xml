@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 18 Apr 2021 13:37:03 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Apr 2021 21:03:25 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 130-132</title>
+      <link>https://sundingyi.com/blog/75/</link>
+      <pubDate>Mon, 19 Apr 2021 21:03:25 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/75/</guid>
+      <description>130 给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 126-129</title>
       <link>https://sundingyi.com/blog/74/</link>
