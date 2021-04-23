@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Apr 2021 15:50:13 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 20:33:00 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 137-139</title>
+      <link>https://sundingyi.com/blog/77/</link>
+      <pubDate>Fri, 23 Apr 2021 20:33:00 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/77/</guid>
+      <description>137 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。 class Solution { int pre; int ans; public int minDiffInBST(TreeNode root) { ans = Integer.MAX_VALUE; pre = -1; dfs(root); return ans; } public void dfs(TreeNode root ){ if (root == null) { return; }</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 133-136</title>
       <link>https://sundingyi.com/blog/76/</link>
