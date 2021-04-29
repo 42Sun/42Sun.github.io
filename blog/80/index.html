@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 146 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 146 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/80/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/80/">每日LeetCode 146</a>
+    </h2>
+    <div class="post-data">
+        2021.4.29 ・ 
+        共 247 字，您可能需要 1 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="146" class="anchor-link"><a href="#146">146</a></h2>
+<p>一个机器人位于一个 <code>m x n</code> 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。</p>
+<p>问总共有多少条不同的路径？</p>
+<pre><code>输入：m = 3, n = 2
+输出：3
+解释：
+从左上角开始，总共有 3 条路径可以到达右下角。
+1. 向右 -&gt; 向下 -&gt; 向下
+2. 向下 -&gt; 向下 -&gt; 向右
+3. 向下 -&gt; 向右 -&gt; 向下
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">uniquePaths</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>m<span style="color:#ff79c6">][</span>n<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> m<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            ans<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            ans<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">&lt;</span> m<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> ans<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+</span> ans<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">];</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">[</span>m <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">][</span>n <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">];</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
