@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 29 Apr 2021 20:08:24 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 21:21:09 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 147</title>
+      <link>https://sundingyi.com/blog/81/</link>
+      <pubDate>Fri, 30 Apr 2021 21:21:09 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/81/</guid>
+      <description>147 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。 机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角</description>
     </item>
     
     <item>
