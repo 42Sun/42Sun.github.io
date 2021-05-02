@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 30 Apr 2021 21:21:09 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 May 2021 20:24:36 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,24 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 149</title>
+      <link>https://sundingyi.com/blog/149/</link>
+      <pubDate>Sun, 02 May 2021 20:24:36 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/149/</guid>
+      <description>149 给定一个 *m* x *n* 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法**。** 进阶： 一个直观的解决方案是使用 O(*m**n*) 的额外</description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 148</title>
+      <link>https://sundingyi.com/blog/82/</link>
+      <pubDate>Sat, 01 May 2021 20:20:03 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/82/</guid>
+      <description>148 给定一个包含非负整数的 *m* x *n* 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。 **说明：**每次只能向下或者向右移动一</description>
     </item>
     
     <item>
