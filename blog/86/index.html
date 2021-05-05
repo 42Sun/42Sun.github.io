@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 152 155 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 152-155 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/86/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/86/">每日LeetCode 152-155</a>
+    </h2>
+    <div class="post-data">
+        2021.5.5 ・ 
+        共 665 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="152" class="anchor-link"><a href="#152">152</a></h2>
+<p>给定两个整数 <em>n</em> 和 <em>k</em>，返回 1 &hellip; <em>n</em> 中所有可能的 <em>k</em> 个数的组合。</p>
+<p><strong>示例:</strong></p>
+<pre><code>输入: n = 4, k = 2
+输出:
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#50fa7b">combine</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        getCombine<span style="color:#ff79c6">(</span>n<span style="color:#ff79c6">,</span> k<span style="color:#ff79c6">,</span> 1<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;());</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">getCombine</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> start<span style="color:#ff79c6">,</span> List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>k <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;(</span>list<span style="color:#ff79c6">));</span>
+            <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> start<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> n <span style="color:#ff79c6">-</span> k <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            list<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            getCombine<span style="color:#ff79c6">(</span>n<span style="color:#ff79c6">,</span> k <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">,</span> i <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">,</span> list<span style="color:#ff79c6">);</span>
+            list<span style="color:#ff79c6">.</span><span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>list<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="153" class="anchor-link"><a href="#153">153</a></h2>
+<p>找出所有相加之和为 <em><strong>n</strong></em> 的 <em><strong>k*</strong> 个数的组合</em>**。***组合中只允许含有 1 - 9 的正整数，并且每种组合中不存在重复的数字。</p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>所有数字都是正整数。</li>
+<li>解集不能包含重复的组合。</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: k = 3, n = 7
+输出: [[1,2,4]]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+    List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> path <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#50fa7b">combinationSum3</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        backtrack<span style="color:#ff79c6">(</span>k<span style="color:#ff79c6">,</span> n<span style="color:#ff79c6">,</span> 1<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">backtrack</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> start<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> sum<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">==</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>sum <span style="color:#ff79c6">==</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;(</span>path<span style="color:#ff79c6">));</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> start<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> 9<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            sum <span style="color:#ff79c6">+=</span> i<span style="color:#ff79c6">;</span>
+            backtrack<span style="color:#ff79c6">(</span>k<span style="color:#ff79c6">,</span> n<span style="color:#ff79c6">,</span> i <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">,</span> sum<span style="color:#ff79c6">);</span>
+            sum <span style="color:#ff79c6">-=</span> i<span style="color:#ff79c6">;</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="154" class="anchor-link"><a href="#154">154</a></h2>
+<p>给你一个整数数组 <code>nums</code> ，数组中的元素 <strong>互不相同</strong> 。返回该数组所有可能的子集（幂集）。</p>
+<p>解集 <strong>不能</strong> 包含重复的子集。你可以按 <strong>任意顺序</strong> 返回解集。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [1,2,3]
+输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+    List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> path <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+
+
+    <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#50fa7b">subsets</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        backtracker<span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> nums<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">backtracker</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> start<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;(</span>path<span style="color:#ff79c6">));</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> start<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++</span> <span style="color:#ff79c6">){</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]);</span>
+            backtracker<span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">,</span> nums<span style="color:#ff79c6">);</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="155" class="anchor-link"><a href="#155">155</a></h2>
+<p>给你一个整数数组 <code>nums</code> ，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。</p>
+<p>解集 <strong>不能</strong> 包含重复的子集。返回的解集中，子集可以按 <strong>任意顺序</strong> 排列。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [1,2,2]
+输出：[[],[1],[1,2],[1,2,2],[2],[2,2]]
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+    List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> path <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> <span style="color:#50fa7b">subsetsWithDup</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">sort</span><span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">);</span>
+        backtracker<span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> nums<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">backtracker</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> start<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;(</span>path<span style="color:#ff79c6">));</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> start<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">&gt;</span> start <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> nums<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">continue</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]);</span>
+            backtracker<span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">,</span> nums<span style="color:#ff79c6">);</span>
+            path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>path<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
