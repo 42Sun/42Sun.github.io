@@ -150,7 +150,7 @@
     </h2>
     <div class="post-data">
         2021.5.6 ・ 
-        共 552 字，您可能需要 2 分钟阅读
+        共 540 字，您可能需要 2 分钟阅读
         
     </div>
     
@@ -241,18 +241,12 @@
 解释：函数应返回新长度 length = 5, 并且原数组的前五个元素被修改为 1, 1, 2, 2, 3 。 不需要考虑数组中超出新长度后面的元素。
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">removeDuplicates</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">&lt;=</span> 2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">return</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">}</span>
         <span style="color:#8be9fd">int</span> slow <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span>
-        <span style="color:#8be9fd">int</span> fast <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>fast <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> fast <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span> fast <span style="color:#ff79c6">&lt;</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span> fast<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
             <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">[</span>slow <span style="color:#ff79c6">-</span> 2<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> nums<span style="color:#ff79c6">[</span>fast<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
                 nums<span style="color:#ff79c6">[</span>slow<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>fast<span style="color:#ff79c6">];</span>
                 slow<span style="color:#ff79c6">++;</span>
             <span style="color:#ff79c6">}</span>
-            fast<span style="color:#ff79c6">++;</span>
         <span style="color:#ff79c6">}</span>
         <span style="color:#ff79c6">return</span> slow<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
