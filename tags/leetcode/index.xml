@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 May 2021 15:58:03 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 17:18:07 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 166-168</title>
+      <link>https://sundingyi.com/blog/91/</link>
+      <pubDate>Tue, 11 May 2021 17:18:07 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/91/</guid>
+      <description>166 09 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 163-165</title>
       <link>https://sundingyi.com/blog/90/</link>
