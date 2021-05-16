@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 May 2021 13:00:04 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 19:28:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 176-177</title>
+      <link>https://sundingyi.com/blog/95/</link>
+      <pubDate>Sun, 16 May 2021 19:28:47 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/95/</guid>
+      <description>176 输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构) B是A的子结构， 即 A中有出现和B相同的结构和节点值。 例如:</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 173-175</title>
       <link>https://sundingyi.com/blog/94/</link>
