@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 May 2021 19:28:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 22:00:11 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 178-179</title>
+      <link>https://sundingyi.com/blog/96/</link>
+      <pubDate>Tue, 18 May 2021 22:00:11 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/96/</guid>
+      <description>178 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1 / 2 2 / \ / 3 4 4</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 176-177</title>
       <link>https://sundingyi.com/blog/95/</link>
