@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 May 2021 22:15:31 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 May 2021 19:56:20 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 187-188</title>
+      <link>https://sundingyi.com/blog/101/</link>
+      <pubDate>Sun, 30 May 2021 19:56:20 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/101/</guid>
+      <description>187 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。 示例 1： 输入：</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 185-186</title>
       <link>https://sundingyi.com/blog/100/</link>
