@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 May 2021 19:56:20 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Jun 2021 15:08:13 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>我花了几十个小时写一套自己的字体</title>
+      <link>https://sundingyi.com/blog/102/</link>
+      <pubDate>Fri, 25 Jun 2021 15:08:13 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/102/</guid>
+      <description>大概两年之前我第一次了解到手写体中文字库自动生成系统这个项目，当时也只是按照网站给的模板写了几页就发现网站不能再登上去了，起初以为是项目终止</description>
     </item>
     
     <item>
