@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 14 Aug 2021 17:08:43 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 20:32:33 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -26,12 +26,21 @@
     </item>
     
     <item>
-      <title>每日LeetCode 193-194</title>
+      <title>每日LeetCode 196 197</title>
+      <link>https://sundingyi.com/blog/107/</link>
+      <pubDate>Sun, 15 Aug 2021 20:32:33 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/107/</guid>
+      <description>196 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 没有重复出现 的数字。 返回同样按</description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 194-195</title>
       <link>https://sundingyi.com/blog/106/</link>
       <pubDate>Sat, 14 Aug 2021 17:08:43 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/106/</guid>
-      <description>193 给定一棵树的前序遍历 preorder 与中序遍历 inorder。请构造二叉树并返回其根节点。 Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7] Output: [3,9,20,null,null,15,7] class Solution { public TreeNode buildTree(int[] preorder, int[] inorder) { if (preorder.length == 0 || inorder.length == 0) { return null; }</description>
+      <description>194 给定一棵树的前序遍历 preorder 与中序遍历 inorder。请构造二叉树并返回其根节点。 Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7] Output: [3,9,20,null,null,15,7] class Solution { public TreeNode buildTree(int[] preorder, int[] inorder) { if (preorder.length == 0 || inorder.length == 0) { return null; }</description>
     </item>
     
     <item>
