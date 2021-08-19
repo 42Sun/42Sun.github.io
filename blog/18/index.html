@@ -186,7 +186,7 @@ Practice4 - 孙丁一的博客
     <ol>
 <li>编写一个类A，该类创建的对象可以调用方法f输出小写的英文字母表。然后再编写一个A类的子类B，要求子类B必须继承类A的方法f（不允许重写），子类B创建的对象不仅可以调用方法f输出小写的英文字母表，而且可以调用子类新增的方法g输出大写的英文字母表。最后编写主类C，在主类的main方法中测试类A与类B。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">C</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">C</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     A a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> A<span style="color:#ff79c6">();</span>
     a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">f</span><span style="color:#ff79c6">();</span>
@@ -230,7 +230,7 @@ Practice4 - 孙丁一的博客
 <p>创建一个左上角坐标为（10，10），长为20，宽为10的矩形对象；计算并打印输出矩形的面积和周长；判断点(25.5，13)是否在矩形内，并打印输出相关信息。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test2</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test2</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     PlainRect p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> PlainRect<span style="color:#ff79c6">(</span>10<span style="color:#ff79c6">,</span> 20<span style="color:#ff79c6">,</span> 10<span style="color:#ff79c6">,</span> 10<span style="color:#ff79c6">);</span>
     System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">area</span><span style="color:#ff79c6">());</span>
@@ -291,7 +291,7 @@ Practice4 - 孙丁一的博客
 <p>（2）编写一个类：ClassA来实现接口InterfaceA，实现int method(int n)接口方法时，要求计算1到n的和；</p>
 <p>（3）编写另一个类：ClassB来实现接口InterfaceA，实现int method(int n)接口方法时，要求计算n的阶乘（n!）；</p>
 <p>（4）编写测试类E，在测试类E的main方法中使用接口回调的形式来测试实现接口的类。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">E</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">E</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     InterfaceA a<span style="color:#ff79c6">;</span>
     a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ClassA<span style="color:#ff79c6">();</span>
@@ -328,7 +328,7 @@ Practice4 - 孙丁一的博客
   <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>2.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Adventure</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Adventure</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     Hero hb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Hero<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">);</span>
     hb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">swim</span><span style="color:#ff79c6">();</span>
@@ -387,7 +387,7 @@ Practice4 - 孙丁一的博客
 <p>（3）设计一个类UseCompute，含有方法：public void useCom(Compute com, int one, int two)</p>
 <p>此方法要求能够：1．用传递过来的对象调用computer方法完成运算  2．输出运算的结果</p>
 <p>（4）设计一个测试类，调用UseCompute中的方法useCom来完成+-*/运算</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     Computer c <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Plus<span style="color:#ff79c6">();</span>
     UseCompute u <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> UseCompute<span style="color:#ff79c6">();</span>
@@ -481,7 +481,7 @@ Practice4 - 孙丁一的博客
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

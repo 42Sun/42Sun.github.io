@@ -199,7 +199,7 @@ Java 多线程基础 - 孙丁一的博客
 
 <h3 id="继承-thread-类实现多线程" class="anchor-link"><a href="#%e7%bb%a7%e6%89%bf-thread-%e7%b1%bb%e5%ae%9e%e7%8e%b0%e5%a4%9a%e7%ba%bf%e7%a8%8b">继承 Thread 类实现多线程</a></h3>
 <p><code>java.lang.Thread</code> 类为实现多线程类的父类，但并不是实现了这个类就能够实现多线程处理。因为还需要覆写Thread类中<code>public void run()</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">extends</span> Thread <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">extends</span> Thread <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> String title<span style="color:#ff79c6">;</span>
 
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">MyThread</span><span style="color:#ff79c6">(</span>String title<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -215,7 +215,7 @@ Java 多线程基础 - 孙丁一的博客
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>多线程要执行的方法都应该在<code>run()</code> 中表明，但是<code>run()</code>是不能被直接调用的，要启动多线程必须使用<code>start()</code>.</p>
 <p>假如主函数如此定义：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">new</span> MyThread<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;A&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">run</span><span style="color:#ff79c6">();</span>
     <span style="color:#ff79c6">new</span> MyThread<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;B&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">run</span><span style="color:#ff79c6">();</span>
@@ -254,7 +254,7 @@ C, i =7
 C, i =8
 C, i =9
 </code></pre><p>使用<code>start()</code>时：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">new</span> MyThread<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;A&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
     <span style="color:#ff79c6">new</span> MyThread<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;B&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">start</span><span style="color:#ff79c6">();</span>
@@ -294,7 +294,7 @@ A, i =9
 C, i =9
 </code></pre><p>此时，多线程才启动。每一个线程对象只允许启动一次。</p>
 <p>观察源码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">start</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">start</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
     <span style="color:#6272a4">/**
 </span><span style="color:#6272a4">         * This method is not invoked for the main method thread or &#34;system&#34;
 </span><span style="color:#6272a4">         * group threads created/set up by the VM. Any new functionality added
@@ -333,7 +333,7 @@ C, i =9
 <p>继承Thread受限于单继承，因此有第二种形式提供多线程实现：<code>java.lang.Runnable</code>接口，此接口是一个函数式接口，只有一个<code>run()</code>，因此可以使用lambda表达式操作。</p>
 <p>实现此接口时，由于不再继承Thread，那么实现的类也就没有<code>start()</code>, 如果不使用<code>start()</code>无法进行多线程启动。</p>
 <p>在Thread构造方法：<code>public Thread(Runnable target)</code>中接收了此接口。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> String title<span style="color:#ff79c6">;</span>
 
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">MyThread</span><span style="color:#ff79c6">(</span>String title<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -359,7 +359,7 @@ C, i =9
 </span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>也可以利用lambda表达式进行定义：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> x <span style="color:#ff79c6">&lt;</span> 3<span style="color:#ff79c6">;</span> x<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
       String title <span style="color:#ff79c6">=</span> String<span style="color:#ff79c6">.</span><span style="color:#50fa7b">valueOf</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">);</span>
@@ -374,7 +374,7 @@ C, i =9
   <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>简化版</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> x <span style="color:#ff79c6">&lt;</span> 3<span style="color:#ff79c6">;</span> x<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
       String title <span style="color:#ff79c6">=</span> String<span style="color:#ff79c6">.</span><span style="color:#50fa7b">valueOf</span><span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">);</span>
@@ -393,7 +393,7 @@ C, i =9
 <p>多线程的本质是在于多个线程可以进行统一资源的抢占<img src="https://tvax1.sinaimg.cn/large/a8eb46baly1glc5a807cnj20o209ft9a.jpg" alt="未命名绘图"></p>
 
 <h3 id="例利用卖票程序实现多个线程的资源并发访问" class="anchor-link"><a href="#%e4%be%8b%e5%88%a9%e7%94%a8%e5%8d%96%e7%a5%a8%e7%a8%8b%e5%ba%8f%e5%ae%9e%e7%8e%b0%e5%a4%9a%e4%b8%aa%e7%ba%bf%e7%a8%8b%e7%9a%84%e8%b5%84%e6%ba%90%e5%b9%b6%e5%8f%91%e8%ae%bf%e9%97%ae">例：利用卖票程序实现多个线程的资源并发访问</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> ticket <span style="color:#ff79c6">=</span> 5<span style="color:#ff79c6">;</span>
 
   @Override
@@ -419,7 +419,7 @@ C, i =9
 
 <h2 id="callable-实现多线程" class="anchor-link"><a href="#callable-%e5%ae%9e%e7%8e%b0%e5%a4%9a%e7%ba%bf%e7%a8%8b">Callable 实现多线程</a></h2>
 <p>Runnable接口有一个缺点，就是无法获取返回值。从 JDK 1.5 之后就提出了一个新的线程实现接口：<code>java.util.concurrent.Callable</code> ( JUC )</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@FunctionalInterface
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@FunctionalInterface
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">interface</span> <span style="color:#50fa7b">Callable</span><span style="color:#ff79c6">&lt;</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
     <span style="color:#6272a4">/**
 </span><span style="color:#6272a4">     * Computes a result, or throws an exception if unable to do so.
@@ -430,7 +430,7 @@ C, i =9
     V <span style="color:#50fa7b">call</span><span style="color:#ff79c6">()</span> <span style="color:#8be9fd;font-style:italic">throws</span> Exception<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p><img src="https://tvax4.sinaimg.cn/large/a8eb46baly1glc5aoxmivj20lf0cnjs0.jpg" alt="未命名绘图"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.util.concurrent.Callable<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.util.concurrent.Callable<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">import</span> java.util.concurrent.FutureTask<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Callable<span style="color:#ff79c6">&lt;</span>String<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
@@ -508,7 +508,7 @@ C, i =9
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

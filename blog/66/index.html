@@ -199,7 +199,7 @@
      2
     /
    2
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd">int</span> base<span style="color:#ff79c6">;</span>
     <span style="color:#8be9fd">int</span> count<span style="color:#ff79c6">;</span>
     <span style="color:#8be9fd">int</span> maxCount<span style="color:#ff79c6">;</span>
@@ -249,7 +249,7 @@
 输出: 3
 解析: 一共有三种种类的糖果，每一种都有两个。
      最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">distributeCandies</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> candyType<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> set <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
         <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">:</span> candyType<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -264,7 +264,7 @@
 <p>N 叉树 在输入中按层序遍历进行序列化表示，每组子节点由空值 <code>null</code> 分隔（请参见示例）。</p>
 
 <h3 id="递归" class="anchor-link"><a href="#%e9%80%92%e5%bd%92">递归</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">preorder</span><span style="color:#ff79c6">(</span>Node root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
         fun<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">,</span> ans<span style="color:#ff79c6">);</span>
@@ -283,7 +283,7 @@
 <span style="color:#ff79c6">}</span>
 </code></pre></div>
 <h3 id="迭代" class="anchor-link"><a href="#%e8%bf%ad%e4%bb%a3">迭代</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">preorder</span><span style="color:#ff79c6">(</span>Node root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         LinkedList<span style="color:#ff79c6">&lt;</span>Node<span style="color:#ff79c6">&gt;</span> stack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkedList<span style="color:#ff79c6">&lt;&gt;();</span>
         List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkedList<span style="color:#ff79c6">&lt;&gt;();</span>
@@ -306,7 +306,7 @@
 </code></pre></div>
 <h2 id="106" class="anchor-link"><a href="#106">106</a></h2>
 <p>给定一个二叉树，返回其节点值的 <strong>前序遍历</strong> 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">preorderTraversal</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         List<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> ans <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
         Deque<span style="color:#ff79c6">&lt;</span>TreeNode<span style="color:#ff79c6">&gt;</span> stack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkedList<span style="color:#ff79c6">&lt;&gt;();</span>
@@ -368,7 +368,7 @@
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

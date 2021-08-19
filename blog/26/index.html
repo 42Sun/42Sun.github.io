@@ -195,7 +195,7 @@
 
 <h3 id="引出" class="anchor-link"><a href="#%e5%bc%95%e5%87%ba">引出</a></h3>
 <p>一个简单的卖票程序，创建若干个线程对象来实现。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> ticket <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
 
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
@@ -231,11 +231,11 @@
 <p>如果想在程序之中实现锁的功能，就可以使用<code>synchcronized</code>关键字，利用此关键字可以定义同步方法或同步代码块，在同步代码块的操作里只允许一个线程执行。</p>
 
 <h4 id="利用同步代码块进行处理" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e8%bf%9b%e8%a1%8c%e5%a4%84%e7%90%86">利用同步代码块进行处理</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">synchcronized<span style="color:#ff79c6">(</span>同步对象<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">synchcronized<span style="color:#ff79c6">(</span>同步对象<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
   同步代码操作<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>一般进行同步对象处理的时候，可以采用当前对象进行同步。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> ticket <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
 
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">run</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
@@ -269,7 +269,7 @@
 
 <h4 id="利用同步方法解决" class="anchor-link"><a href="#%e5%88%a9%e7%94%a8%e5%90%8c%e6%ad%a5%e6%96%b9%e6%b3%95%e8%a7%a3%e5%86%b3">利用同步方法解决</a></h4>
 <p>只需要在方法定义上使用<code>synchronized</code>关键字即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyThread</span> <span style="color:#8be9fd;font-style:italic">implements</span> Runnable <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> ticket <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
 
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">sell</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
@@ -304,7 +304,7 @@
 
 <h2 id="线程死锁" class="anchor-link"><a href="#%e7%ba%bf%e7%a8%8b%e6%ad%bb%e9%94%81">线程死锁</a></h2>
 <p>死锁是在进行多线程同步的处理之中有可能产生的一种问题。指的是若干个线程彼此互相等待的状态。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Person</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Person</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">synchronized</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">say</span><span style="color:#ff79c6">(</span>Person2 p2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Person类提示&#34;</span><span style="color:#ff79c6">);</span>
     p2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">();</span>
@@ -388,7 +388,7 @@
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

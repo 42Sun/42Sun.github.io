@@ -206,7 +206,7 @@ Java 常用基础类库 - 孙丁一的博客
 </li>
 <li>数据追加：<code>public StringBuffer append( 各种数据类型 )</code>相当于字符串的 +</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     StringBuffer sb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuffer<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Hello&#34;</span><span style="color:#ff79c6">);</span>
     change<span style="color:#ff79c6">(</span>sb<span style="color:#ff79c6">);</span>
@@ -221,7 +221,7 @@ Java 常用基础类库 - 孙丁一的博客
 
 <h3 id="插入数据" class="anchor-link"><a href="#%e6%8f%92%e5%85%a5%e6%95%b0%e6%8d%ae">插入数据</a></h3>
 <p><code>public StringBuffer insert(int offset, 数据类型 b)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     StringBuffer sb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuffer<span style="color:#ff79c6">();</span>
     sb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">insert</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> <span style="color:#f1fa8c">&#34;world&#34;</span><span style="color:#ff79c6">);</span>
@@ -231,7 +231,7 @@ Java 常用基础类库 - 孙丁一的博客
 </code></pre></div>
 <h3 id="删除指定范围的数据" class="anchor-link"><a href="#%e5%88%a0%e9%99%a4%e6%8c%87%e5%ae%9a%e8%8c%83%e5%9b%b4%e7%9a%84%e6%95%b0%e6%8d%ae">删除指定范围的数据</a></h3>
 <p><code>public StringBuffer delete(int start, int end)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     StringBuffer sb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuffer<span style="color:#ff79c6">();</span>
     sb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello&#34;</span><span style="color:#ff79c6">).</span><span style="color:#50fa7b">delete</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> 2<span style="color:#ff79c6">);</span>
@@ -241,7 +241,7 @@ Java 常用基础类库 - 孙丁一的博客
 </code></pre></div>
 <h3 id="字符串反转" class="anchor-link"><a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8f%8d%e8%bd%ac">字符串反转</a></h3>
 <p><code>public StringBuffer reverse()</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     StringBuffer sb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuffer<span style="color:#ff79c6">();</span>
     sb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello&#34;</span><span style="color:#ff79c6">);</span>
@@ -255,7 +255,7 @@ Java 常用基础类库 - 孙丁一的博客
 <h2 id="charsequence-接口" class="anchor-link"><a href="#charsequence-%e6%8e%a5%e5%8f%a3">CharSequence 接口</a></h2>
 <p><code>CharSequence</code>是一个描述字符串结构的接口，有三个常用的子类实现了这个接口。分别是<code>String</code>,<code>StringBuffer</code>,<code>StringBuilder</code>。</p>
 <p>在<code>StringBuffer</code>和<code>StringBuilder</code>中可以将<code>CharSequence</code>作为参数传入。只要有字符串，就可以为<code>CharSequence</code>接口实例化。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     CharSequence str <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;hello world&#34;</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 子类实例向父接口向上转型
 </span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">}</span>
@@ -266,7 +266,7 @@ Java 常用基础类库 - 孙丁一的博客
 <li><code>int length();</code>获取字符串的长度。</li>
 <li><code>CharSequence subSequence(int start, int end);</code>截取部分字符串。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     CharSequence str <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;hello world&#34;</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 子类实例向父接口向上转型
 </span><span style="color:#6272a4"></span>    CharSequence sub <span style="color:#ff79c6">=</span> str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">subSequence</span><span style="color:#ff79c6">(</span>0<span style="color:#ff79c6">,</span> 5<span style="color:#ff79c6">);</span>
@@ -278,7 +278,7 @@ Java 常用基础类库 - 孙丁一的博客
 <h2 id="autocloseable-接口" class="anchor-link"><a href="#autocloseable-%e6%8e%a5%e5%8f%a3">AutoCloseable 接口</a></h2>
 <p><code>AutoCloseable</code>主要是用于资源开发的处理上，以实现资源的自动关闭。在进行文件、网络、数据库的开发过程之中，由于服务器的资源有限，在使用之后，应该关闭资源。</p>
 <p>模拟消息发送处理流程：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     NetMessage nm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NetMessage<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">);</span>
     <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nm<span style="color:#ff79c6">.</span><span style="color:#50fa7b">open</span><span style="color:#ff79c6">())</span> <span style="color:#ff79c6">{</span>
@@ -314,7 +314,7 @@ Java 常用基础类库 - 孙丁一的博客
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>既然所有的资源完成处理之后要进行关闭操作，那么为什么不进行自动关闭呢？于是为了实现这一需求，出现了<code>AutoCloseable</code>接口。该接口只提供有一个方法<code>void close() throws Exception</code></p>
 <p>要想实现自动关闭处理，除了要实现<code>AutoClosed</code>之外，还需要结合异常处理语句才能正常调用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">throws</span> Exception <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">try</span> <span style="color:#ff79c6">(</span>NetMessage nm <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NetMessage<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
       nm<span style="color:#ff79c6">.</span><span style="color:#50fa7b">open</span><span style="color:#ff79c6">();</span>
@@ -352,7 +352,7 @@ Java 常用基础类库 - 孙丁一的博客
 <p><code>Runtime</code>描述的是运行时的状态，在整个 JVM 中，<code>Runtime</code>类是唯一一个与 JVM 运行状态有关的类，并且都会默认提供一个该类的实例化对象。</p>
 <p>由于在每一个 JVM 进程里面只允许提供有一个<code>Runtime</code>类的对象，所以这个类的构造方法是默认私有的，则证明该类使用的是单类设计模式，所以就会提供一个静态方法获取本类实例。</p>
 <p>如果想获取实例化对象，那么就可以依靠类中的<code>public static Runtime getRuntime()</code>完成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     Runtime run <span style="color:#ff79c6">=</span> Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">();</span>
     System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>run<span style="color:#ff79c6">.</span><span style="color:#50fa7b">availableProcessors</span><span style="color:#ff79c6">());</span> <span style="color:#6272a4">// 获取当前可用线程数
@@ -369,13 +369,13 @@ Java 常用基础类库 - 孙丁一的博客
 <li>获取当前时间：<code>public static native long currentTimeMillis();</code></li>
 <li>垃圾回收：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gc</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">gc</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
         Runtime<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getRuntime</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">gc</span><span style="color:#ff79c6">();</span>
     <span style="color:#ff79c6">}</span>
 </code></pre></div>
 <h2 id="cleaner-类" class="anchor-link"><a href="#cleaner-%e7%b1%bb">Cleaner 类</a></h2>
 <p><code>Cleaner</code>类主要是进行<code>finalize()</code>的替代。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.lang.ref.Cleaner<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.lang.ref.Cleaner<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -413,7 +413,7 @@ Java 常用基础类库 - 孙丁一的博客
 
 <h2 id="对象克隆" class="anchor-link"><a href="#%e5%af%b9%e8%b1%a1%e5%85%8b%e9%9a%86">对象克隆</a></h2>
 <p>所谓的对象克隆指的就是对象复制，而且属于全新的复制，需要使用<code>Object</code>中的<code>clone()</code>。所有的类都有<code>clone()</code>，但不是所有的类都希望被克隆。如果想实现对象克隆，那么对象所在的类需要实现接口<code>Cloneable</code>。此接口没有一个方法，因为它描述的是一种能力。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">throws</span> CloneNotSupportedException <span style="color:#ff79c6">{</span>
     Member member <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Member<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;haha&#34;</span><span style="color:#ff79c6">,</span> 12<span style="color:#ff79c6">);</span>
     Member memberB <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>Member<span style="color:#ff79c6">)</span> member<span style="color:#ff79c6">.</span><span style="color:#50fa7b">clone</span><span style="color:#ff79c6">();</span>
@@ -456,7 +456,7 @@ Java 常用基础类库 - 孙丁一的博客
 <p>假设一个数字很大，超过了 double 的范围，这个时候没有一种数据类型可以保存下此内容，为了解决此问题，提供有两个大数字操作类。</p>
 
 <h4 id="biginteger" class="anchor-link"><a href="#biginteger">BigInteger</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.math.BigInteger<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.math.BigInteger<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -473,7 +473,7 @@ Java 常用基础类库 - 孙丁一的博客
 </code></pre></div>
 <h4 id="bigdecimal" class="anchor-link"><a href="#bigdecimal">BigDecimal</a></h4>
 <p>使用基本同上，但是在<code>BigDecimal</code>中有一个数据进位的问题，使用如下方式进行进位控制。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.math.BigDecimal<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.math.BigDecimal<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">import</span> java.math.RoundingMode<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
@@ -491,7 +491,7 @@ Java 常用基础类库 - 孙丁一的博客
 <li>将 long 转为 Date <code>public Date(long date)</code></li>
 <li>将 Date 转为 long <code>public long getTime()</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.util.Date<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> java.util.Date<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -545,7 +545,7 @@ Java 常用基础类库 - 孙丁一的博客
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

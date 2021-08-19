@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-Spring a O P - 孙丁一的博客
+Spring Aop - 孙丁一的博客
 </title>
 
 
@@ -201,8 +201,8 @@ Spring a O P - 孙丁一的博客
 <ol>
 <li>
 <p>有共同的行为（结婚）- 定义成接口</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
-   
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
 <span style="color:#6272a4">/**
 </span><span style="color:#6272a4"> * 定义行为
 </span><span style="color:#6272a4"> */</span>
@@ -212,8 +212,8 @@ Spring a O P - 孙丁一的博客
 </code></pre></div></li>
 <li>
 <p>目标角色（新人）- 实现接口</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
-   
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
 <span style="color:#6272a4">/**
 </span><span style="color:#6272a4"> * 目标角色 实现行为
 </span><span style="color:#6272a4"> */</span>
@@ -226,8 +226,8 @@ Spring a O P - 孙丁一的博客
 </code></pre></div></li>
 <li>
 <p>代理角色（婚庆公司） - 实现接口、用户行为的增强</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
-   
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+
 <span style="color:#6272a4">/**
 </span><span style="color:#6272a4"> * 静态代理的代理角色
 </span><span style="color:#6272a4"> * 1. 实现行为
@@ -240,7 +240,7 @@ Spring a O P - 孙丁一的博客
 </span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">MarryCompany</span><span style="color:#ff79c6">(</span>Marrytarget<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">target</span> <span style="color:#ff79c6">=</span>target<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
-   
+
     <span style="color:#6272a4">//1
 </span><span style="color:#6272a4"></span>@Override
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">toMarry</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
@@ -253,7 +253,7 @@ Spring a O P - 孙丁一的博客
 </code></pre></div></li>
 </ol>
 <p>执行测试：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">StaticProxy</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -283,7 +283,7 @@ Spring a O P - 孙丁一的博客
 </ol>
 
 <h4 id="jdk-动态代理" class="anchor-link"><a href="#jdk-%e5%8a%a8%e6%80%81%e4%bb%a3%e7%90%86">JDK 动态代理</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
 
 <span style="color:#ff79c6">import</span> java.lang.reflect.InvocationHandler<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">import</span> java.lang.reflect.Method<span style="color:#ff79c6">;</span>
@@ -331,7 +331,7 @@ Spring a O P - 孙丁一的博客
     <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">JdkHandlerTest</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -349,7 +349,7 @@ Spring a O P - 孙丁一的博客
 <p>实现原理：<strong>继承</strong></p>
 
 <h5 id="添加依赖" class="anchor-link"><a href="#%e6%b7%bb%e5%8a%a0%e4%be%9d%e8%b5%96">添加依赖</a></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/cglib/cglib&gt; --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/cglib/cglib&gt; --&gt;</span>
 <span style="color:#ff79c6">&lt;dependency&gt;</span>
     <span style="color:#ff79c6">&lt;groupId&gt;</span>cglib<span style="color:#ff79c6">&lt;/groupId&gt;</span>
     <span style="color:#ff79c6">&lt;artifactId&gt;</span>cglib<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
@@ -357,7 +357,7 @@ Spring a O P - 孙丁一的博客
 <span style="color:#ff79c6">&lt;/dependency&gt;</span>
 </code></pre></div>
 <h5 id="定义类" class="anchor-link"><a href="#%e5%ae%9a%e4%b9%89%e7%b1%bb">定义类</a></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
 
 <span style="color:#ff79c6">import</span> com.sun.org.apache.bcel.internal.generic.NEW<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">import</span> com.sun.tracing.dtrace.ArgsAttributes<span style="color:#ff79c6">;</span>
@@ -413,7 +413,7 @@ Spring a O P - 孙丁一的博客
 <span style="color:#ff79c6">}</span>
 </code></pre></div>
 <h5 id="使用" class="anchor-link"><a href="#%e4%bd%bf%e7%94%a8">使用</a></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.proxy<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">JdkHandlerTest</span> <span style="color:#ff79c6">{</span>
     <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span>args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -434,7 +434,7 @@ Spring a O P - 孙丁一的博客
 </ol>
 
 <h2 id="注入依赖" class="anchor-link"><a href="#%e6%b3%a8%e5%85%a5%e4%be%9d%e8%b5%96">注入依赖</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/org.aspectj/aspectjweaver&gt; --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6272a4">&lt;!-- &lt;https://mvnrepository.com/artifact/org.aspectj/aspectjweaver&gt; --&gt;</span>
     <span style="color:#ff79c6">&lt;dependency&gt;</span>
       <span style="color:#ff79c6">&lt;groupId&gt;</span>org.aspectj<span style="color:#ff79c6">&lt;/groupId&gt;</span>
       <span style="color:#ff79c6">&lt;artifactId&gt;</span>aspectjweaver<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
@@ -442,7 +442,7 @@ Spring a O P - 孙丁一的博客
     <span style="color:#ff79c6">&lt;/dependency&gt;</span>
 </code></pre></div>
 <h2 id="修改-xml" class="anchor-link"><a href="#%e4%bf%ae%e6%94%b9-xml">修改 xml</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;beans</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
        <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
        <span style="color:#50fa7b">xmlns:aop=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/aop&gt;&#34;</span>
@@ -481,7 +481,7 @@ Spring a O P - 孙丁一的博客
 <p><code>execution(* com.xxxx.service..*.*(..))</code></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.aspect<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.sundingyi.aspect<span style="color:#ff79c6">;</span>
 
 <span style="color:#ff79c6">import</span> org.aspectj.lang.ProceedingJoinPoint<span style="color:#ff79c6">;</span>
 <span style="color:#ff79c6">import</span> org.aspectj.lang.annotation.*<span style="color:#ff79c6">;</span>
@@ -559,7 +559,7 @@ throwable<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printSt
 <span style="color:#ff79c6">}</span>
 </code></pre></div>
 <h3 id="xml-文件实现" class="anchor-link"><a href="#xml-%e6%96%87%e4%bb%b6%e5%ae%9e%e7%8e%b0">xml 文件实现</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;aop:config&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;aop:config&gt;</span>
   <span style="color:#ff79c6">&lt;aop:aspect</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;time&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;timeHandler&#34;</span><span style="color:#ff79c6">&gt;</span>
       <span style="color:#ff79c6">&lt;aop:pointcut</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;addAllMethod&#34;</span> <span style="color:#50fa7b">expression=</span><span style="color:#f1fa8c">&#34;execution(* com.xrq.aop.HelloWorld.*(..))&#34;</span> <span style="color:#ff79c6">/&gt;</span>
       <span style="color:#ff79c6">&lt;aop:before</span> <span style="color:#50fa7b">method=</span><span style="color:#f1fa8c">&#34;printTime&#34;</span> <span style="color:#50fa7b">pointcut-ref=</span><span style="color:#f1fa8c">&#34;addAllMethod&#34;</span> <span style="color:#ff79c6">/&gt;</span>
@@ -609,7 +609,7 @@ throwable<span style="color:#ff79c6">.</span><span style="color:#50fa7b">printSt
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

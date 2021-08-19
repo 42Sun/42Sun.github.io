@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-T S P问题简单讨论 - 孙丁一的博客
+Tsp问题简单讨论 - 孙丁一的博客
 </title>
 
 
@@ -444,7 +444,7 @@ T S P问题简单讨论 - 孙丁一的博客
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
 
 
 <span style="color:#6272a4"># 邻域搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
@@ -469,7 +469,7 @@ T S P问题简单讨论 - 孙丁一的博客
     a<span style="color:#ff79c6">.</span>append(first)
     <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
         length <span style="color:#ff79c6">+=</span> array[a[i]][a[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>]]
-    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;Prim结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>([i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> a]) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
+    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;Prim结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>([i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> a]) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
 
 
 <span style="color:#6272a4"># 贪婪搜索算法的拓展，array为邻接矩阵，first为起点下标，n为城市个数</span>
@@ -506,7 +506,7 @@ T S P问题简单讨论 - 孙丁一的博客
 
     <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, n):
         length <span style="color:#ff79c6">+=</span> array[result[i] <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>][result[i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>]
-    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;Kruskal结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(result) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
+    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;Kruskal结果为 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(result) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;长度 &#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(length))
 
 
 <span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
@@ -565,7 +565,7 @@ Kruskal结果为 [2, 4, 1, 5, 3, 2]长度 18
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

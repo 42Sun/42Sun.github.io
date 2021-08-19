@@ -150,7 +150,7 @@
     </h2>
     <div class="post-data">
         2020.6.28 ・ 
-        共 1876 字，您可能需要 4 分钟阅读
+        共 1872 字，您可能需要 4 分钟阅读
         
     </div>
     
@@ -195,143 +195,143 @@
 <p>如果不希望转义，可以在字符串前面加<code>r</code></p>
 
 <h3 id="简化" class="anchor-link"><a href="#%e7%ae%80%e5%8c%96">简化</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
-<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> * </span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> = </span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c">&#39;</span> <span style="color:#ff79c6">%</span> (a, b, a <span style="color:#ff79c6">*</span> b))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> * </span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> = </span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c">&#39;</span> <span style="color:#ff79c6">%</span> (a, b, a <span style="color:#ff79c6">*</span> b))
 </code></pre></div><p>当然，我们也可以用字符串提供的方法来完成字符串的格式，代码如下所示。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
-<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;{0} * {1} = {2}&#39;</span><span style="color:#ff79c6">.</span>format(a, b, a <span style="color:#ff79c6">*</span> b))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{0}</span><span style="color:#f1fa8c"> * </span><span style="color:#f1fa8c">{1}</span><span style="color:#f1fa8c"> = </span><span style="color:#f1fa8c">{2}</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">.</span>format(a, b, a <span style="color:#ff79c6">*</span> b))
 </code></pre></div><p>Python 3.6以后，格式化字符串还有更为简洁的书写方式，就是在字符串前加上字母<code>f</code>，我们可以使用下面的语法糖来简化上面的代码。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
-<span style="color:#ff79c6">print</span>(f<span style="color:#f1fa8c">&#39;{a} * {b} = {a * b}&#39;</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str1 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello, world!&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">{</span>a<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c"> * </span><span style="color:#f1fa8c">{</span>b<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c"> = </span><span style="color:#f1fa8c">{</span>a <span style="color:#ff79c6">*</span> b<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str1 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;hello, world!&#39;</span>
 <span style="color:#6272a4"># 通过内置函数len计算字符串的长度</span>
-<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(str1)) <span style="color:#6272a4"># 13</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(str1)) <span style="color:#6272a4"># 13</span>
 <span style="color:#6272a4"># 获得字符串首字母大写的拷贝</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>capitalize()) <span style="color:#6272a4"># Hello, world!</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>capitalize()) <span style="color:#6272a4"># Hello, world!</span>
 <span style="color:#6272a4"># 获得字符串每个单词首字母大写的拷贝</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>title()) <span style="color:#6272a4"># Hello, World!</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>title()) <span style="color:#6272a4"># Hello, World!</span>
 <span style="color:#6272a4"># 获得字符串变大写后的拷贝</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>upper()) <span style="color:#6272a4"># HELLO, WORLD!</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>upper()) <span style="color:#6272a4"># HELLO, WORLD!</span>
 <span style="color:#6272a4"># 从字符串中查找子串所在位置</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;or&#39;</span>)) <span style="color:#6272a4"># 8</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;shit&#39;</span>)) <span style="color:#6272a4"># -1</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;or&#39;</span>)) <span style="color:#6272a4"># 8</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#39;shit&#39;</span>)) <span style="color:#6272a4"># -1</span>
 <span style="color:#6272a4"># 与find类似但找不到子串时会引发异常</span>
 <span style="color:#6272a4"># print(str1.index(&#39;or&#39;))</span>
 <span style="color:#6272a4"># print(str1.index(&#39;shit&#39;))</span>
 <span style="color:#6272a4"># 检查字符串是否以指定的字符串开头</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>startswith(<span style="color:#f1fa8c">&#39;He&#39;</span>)) <span style="color:#6272a4"># False</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>startswith(<span style="color:#f1fa8c">&#39;hel&#39;</span>)) <span style="color:#6272a4"># True</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>startswith(<span style="color:#f1fa8c">&#39;He&#39;</span>)) <span style="color:#6272a4"># False</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>startswith(<span style="color:#f1fa8c">&#39;hel&#39;</span>)) <span style="color:#6272a4"># True</span>
 <span style="color:#6272a4"># 检查字符串是否以指定的字符串结尾</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>endswith(<span style="color:#f1fa8c">&#39;!&#39;</span>)) <span style="color:#6272a4"># True</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>endswith(<span style="color:#f1fa8c">&#39;!&#39;</span>)) <span style="color:#6272a4"># True</span>
 <span style="color:#6272a4"># 将字符串以指定的宽度居中并在两侧填充指定的字符</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>center(<span style="color:#bd93f9">50</span>, <span style="color:#f1fa8c">&#39;*&#39;</span>))
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>center(<span style="color:#bd93f9">50</span>, <span style="color:#f1fa8c">&#39;*&#39;</span>))
 <span style="color:#6272a4"># 将字符串以指定的宽度靠右放置左侧填充指定的字符</span>
-<span style="color:#ff79c6">print</span>(str1<span style="color:#ff79c6">.</span>rjust(<span style="color:#bd93f9">50</span>, <span style="color:#f1fa8c">&#39; &#39;</span>))
+<span style="color:#8be9fd;font-style:italic">print</span>(str1<span style="color:#ff79c6">.</span>rjust(<span style="color:#bd93f9">50</span>, <span style="color:#f1fa8c">&#39; &#39;</span>))
 str2 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;abc123456&#39;</span>
 <span style="color:#6272a4"># 检查字符串是否由数字构成</span>
-<span style="color:#ff79c6">print</span>(str2<span style="color:#ff79c6">.</span>isdigit())  <span style="color:#6272a4"># False</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str2<span style="color:#ff79c6">.</span>isdigit())  <span style="color:#6272a4"># False</span>
 <span style="color:#6272a4"># 检查字符串是否以字母构成</span>
-<span style="color:#ff79c6">print</span>(str2<span style="color:#ff79c6">.</span>isalpha())  <span style="color:#6272a4"># False</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str2<span style="color:#ff79c6">.</span>isalpha())  <span style="color:#6272a4"># False</span>
 <span style="color:#6272a4"># 检查字符串是否以数字和字母构成</span>
-<span style="color:#ff79c6">print</span>(str2<span style="color:#ff79c6">.</span>isalnum())  <span style="color:#6272a4"># True</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(str2<span style="color:#ff79c6">.</span>isalnum())  <span style="color:#6272a4"># True</span>
 str3 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;  jackfrued@126.com &#39;</span>
-<span style="color:#ff79c6">print</span>(str3)
+<span style="color:#8be9fd;font-style:italic">print</span>(str3)
 <span style="color:#6272a4"># 获得字符串修剪左右两侧空格之后的拷贝</span>
-<span style="color:#ff79c6">print</span>(str3<span style="color:#ff79c6">.</span>strip())
+<span style="color:#8be9fd;font-style:italic">print</span>(str3<span style="color:#ff79c6">.</span>strip())
 </code></pre></div>
 <h2 id="列表" class="anchor-link"><a href="#%e5%88%97%e8%a1%a8">列表</a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">100</span>]
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># [1, 3, 5, 7, 100]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">100</span>]
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># [1, 3, 5, 7, 100]</span>
 <span style="color:#6272a4"># 乘号表示列表元素的重复</span>
 list2 <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;hello&#39;</span>] <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">3</span>
-<span style="color:#ff79c6">print</span>(list2) <span style="color:#6272a4"># [&#39;hello&#39;, &#39;hello&#39;, &#39;hello&#39;]</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list2) <span style="color:#6272a4"># [&#39;hello&#39;, &#39;hello&#39;, &#39;hello&#39;]</span>
 <span style="color:#6272a4"># 计算列表长度(元素个数)</span>
-<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(list1)) <span style="color:#6272a4"># 5</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(list1)) <span style="color:#6272a4"># 5</span>
 <span style="color:#6272a4"># 下标(索引)运算</span>
-<span style="color:#ff79c6">print</span>(list1[<span style="color:#bd93f9">0</span>]) <span style="color:#6272a4"># 1</span>
-<span style="color:#ff79c6">print</span>(list1[<span style="color:#bd93f9">4</span>]) <span style="color:#6272a4"># 100</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1[<span style="color:#bd93f9">0</span>]) <span style="color:#6272a4"># 1</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1[<span style="color:#bd93f9">4</span>]) <span style="color:#6272a4"># 100</span>
 <span style="color:#6272a4"># print(list1[5])  # IndexError: list index out of range</span>
-<span style="color:#ff79c6">print</span>(list1[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]) <span style="color:#6272a4"># 100</span>
-<span style="color:#ff79c6">print</span>(list1[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">3</span>]) <span style="color:#6272a4"># 5</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]) <span style="color:#6272a4"># 100</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">3</span>]) <span style="color:#6272a4"># 5</span>
 list1[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">300</span>
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># [1, 3, 300, 7, 100]</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># [1, 3, 300, 7, 100]</span>
 <span style="color:#6272a4"># 通过循环用下标遍历列表元素</span>
 <span style="color:#ff79c6">for</span> index <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(list1)):
-    <span style="color:#ff79c6">print</span>(list1[index])
+    <span style="color:#8be9fd;font-style:italic">print</span>(list1[index])
 <span style="color:#6272a4"># 通过for循环遍历列表元素</span>
 <span style="color:#ff79c6">for</span> elem <span style="color:#ff79c6">in</span> list1:
-    <span style="color:#ff79c6">print</span>(elem)
+    <span style="color:#8be9fd;font-style:italic">print</span>(elem)
 <span style="color:#6272a4"># 通过enumerate函数处理列表之后再遍历可以同时获得元素索引和值</span>
 <span style="color:#ff79c6">for</span> index, elem <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">enumerate</span>(list1):
-    <span style="color:#ff79c6">print</span>(index, elem)
+    <span style="color:#8be9fd;font-style:italic">print</span>(index, elem)
 </code></pre></div>
 <h3 id="元素操作" class="anchor-link"><a href="#%e5%85%83%e7%b4%a0%e6%93%8d%e4%bd%9c">元素操作</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">100</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">7</span>, <span style="color:#bd93f9">100</span>]
 <span style="color:#6272a4"># 添加元素</span>
 list1<span style="color:#ff79c6">.</span>append(<span style="color:#bd93f9">200</span>)
 list1<span style="color:#ff79c6">.</span>insert(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">400</span>)
 <span style="color:#6272a4"># 合并两个列表</span>
 <span style="color:#6272a4"># list1.extend([1000, 2000])</span>
 list1 <span style="color:#ff79c6">+=</span> [<span style="color:#bd93f9">1000</span>, <span style="color:#bd93f9">2000</span>]
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000]</span>
-<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(list1)) <span style="color:#6272a4"># 9</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000]</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(list1)) <span style="color:#6272a4"># 9</span>
 <span style="color:#6272a4"># 先通过成员运算判断元素是否在列表中，如果存在就删除该元素</span>
 <span style="color:#ff79c6">if</span> <span style="color:#bd93f9">3</span> <span style="color:#ff79c6">in</span> list1:
 	list1<span style="color:#ff79c6">.</span>remove(<span style="color:#bd93f9">3</span>)
 <span style="color:#ff79c6">if</span> <span style="color:#bd93f9">1234</span> <span style="color:#ff79c6">in</span> list1:
     list1<span style="color:#ff79c6">.</span>remove(<span style="color:#bd93f9">1234</span>)
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># [1, 400, 5, 7, 100, 200, 1000, 2000]</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># [1, 400, 5, 7, 100, 200, 1000, 2000]</span>
 <span style="color:#6272a4"># 从指定的位置删除元素</span>
 list1<span style="color:#ff79c6">.</span>pop(<span style="color:#bd93f9">0</span>)
 list1<span style="color:#ff79c6">.</span>pop(<span style="color:#8be9fd;font-style:italic">len</span>(list1) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>)
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># [400, 5, 7, 100, 200, 1000]</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># [400, 5, 7, 100, 200, 1000]</span>
 <span style="color:#6272a4"># 清空列表元素</span>
 list1<span style="color:#ff79c6">.</span>clear()
-<span style="color:#ff79c6">print</span>(list1) <span style="color:#6272a4"># []</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(list1) <span style="color:#6272a4"># []</span>
 </code></pre></div>
 <h3 id="排序" class="anchor-link"><a href="#%e6%8e%92%e5%ba%8f">排序</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;orange&#39;</span>, <span style="color:#f1fa8c">&#39;apple&#39;</span>, <span style="color:#f1fa8c">&#39;zoo&#39;</span>, <span style="color:#f1fa8c">&#39;internationalization&#39;</span>, <span style="color:#f1fa8c">&#39;blueberry&#39;</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list1 <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;orange&#39;</span>, <span style="color:#f1fa8c">&#39;apple&#39;</span>, <span style="color:#f1fa8c">&#39;zoo&#39;</span>, <span style="color:#f1fa8c">&#39;internationalization&#39;</span>, <span style="color:#f1fa8c">&#39;blueberry&#39;</span>]
 list2 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">sorted</span>(list1)
 <span style="color:#6272a4"># sorted函数返回列表排序后的拷贝不会修改传入的列表</span>
 <span style="color:#6272a4"># 函数的设计就应该像sorted函数一样尽可能不产生副作用</span>
-list3 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">sorted</span>(list1, reverse<span style="color:#ff79c6">=</span>True)
+list3 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">sorted</span>(list1, reverse<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
 <span style="color:#6272a4"># 通过key关键字参数指定根据字符串长度进行排序而不是默认的字母表顺序</span>
 list4 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">sorted</span>(list1, key<span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">len</span>)
-<span style="color:#ff79c6">print</span>(list1)
-<span style="color:#ff79c6">print</span>(list2)
-<span style="color:#ff79c6">print</span>(list3)
-<span style="color:#ff79c6">print</span>(list4)
+<span style="color:#8be9fd;font-style:italic">print</span>(list1)
+<span style="color:#8be9fd;font-style:italic">print</span>(list2)
+<span style="color:#8be9fd;font-style:italic">print</span>(list3)
+<span style="color:#8be9fd;font-style:italic">print</span>(list4)
 <span style="color:#6272a4"># 给列表对象发出排序消息直接在列表对象上进行排序</span>
-list1<span style="color:#ff79c6">.</span>sort(reverse<span style="color:#ff79c6">=</span>True)
-<span style="color:#ff79c6">print</span>(list1)
+list1<span style="color:#ff79c6">.</span>sort(reverse<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
+<span style="color:#8be9fd;font-style:italic">print</span>(list1)
 </code></pre></div>
 <h2 id="元组" class="anchor-link"><a href="#%e5%85%83%e7%bb%84">元组</a></h2>
 <p>与列表类似，不同之处在于元组内的数据不可更改</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># 定义元组</span>
-t <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c">&#39;骆昊&#39;</span>, <span style="color:#bd93f9">38</span>, True, <span style="color:#f1fa8c">&#39;四川成都&#39;</span>)
-<span style="color:#ff79c6">print</span>(t)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># 定义元组</span>
+t <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c">&#39;骆昊&#39;</span>, <span style="color:#bd93f9">38</span>, <span style="color:#ff79c6">True</span>, <span style="color:#f1fa8c">&#39;四川成都&#39;</span>)
+<span style="color:#8be9fd;font-style:italic">print</span>(t)
 <span style="color:#6272a4"># 获取元组中的元素</span>
-<span style="color:#ff79c6">print</span>(t[<span style="color:#bd93f9">0</span>])
-<span style="color:#ff79c6">print</span>(t[<span style="color:#bd93f9">3</span>])
+<span style="color:#8be9fd;font-style:italic">print</span>(t[<span style="color:#bd93f9">0</span>])
+<span style="color:#8be9fd;font-style:italic">print</span>(t[<span style="color:#bd93f9">3</span>])
 <span style="color:#6272a4"># 遍历元组中的值</span>
 <span style="color:#ff79c6">for</span> member <span style="color:#ff79c6">in</span> t:
-    <span style="color:#ff79c6">print</span>(member)
+    <span style="color:#8be9fd;font-style:italic">print</span>(member)
 <span style="color:#6272a4"># 重新给元组赋值</span>
 <span style="color:#6272a4"># t[0] = &#39;王大锤&#39;  # TypeError</span>
 <span style="color:#6272a4"># 变量t重新引用了新的元组原来的元组将被垃圾回收</span>
-t <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c">&#39;王大锤&#39;</span>, <span style="color:#bd93f9">20</span>, True, <span style="color:#f1fa8c">&#39;云南昆明&#39;</span>)
-<span style="color:#ff79c6">print</span>(t)
+t <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c">&#39;王大锤&#39;</span>, <span style="color:#bd93f9">20</span>, <span style="color:#ff79c6">True</span>, <span style="color:#f1fa8c">&#39;云南昆明&#39;</span>)
+<span style="color:#8be9fd;font-style:italic">print</span>(t)
 <span style="color:#6272a4"># 将元组转换成列表</span>
 person <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">list</span>(t)
-<span style="color:#ff79c6">print</span>(person)
+<span style="color:#8be9fd;font-style:italic">print</span>(person)
 <span style="color:#6272a4"># 列表是可以修改它的元素的</span>
 person[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;李小龙&#39;</span>
 person[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">25</span>
-<span style="color:#ff79c6">print</span>(person)
+<span style="color:#8be9fd;font-style:italic">print</span>(person)
 <span style="color:#6272a4"># 将列表转换成元组</span>
 fruits_list <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;apple&#39;</span>, <span style="color:#f1fa8c">&#39;banana&#39;</span>, <span style="color:#f1fa8c">&#39;orange&#39;</span>]
 fruits_tuple <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">tuple</span>(fruits_list)
-<span style="color:#ff79c6">print</span>(fruits_tuple)
+<span style="color:#8be9fd;font-style:italic">print</span>(fruits_tuple)
 </code></pre></div>
 <h3 id="元组的优势" class="anchor-link"><a href="#%e5%85%83%e7%bb%84%e7%9a%84%e4%bc%98%e5%8a%bf">元组的优势</a></h3>
 <ol>
@@ -342,45 +342,45 @@ fruits_tuple <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;fon
 <h2 id="集合" class="anchor-link"><a href="#%e9%9b%86%e5%90%88">集合</a></h2>
 
 <h3 id="集合元素的修改" class="anchor-link"><a href="#%e9%9b%86%e5%90%88%e5%85%83%e7%b4%a0%e7%9a%84%e4%bf%ae%e6%94%b9">集合元素的修改</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set1 <span style="color:#ff79c6">=</span> {<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">2</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set1 <span style="color:#ff79c6">=</span> {<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">3</span>, <span style="color:#bd93f9">2</span>}
 set2 <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">12</span>, <span style="color:#bd93f9">123</span>]
 set1<span style="color:#ff79c6">.</span>remove(<span style="color:#bd93f9">1</span>)
 set1<span style="color:#ff79c6">.</span>update(set2)
 set1<span style="color:#ff79c6">.</span>pop()
-<span style="color:#ff79c6">print</span>(set1)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1)
 </code></pre></div>
 <h3 id="集合运算" class="anchor-link"><a href="#%e9%9b%86%e5%90%88%e8%bf%90%e7%ae%97">集合运算</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># 集合的交集、并集、差集、对称差运算</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">&amp;</span> set2)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># 集合的交集、并集、差集、对称差运算</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">&amp;</span> set2)
 <span style="color:#6272a4"># print(set1.intersection(set2))</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">|</span> set2)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">|</span> set2)
 <span style="color:#6272a4"># print(set1.union(set2))</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">-</span> set2)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">-</span> set2)
 <span style="color:#6272a4"># print(set1.difference(set2))</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">^</span> set2)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">^</span> set2)
 <span style="color:#6272a4"># print(set1.symmetric_difference(set2))</span>
 <span style="color:#6272a4"># 判断子集和超集</span>
-<span style="color:#ff79c6">print</span>(set2 <span style="color:#ff79c6">&lt;=</span> set1)
+<span style="color:#8be9fd;font-style:italic">print</span>(set2 <span style="color:#ff79c6">&lt;=</span> set1)
 <span style="color:#6272a4"># print(set2.issubset(set1))</span>
-<span style="color:#ff79c6">print</span>(set3 <span style="color:#ff79c6">&lt;=</span> set1)
+<span style="color:#8be9fd;font-style:italic">print</span>(set3 <span style="color:#ff79c6">&lt;=</span> set1)
 <span style="color:#6272a4"># print(set3.issubset(set1))</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">&gt;=</span> set2)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">&gt;=</span> set2)
 <span style="color:#6272a4"># print(set1.issuperset(set2))</span>
-<span style="color:#ff79c6">print</span>(set1 <span style="color:#ff79c6">&gt;=</span> set3)
+<span style="color:#8be9fd;font-style:italic">print</span>(set1 <span style="color:#ff79c6">&gt;=</span> set3)
 <span style="color:#6272a4"># print(set1.issuperset(set3))</span>
 </code></pre></div>
 <h2 id="字典" class="anchor-link"><a href="#%e5%ad%97%e5%85%b8">字典</a></h2>
 <p>字典中的每个元素都是键值对的形式存在</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">scores <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;a&#39;</span>: <span style="color:#bd93f9">12</span>, <span style="color:#f1fa8c">&#39;b&#39;</span>: <span style="color:#bd93f9">123</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">scores <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;a&#39;</span>: <span style="color:#bd93f9">12</span>, <span style="color:#f1fa8c">&#39;b&#39;</span>: <span style="color:#bd93f9">123</span>}
 items1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">dict</span>(one<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>, two<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span>, three<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3</span>, four<span style="color:#ff79c6">=</span><span style="color:#bd93f9">4</span>)
 items3 <span style="color:#ff79c6">=</span> {num: num <span style="color:#ff79c6">**</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">for</span> num <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">10</span>)}
-<span style="color:#ff79c6">print</span>(items3)
-<span style="color:#ff79c6">print</span>(scores[<span style="color:#f1fa8c">&#39;a&#39;</span>])
+<span style="color:#8be9fd;font-style:italic">print</span>(items3)
+<span style="color:#8be9fd;font-style:italic">print</span>(scores[<span style="color:#f1fa8c">&#39;a&#39;</span>])
 <span style="color:#ff79c6">for</span> key <span style="color:#ff79c6">in</span> scores:
     <span style="color:#ff79c6">pass</span>
-<span style="color:#ff79c6">print</span>(scores<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;c&#39;</span>,<span style="color:#bd93f9">123123</span>))
-<span style="color:#ff79c6">print</span>(scores<span style="color:#ff79c6">.</span>popitem())
-<span style="color:#ff79c6">print</span>(scores<span style="color:#ff79c6">.</span>pop(<span style="color:#f1fa8c">&#39;a&#39;</span>))
+<span style="color:#8be9fd;font-style:italic">print</span>(scores<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#39;c&#39;</span>,<span style="color:#bd93f9">123123</span>))
+<span style="color:#8be9fd;font-style:italic">print</span>(scores<span style="color:#ff79c6">.</span>popitem())
+<span style="color:#8be9fd;font-style:italic">print</span>(scores<span style="color:#ff79c6">.</span>pop(<span style="color:#f1fa8c">&#39;a&#39;</span>))
 scores<span style="color:#ff79c6">.</span>clear()
 </code></pre></div>
 </div>
@@ -425,7 +425,7 @@ scores<span style="color:#ff79c6">.</span>clear()
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

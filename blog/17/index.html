@@ -186,7 +186,7 @@ Practice3 - 孙丁一的博客
     <ul>
 <li>学生类（Student）:属性：姓名、年龄、数学成绩、英语成绩；方法：构造函数（初始化姓名和年龄），设置成绩，求均分；子类（Newstudent）:属性：政治成绩；方法：构造函数，设置成绩（与父类的设置成绩构成重载），求均分；在main函数中定义子类的对象，调用其所有方法；</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test14</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test14</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     NewStudent a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NewStudent<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Zhang&#34;</span><span style="color:#ff79c6">,</span> 20<span style="color:#ff79c6">);</span>
     a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setGrade</span><span style="color:#ff79c6">(</span>45<span style="color:#ff79c6">,</span> 35<span style="color:#ff79c6">,</span> 77<span style="color:#ff79c6">);</span>
@@ -235,7 +235,7 @@ Practice3 - 孙丁一的博客
 </code></pre></div><ul>
 <li>日期（Date）：属性：年，月，日；方法：设置日期，输出日期；子类（NewDate）：属性：时，秒，分；方法：设置日期（和父类构成重载），输出日期（和父类构成重写，但是要调用父类的输出日期函数）；在main函数中定义子类的对象，调用其所有方法；</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test15</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test15</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     NewDate a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NewDate<span style="color:#ff79c6">();</span>
     a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setDate</span><span style="color:#ff79c6">(</span>2020<span style="color:#ff79c6">,</span> 10<span style="color:#ff79c6">,</span> 19<span style="color:#ff79c6">,</span> 9<span style="color:#ff79c6">,</span> 40<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">);</span>
@@ -281,7 +281,7 @@ Practice3 - 孙丁一的博客
 </code></pre></div><ul>
 <li>父类（Data）：属性：int a,  方法：求绝对值，求阶乘；子类（Newdata）:属性 int n, 方法：求1-n的绝对值和，求1-n的阶乘和；在main函数中定义子类的对象，调用其所有方法；</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test16</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test16</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     NewData a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> NewData<span style="color:#ff79c6">();</span>
     a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">n</span> <span style="color:#ff79c6">=</span> 2<span style="color:#ff79c6">;</span>
@@ -340,7 +340,7 @@ Practice3 - 孙丁一的博客
 </code></pre></div><ul>
 <li>父类（Employee）：属性：姓名、工号、工资；方法：构造函数（初始化姓名、工号），设置工资，输出信息（姓名，工号，工资）；输出等级（工资&gt;5000, 为C，否则为D）；子类（Leader）：属性：等级；方法：设置等级，输出信息（姓名，工号，等级和工资），计算工资（等级为A的，工资+5000；等级为B的，工资增加2000）；在main函数中定义子类的对象，调用其所有方法；</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test17</span> <span style="color:#ff79c6">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test17</span> <span style="color:#ff79c6">{</span>
   <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     Leader a <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Leader<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Zhang&#34;</span><span style="color:#ff79c6">,</span> 123<span style="color:#ff79c6">);</span>
     a<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setPay</span><span style="color:#ff79c6">(</span>5000<span style="color:#ff79c6">);</span>
@@ -437,7 +437,7 @@ Practice3 - 孙丁一的博客
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">

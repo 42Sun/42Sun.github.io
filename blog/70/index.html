@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-Spring I O C - 孙丁一的博客
+Spring Ioc - 孙丁一的博客
 </title>
 
 
@@ -199,13 +199,13 @@ Spring I O C - 孙丁一的博客
 
 <h4 id="p-标签注入" class="anchor-link"><a href="#p-%e6%a0%87%e7%ad%be%e6%b3%a8%e5%85%a5">P 标签注入</a></h4>
 <p>在 Spring 2.5 之后，为了 set 注入的方便，引入了这个方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;org.example.service.UserService&#34;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userService&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;org.example.service.UserService&#34;</span> 
 	<span style="color:#50fa7b">p:name=</span><span style="color:#f1fa8c">&#34;haha&#34;</span>
 	<span style="color:#50fa7b">p:userDao-ref=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span><span style="color:#ff79c6">&gt;</span>
 <span style="color:#ff79c6">&lt;/bean&gt;</span>
 </code></pre></div>
 <h4 id="对于其他类对象" class="anchor-link"><a href="#%e5%af%b9%e4%ba%8e%e5%85%b6%e4%bb%96%e7%b1%bb%e5%af%b9%e8%b1%a1">对于其他类对象</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> org.example.service<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> org.example.service<span style="color:#ff79c6">;</span>
 
 <span style="color:#ff79c6">import</span> org.example.dao.UserDao<span style="color:#ff79c6">;</span>
 
@@ -231,7 +231,7 @@ Spring I O C - 孙丁一的博客
 
 <h4 id="对于内部属性" class="anchor-link"><a href="#%e5%af%b9%e4%ba%8e%e5%86%85%e9%83%a8%e5%b1%9e%e6%80%a7">对于内部属性</a></h4>
 <p>常用有<code>String、Integer、Map、List</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">private</span> String name<span style="color:#ff79c6">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">private</span> String name<span style="color:#ff79c6">;</span>
 
 <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setName</span><span style="color:#ff79c6">(</span>Stringname<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">name</span> <span style="color:#ff79c6">=</span>name<span style="color:#ff79c6">;</span>
@@ -244,13 +244,13 @@ Spring I O C - 孙丁一的博客
 
 <h3 id="构造器注入" class="anchor-link"><a href="#%e6%9e%84%e9%80%a0%e5%99%a8%e6%b3%a8%e5%85%a5">构造器注入</a></h3>
 <p>在构造的地方注入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;constructor-arg</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;构造器中的参数&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;那个参数的Bean id&#34;</span><span style="color:#ff79c6">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;constructor-arg</span> <span style="color:#50fa7b">name=</span><span style="color:#f1fa8c">&#34;构造器中的参数&#34;</span> <span style="color:#50fa7b">ref=</span><span style="color:#f1fa8c">&#34;那个参数的Bean id&#34;</span><span style="color:#ff79c6">/&gt;</span>
 </code></pre></div><p>如果出现循环依赖，需要通过 set 注入解决。</p>
 
 <h3 id="自动注入" class="anchor-link"><a href="#%e8%87%aa%e5%8a%a8%e6%b3%a8%e5%85%a5">自动注入</a></h3>
 
 <h4 id="resource" class="anchor-link"><a href="#resource">@Resource</a></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#ff79c6">&lt;beans</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
        <span style="color:#50fa7b">xmlns:xsi=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
        <span style="color:#50fa7b">xmlns:context=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/context&gt;&#34;</span>
@@ -267,7 +267,7 @@ Spring I O C - 孙丁一的博客
     <span style="color:#ff79c6">&lt;bean</span> <span style="color:#50fa7b">id=</span><span style="color:#f1fa8c">&#34;userDao&#34;</span> <span style="color:#50fa7b">class=</span><span style="color:#f1fa8c">&#34;com.sundingyi.dao.UserDao&#34;</span><span style="color:#ff79c6">/&gt;</span>
 <span style="color:#ff79c6">&lt;/beans&gt;</span>
 </code></pre></div><p>在配置文件中如此书写，另外，在需要的类中添加<code>@Resource</code>关键字</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 注入 UserDao
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 注入 UserDao
 </span><span style="color:#6272a4"></span>    @Resource
     <span style="color:#8be9fd;font-style:italic">private</span> UserDao userDao<span style="color:#ff79c6">;</span>
     <span style="color:#6272a4">//set
@@ -306,7 +306,7 @@ Spring I O C - 孙丁一的博客
 <p>@Component: 用在任意层</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">&lt;?</span>xml version<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span><span style="color:#ff79c6">?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">&lt;?</span>xml version<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;1.0&#34;</span> encoding<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span><span style="color:#ff79c6">?&gt;</span>
 <span style="color:#ff79c6">&lt;</span>beans xmlns<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/beans&gt;&#34;</span>
        xmlns<span style="color:#ff79c6">:</span>xsi<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;</span>
        xmlns<span style="color:#ff79c6">:</span>context<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&lt;http://www.springframework.org/schema/context&gt;&#34;</span>
@@ -400,7 +400,7 @@ Spring I O C - 孙丁一的博客
         
 
 
-<script src="https://sundingyi.com/js/bundle.2ee571453a8980175e10bda96bda797cc9c4e2e745e488df68d50cef5deb57ff.js" integrity="sha256-LuVxRTqJgBdeEL2pa9p5fMnE4udF5IjfaNUM713rV/8="></script>
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
 
 
 <script type="application/javascript">
