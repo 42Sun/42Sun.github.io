@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Aug 2021 19:37:14 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Aug 2021 21:57:47 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 204</title>
+      <link>https://sundingyi.com/blog/111/</link>
+      <pubDate>Fri, 20 Aug 2021 21:57:47 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/111/</guid>
+      <description>204 给定一个三角形 triangle ，找出自顶向下的最小路径和。 每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 202-203</title>
       <link>https://sundingyi.com/blog/110/</link>
