@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 206 207 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 206-207 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/113/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/113/">每日LeetCode 206-207</a>
+    </h2>
+    <div class="post-data">
+        2021.8.22 ・ 
+        共 734 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="206" class="anchor-link"><a href="#206">206</a></h2>
+<p>给你一个二叉树的根节点 <code>root</code> ，树中每个节点都存放有一个 <code>0</code> 到 <code>9</code> 之间的数字。</p>
+<p>每条从根节点到叶节点的路径都代表一个数字：</p>
+<ul>
+<li>例如，从根节点到叶节点的路径 <code>1 -&gt; 2 -&gt; 3</code> 表示数字 <code>123</code> 。</li>
+</ul>
+<p>计算从根节点到叶节点生成的 <strong>所有数字之和</strong> 。</p>
+<p><strong>叶节点</strong> 是指没有子节点的节点。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">sumNumbers</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">return</span> dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">dfs</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> temp<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> temp <span style="color:#ff79c6">*</span> 10 <span style="color:#ff79c6">+</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">&amp;&amp;</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">,</span> result<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">,</span> result<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="207" class="anchor-link"><a href="#207">207</a></h2>
+<p>给你一个 <code>m x n</code> 的矩阵 <code>board</code> ，由若干字符 <code>'X'</code> 和 <code>'O'</code> ，找到所有被 <code>'X'</code> 围绕的区域，并将这些区域里所有的 <code>'O'</code> 用 <code>'X'</code> 填充。</p>
+<pre><code>输入：board = [[&quot;X&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;O&quot;,&quot;O&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;X&quot;,&quot;O&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;O&quot;,&quot;X&quot;,&quot;X&quot;]]
+输出：[[&quot;X&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;X&quot;,&quot;X&quot;,&quot;X&quot;],[&quot;X&quot;,&quot;O&quot;,&quot;X&quot;,&quot;X&quot;]]
+解释：被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">;</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">solve</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">[][]</span> board<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        n <span style="color:#ff79c6">=</span> board<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>n <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+        m <span style="color:#ff79c6">=</span> board<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">);</span>
+            dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">,</span> m <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> m <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">);</span>
+            dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> n <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> m<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;O&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;X&#39;</span><span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;M&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    board<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;O&#39;</span><span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">dfs</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">[][]</span> board<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">||</span> x <span style="color:#ff79c6">&gt;=</span> n <span style="color:#ff79c6">||</span> y <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">||</span> y <span style="color:#ff79c6">&gt;=</span> m <span style="color:#ff79c6">||</span> board<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">][</span>y<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;O&#39;</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        board<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">][</span>y<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;M&#39;</span><span style="color:#ff79c6">;</span>
+        dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> x <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">,</span> y<span style="color:#ff79c6">);</span>
+        dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> x <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">,</span> y<span style="color:#ff79c6">);</span>
+        dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> x<span style="color:#ff79c6">,</span> y <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">);</span>
+        dfs<span style="color:#ff79c6">(</span>board<span style="color:#ff79c6">,</span> x<span style="color:#ff79c6">,</span> y <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
