@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Aug 2021 21:57:56 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Aug 2021 20:34:30 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>每日LeetCode 214</title>
+      <link>https://sundingyi.com/blog/119/</link>
+      <pubDate>Tue, 31 Aug 2021 20:34:30 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/119/</guid>
+      <description>214 运用你所掌握的数据结构，设计和实现一个 LRU (最近最少使用) 缓存机制 。 实现 LRUCache 类： LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存 int get(int key) 如果关键字 key 存在于缓存</description>
     </item>
     
     <item>
