@@ -6,7 +6,16 @@
     <description>Recent content in 文章 on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Sep 2021 21:36:28 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Sep 2021 23:17:10 +0800</lastBuildDate><atom:link href="https://sundingyi.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 216</title>
+      <link>https://sundingyi.com/blog/121/</link>
+      <pubDate>Thu, 02 Sep 2021 23:17:10 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/121/</guid>
+      <description>216 给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。 示例 1: 输入: [2,3,-2,4] 输出: 6 解</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 215</title>
       <link>https://sundingyi.com/blog/215/</link>
