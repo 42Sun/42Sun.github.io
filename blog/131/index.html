@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 226 227 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 226-227 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/131/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/131/">每日LeetCode 226-227</a>
+    </h2>
+    <div class="post-data">
+        2021.9.15 ・ 
+        共 636 字，您可能需要 2 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="226" class="anchor-link"><a href="#226">226</a></h2>
+<p><strong><a href="https://baike.baidu.com/item/%E5%AD%97%E5%85%B8%E6%A0%91/9825209?fr=aladdin">Trie</a></strong>（发音类似 &ldquo;try&rdquo;）或者说 <strong>前缀树</strong> 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。</p>
+<p>请你实现 Trie 类：</p>
+<ul>
+<li><code>Trie()</code> 初始化前缀树对象。</li>
+<li><code>void insert(String word)</code> 向前缀树中插入字符串 <code>word</code> 。</li>
+<li><code>boolean search(String word)</code> 如果字符串 <code>word</code> 在前缀树中，返回 <code>true</code>（即，在检索之前已经插入）；否则，返回 <code>false</code> 。</li>
+<li><code>boolean startsWith(String prefix)</code> 如果之前已经插入的字符串 <code>word</code> 的前缀之一为 <code>prefix</code> ，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<pre><code>输入
+[&quot;Trie&quot;, &quot;insert&quot;, &quot;search&quot;, &quot;search&quot;, &quot;startsWith&quot;, &quot;insert&quot;, &quot;search&quot;]
+[[], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;]]
+输出
+[null, null, true, false, true, null, true]
+
+解释
+Trie trie = new Trie();
+trie.insert(&quot;apple&quot;);
+trie.search(&quot;apple&quot;);   // 返回 True
+trie.search(&quot;app&quot;);     // 返回 False
+trie.startsWith(&quot;app&quot;); // 返回 True
+trie.insert(&quot;app&quot;);
+trie.search(&quot;app&quot;);     // 返回 True
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Trie</span> <span style="color:#ff79c6">{</span>
+
+    <span style="color:#8be9fd;font-style:italic">private</span> Trie<span style="color:#ff79c6">[]</span> children<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">boolean</span> isEnd<span style="color:#ff79c6">;</span>
+
+    <span style="color:#6272a4">/** Initialize your data structure here. */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">Trie</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        children <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Trie<span style="color:#ff79c6">[</span>26<span style="color:#ff79c6">];</span>
+        isEnd <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/** Inserts a word into the trie. */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">insert</span><span style="color:#ff79c6">(</span>String word<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Trie node <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> word<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">char</span> ch <span style="color:#ff79c6">=</span> word<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            <span style="color:#8be9fd">int</span> index <span style="color:#ff79c6">=</span> ch <span style="color:#ff79c6">-</span> <span style="color:#f1fa8c">&#39;a&#39;</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">[</span>index<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">[</span>index<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Trie<span style="color:#ff79c6">();</span>
+            <span style="color:#ff79c6">}</span>
+            node <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">[</span>index<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+        node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isEnd</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/** Returns if the word is in the trie. */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">search</span><span style="color:#ff79c6">(</span>String word<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Trie node <span style="color:#ff79c6">=</span> searchPrefix<span style="color:#ff79c6">(</span>word<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> node <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span> <span style="color:#ff79c6">&amp;&amp;</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isEnd</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">/**
+</span><span style="color:#6272a4">     * Returns if there is any word in the trie that starts with the given prefix.
+</span><span style="color:#6272a4">     */</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">startsWith</span><span style="color:#ff79c6">(</span>String prefix<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Trie node <span style="color:#ff79c6">=</span> searchPrefix<span style="color:#ff79c6">(</span>prefix<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> node <span style="color:#ff79c6">!=</span> nullE<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">private</span> Trie <span style="color:#50fa7b">searchPrefix</span><span style="color:#ff79c6">(</span>String prefix<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Trie node <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> prefix<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">char</span> ch <span style="color:#ff79c6">=</span> prefix<span style="color:#ff79c6">.</span><span style="color:#50fa7b">charAt</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+            <span style="color:#8be9fd">int</span> index <span style="color:#ff79c6">=</span> ch <span style="color:#ff79c6">-</span> <span style="color:#f1fa8c">&#39;a&#39;</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">[</span>index<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            node <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">children</span><span style="color:#ff79c6">[</span>index<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> node<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+<h2 id="227" class="anchor-link"><a href="#227">227</a></h2>
+<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
+<p>找出该数组中满足其和 <code>≥ target</code> 的长度最小的 <strong>连续子数组</strong> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度**。**如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：target = 7, nums = [2,3,1,2,4,3]
+输出：2
+解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">minSubArrayLen</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> target<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> start <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> end <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MAX_VALUE</span><span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> sum <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>end <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            sum <span style="color:#ff79c6">+=</span> nums<span style="color:#ff79c6">[</span>end<span style="color:#ff79c6">];</span>
+            <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>sum <span style="color:#ff79c6">&gt;=</span> target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                result <span style="color:#ff79c6">=</span> Math<span style="color:#ff79c6">.</span><span style="color:#50fa7b">min</span><span style="color:#ff79c6">(</span>result<span style="color:#ff79c6">,</span> end <span style="color:#ff79c6">-</span> start <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">);</span>
+                sum <span style="color:#ff79c6">-=</span> nums<span style="color:#ff79c6">[</span>start<span style="color:#ff79c6">];</span>
+                start<span style="color:#ff79c6">++;</span>
+            <span style="color:#ff79c6">}</span>
+            end<span style="color:#ff79c6">++;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> result <span style="color:#ff79c6">==</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">MAX_VALUE</span> <span style="color:#ff79c6">?</span> 0 <span style="color:#ff79c6">:</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
