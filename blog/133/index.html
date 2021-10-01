@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 230 231 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 230-231 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/133/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/133/">每日LeetCode 230-231</a>
+    </h2>
+    <div class="post-data">
+        2021.9.18 ・ 
+        共 366 字，您可能需要 1 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="231" class="anchor-link"><a href="#231">231</a></h2>
+<p>给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。</p>
+<p>示例 1:</p>
+<p>输入: nums = [1,1,1,2,2,3], k = 2
+输出: [1,2]
+示例 2:</p>
+<p>输入: nums = [1], k = 1
+输出: [1]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> <span style="color:#50fa7b">topKFrequent</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Map<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">,</span> Integer<span style="color:#ff79c6">&gt;</span> map <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashMap<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> num <span style="color:#ff79c6">:</span> nums<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            map<span style="color:#ff79c6">.</span><span style="color:#50fa7b">put</span><span style="color:#ff79c6">(</span>num<span style="color:#ff79c6">,</span> map<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getOrDefault</span><span style="color:#ff79c6">(</span>num<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+
+        PriorityQueue<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]&gt;</span> queue <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> PriorityQueue<span style="color:#ff79c6">&lt;&gt;((</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> m<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">-&gt;</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> m<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">-</span> n<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">});</span>
+
+        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span>Map<span style="color:#ff79c6">.</span><span style="color:#50fa7b">Entry</span><span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">,</span> Integer<span style="color:#ff79c6">&gt;</span> entry <span style="color:#ff79c6">:</span> map<span style="color:#ff79c6">.</span><span style="color:#50fa7b">entrySet</span><span style="color:#ff79c6">())</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span> key <span style="color:#ff79c6">=</span> entry<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getKey</span><span style="color:#ff79c6">();</span>
+            <span style="color:#8be9fd">int</span> value <span style="color:#ff79c6">=</span> entry<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getValue</span><span style="color:#ff79c6">();</span>
+
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">==</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">peek</span><span style="color:#ff79c6">()[</span>1<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> value<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">poll</span><span style="color:#ff79c6">();</span>
+                    queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offer</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{</span>key<span style="color:#ff79c6">,</span> value<span style="color:#ff79c6">});</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offer</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{</span>key<span style="color:#ff79c6">,</span> value<span style="color:#ff79c6">});</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> result <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>k<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> k<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            result<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> queue<span style="color:#ff79c6">.</span><span style="color:#50fa7b">poll</span><span style="color:#ff79c6">()[</span>0<span style="color:#ff79c6">];</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div><p>小顶堆，用优先队列（PriorityQueue 来实现）</p>
+
+<h2 id="232" class="anchor-link"><a href="#232">232</a></h2>
+<p>给你一个整数 n ，请你找出并返回第 n 个 丑数 。</p>
+<p>丑数 就是只包含质因数 2、3 和/或 5 的正整数。</p>
+<p>示例 1：</p>
+<p>输入：n = 10
+输出：12
+解释：[1, 2, 3, 4, 5, 6, 8, 9, 10, 12] 是由前 10 个丑数组成的序列。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">nthUglyNumber</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> factors <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{</span>2<span style="color:#ff79c6">,</span> 3<span style="color:#ff79c6">,</span> 5<span style="color:#ff79c6">};</span>
+        PriorityQueue<span style="color:#ff79c6">&lt;</span>Long<span style="color:#ff79c6">&gt;</span> heap <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> PriorityQueue<span style="color:#ff79c6">&lt;&gt;();</span>
+        Set<span style="color:#ff79c6">&lt;</span>Long<span style="color:#ff79c6">&gt;</span> appeared <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+        appeared<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>1L<span style="color:#ff79c6">);</span>
+        heap<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offer</span><span style="color:#ff79c6">(</span>1L<span style="color:#ff79c6">);</span>
+        <span style="color:#8be9fd">int</span> res <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">long</span> cur <span style="color:#ff79c6">=</span>  heap<span style="color:#ff79c6">.</span><span style="color:#50fa7b">poll</span><span style="color:#ff79c6">();</span>
+            res <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">)</span> cur<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> factor<span style="color:#ff79c6">:</span> factors<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#8be9fd">long</span> next <span style="color:#ff79c6">=</span> cur <span style="color:#ff79c6">*</span> factor<span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>appeared<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>next<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+                    heap<span style="color:#ff79c6">.</span><span style="color:#50fa7b">offer</span><span style="color:#ff79c6">(</span>next<span style="color:#ff79c6">);</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> res<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
