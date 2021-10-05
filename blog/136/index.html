@@ -10,13 +10,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-每日 Leet Code 234 - 孙丁一的博客
+每日 Leet Code 234 236 - 孙丁一的博客
 </title>
 
 
 
         
-        <meta property="og:title" content="每日LeetCode 234 - 孙丁一的博客" />
+        <meta property="og:title" content="每日LeetCode 234-236 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
 <meta property="og:url" content="https://sundingyi.com/blog/136/"/>
@@ -146,11 +146,11 @@
                 
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
-        <a href="https://sundingyi.com/blog/136/">每日LeetCode 234</a>
+        <a href="https://sundingyi.com/blog/136/">每日LeetCode 234-236</a>
     </h2>
     <div class="post-data">
         2021.10.5 ・ 
-        共 336 字，您可能需要 1 分钟阅读
+        共 801 字，您可能需要 2 分钟阅读
         
     </div>
     
@@ -249,6 +249,56 @@
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>摩尔投票，两两抵抗</p>
 
+<h2 id="235" class="anchor-link"><a href="#235">235</a></h2>
+<p>给定一个二叉搜索树的根节点 <code>root</code> ，和一个整数 <code>k</code> ，请你设计一个算法查找其中第 <code>k</code> 个最小元素（从 1 开始计数）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">kthSmallest</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        Deque<span style="color:#ff79c6">&lt;</span>TreeNode<span style="color:#ff79c6">&gt;</span> stack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> LinkedList<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">push</span><span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">);</span>
+                root <span style="color:#ff79c6">=</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            root <span style="color:#ff79c6">=</span> stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">pop</span><span style="color:#ff79c6">();</span>
+            k<span style="color:#ff79c6">--;</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>k <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            root <span style="color:#ff79c6">=</span> root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div><p>二叉搜索树的中序遍历是递增序列，每次进行比对K即可。</p>
+
+<h2 id="236" class="anchor-link"><a href="#236">236</a></h2>
+<p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    TreeNode ans<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> TreeNode <span style="color:#50fa7b">lowestCommonAncestor</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">,</span> TreeNode p<span style="color:#ff79c6">,</span> TreeNode q<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">,</span> p<span style="color:#ff79c6">,</span> q<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">dfs</span><span style="color:#ff79c6">(</span>TreeNode root<span style="color:#ff79c6">,</span> TreeNode p<span style="color:#ff79c6">,</span> TreeNode q<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#6272a4">// 左子树是否含有 p 或 q
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd">boolean</span> l <span style="color:#ff79c6">=</span> dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">left</span><span style="color:#ff79c6">,</span> p<span style="color:#ff79c6">,</span> q<span style="color:#ff79c6">);</span>
+        <span style="color:#6272a4">// 右子树是否含有 p 或 q
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd">boolean</span> r <span style="color:#ff79c6">=</span> dfs<span style="color:#ff79c6">(</span>root<span style="color:#ff79c6">.</span><span style="color:#50fa7b">right</span><span style="color:#ff79c6">,</span> p<span style="color:#ff79c6">,</span> q<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">((</span>l <span style="color:#ff79c6">&amp;&amp;</span> r<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">((</span>l <span style="color:#ff79c6">||</span> r<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> p <span style="color:#ff79c6">||</span> root <span style="color:#ff79c6">==</span> q<span style="color:#ff79c6">)))</span> <span style="color:#ff79c6">{</span>
+            ans <span style="color:#ff79c6">=</span> root<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> l <span style="color:#ff79c6">||</span> r <span style="color:#ff79c6">||</span> <span style="color:#ff79c6">(</span>root <span style="color:#ff79c6">==</span> p <span style="color:#ff79c6">||</span> root <span style="color:#ff79c6">==</span> q<span style="color:#ff79c6">);</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></div>
 </div>
 <script src="https://utteranc.es/client.js"
     repo="42Sun/blogcomment"
