@@ -6,7 +6,16 @@
     <description>Recent content in LeetCode on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 05 Oct 2021 19:33:07 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Oct 2021 20:05:17 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日LeetCode 238</title>
+      <link>https://sundingyi.com/blog/138/</link>
+      <pubDate>Wed, 06 Oct 2021 20:05:17 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/138/</guid>
+      <description>238 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右</description>
+    </item>
+    
     <item>
       <title>每日LeetCode 237</title>
       <link>https://sundingyi.com/blog/137/</link>
