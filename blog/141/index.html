@@ -150,7 +150,7 @@
     </h2>
     <div class="post-data">
         2022.1.14 ・ 
-        共 1041 字，您可能需要 3 分钟阅读
+        共 1191 字，您可能需要 3 分钟阅读
         
     </div>
     
@@ -260,7 +260,27 @@ B = [2,5,6],       n = 3</p>
         <span style="color:#8be9fd">int</span> cur <span style="color:#ff79c6">=</span> length <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>cur <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
             <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>pa <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">&amp;&amp;</span> pb <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-…        <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>cur <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    A<span style="color:#ff79c6">[</span>cur<span style="color:#ff79c6">--]</span> <span style="color:#ff79c6">=</span> B<span style="color:#ff79c6">[</span>pb<span style="color:#ff79c6">--];</span>
+                <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span> 
+
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>pb <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">&amp;&amp;</span> pa <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>cur <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    A<span style="color:#ff79c6">[</span>cur<span style="color:#ff79c6">--]</span> <span style="color:#ff79c6">=</span> A<span style="color:#ff79c6">[</span>pa<span style="color:#ff79c6">--];</span>
+                <span style="color:#ff79c6">}</span>
+                <span style="color:#ff79c6">return</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>A<span style="color:#ff79c6">[</span>pa<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;=</span> B<span style="color:#ff79c6">[</span>pb<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+                A<span style="color:#ff79c6">[</span>cur<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> A<span style="color:#ff79c6">[</span>pa<span style="color:#ff79c6">];</span>
+                pa<span style="color:#ff79c6">--;</span>
+            <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                A<span style="color:#ff79c6">[</span>cur<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> B<span style="color:#ff79c6">[</span>pb<span style="color:#ff79c6">];</span>
+                pb<span style="color:#ff79c6">--;</span>
+            <span style="color:#ff79c6">}</span>
+            cur<span style="color:#ff79c6">--;</span>
+        <span style="color:#ff79c6">}</span>
     <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
 </code></pre></div><p>双指针，由于 a 数组有足够的空间，还有一个指针指向当前在的位置。双指针指向需要排序的两个数组。（美团一面）</p>
@@ -279,7 +299,37 @@ B = [2,5,6],       n = 3</p>
 
         <span style="color:#8be9fd">int</span> rows <span style="color:#ff79c6">=</span> matrix<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
         <span style="color:#8be9fd">int</span> columns <span style="color:#ff79c6">=</span> matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
-…<span style="color:#ff79c6">}</span>
+        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> columns <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> top <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> buttom <span style="color:#ff79c6">=</span> rows <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span>
+
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;=</span> right <span style="color:#ff79c6">&amp;&amp;</span> top <span style="color:#ff79c6">&lt;=</span> buttom<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> c <span style="color:#ff79c6">=</span> left<span style="color:#ff79c6">;</span> c <span style="color:#ff79c6">&lt;=</span> right<span style="color:#ff79c6">;</span> c<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>top<span style="color:#ff79c6">][</span>c<span style="color:#ff79c6">]);</span>
+            <span style="color:#ff79c6">}</span>
+
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> r <span style="color:#ff79c6">=</span> top <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span> r <span style="color:#ff79c6">&lt;=</span> buttom<span style="color:#ff79c6">;</span> r<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>r<span style="color:#ff79c6">][</span>right<span style="color:#ff79c6">]);</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;</span> right <span style="color:#ff79c6">&amp;&amp;</span> top <span style="color:#ff79c6">&lt;</span> buttom<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> c <span style="color:#ff79c6">=</span> right <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span> c <span style="color:#ff79c6">&gt;=</span> left<span style="color:#ff79c6">;</span> c<span style="color:#ff79c6">--)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>buttom<span style="color:#ff79c6">][</span>c<span style="color:#ff79c6">]);</span>
+            <span style="color:#ff79c6">}</span>
+
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> r <span style="color:#ff79c6">=</span> buttom <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span> r <span style="color:#ff79c6">&gt;=</span> top <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span> r<span style="color:#ff79c6">--)</span> <span style="color:#ff79c6">{</span>
+                ans<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>r<span style="color:#ff79c6">][</span>left<span style="color:#ff79c6">]);</span>
+            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+            
+            left<span style="color:#ff79c6">++;</span>
+            right<span style="color:#ff79c6">--;</span>
+            top<span style="color:#ff79c6">++;</span>
+            buttom<span style="color:#ff79c6">--;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></div><p>简单的模拟一层一层就好，注意开头和起始的位置，和当遇到只有一层或一列的情况应该怎么特殊处理（用一个 if 判断一下就好了）。</p>
 
 </div>
