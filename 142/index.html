@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+每日 Leet Code 245 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="每日LeetCode 245 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/142/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+                <h1 class="bold-title is-1">每日LeetCode 245</h1>
+                
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+    <div class="container markdown top-pad">
+        
+<h2 id="245" class="anchor-link"><a href="#245">245</a></h2>
+<p>给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。</p>
+<p>请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
+<p>示例 1:</p>
+<p>输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">findKthLargest</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> k<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> heapSize <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        buildMaxHeap<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> heapSize<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&gt;=</span> nums<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">-</span> k <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">--)</span> <span style="color:#ff79c6">{</span>
+            swap<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">);</span>
+            heapSize<span style="color:#ff79c6">--;</span>
+            heapify<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">,</span> heapSize<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> nums<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">];</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">buildMaxHeap</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> heapSize<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> heapSize <span style="color:#ff79c6">/</span> 2 <span style="color:#ff79c6">-</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&gt;=</span> 0<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">--)</span> <span style="color:#ff79c6">{</span>
+            heapify<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">,</span> heapSize<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">heapify</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> heapSize<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> left <span style="color:#ff79c6">=</span> i <span style="color:#ff79c6">*</span> 2 <span style="color:#ff79c6">+</span> 1<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> right <span style="color:#ff79c6">=</span> i <span style="color:#ff79c6">*</span> 2 <span style="color:#ff79c6">+</span> 2<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> largest <span style="color:#ff79c6">=</span> i<span style="color:#ff79c6">;</span>
+
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>left <span style="color:#ff79c6">&lt;</span> heapSize <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>left<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;</span> nums<span style="color:#ff79c6">[</span>largest<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+            largest <span style="color:#ff79c6">=</span> left<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>right <span style="color:#ff79c6">&lt;</span> heapSize <span style="color:#ff79c6">&amp;&amp;</span> nums<span style="color:#ff79c6">[</span>right<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&gt;</span> nums<span style="color:#ff79c6">[</span>largest<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">{</span>
+            largest <span style="color:#ff79c6">=</span> right<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>largest <span style="color:#ff79c6">!=</span> i<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            swap<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> largest<span style="color:#ff79c6">,</span> i<span style="color:#ff79c6">);</span>
+            heapify<span style="color:#ff79c6">(</span>nums<span style="color:#ff79c6">,</span> largest<span style="color:#ff79c6">,</span> heapSize<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">swap</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> nums<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> a<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> b<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> temp <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>a<span style="color:#ff79c6">];</span>
+        nums<span style="color:#ff79c6">[</span>a<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> nums<span style="color:#ff79c6">[</span>b<span style="color:#ff79c6">];</span>
+        nums<span style="color:#ff79c6">[</span>b<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> temp<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+
+</code></pre></div><p>可以维护一个大根堆，需要第几个最大的值，就删掉前几个更大的值就好了。</p>
+<ol>
+<li>
+<p>用一个数组创建一个大根堆</p>
+<p>先把这个数组当作是一个满二叉树，我们不需要调整这个二叉树的叶子结点，因为一个满二叉树的叶子结点比内部节点多 1 个，设这个满二叉树的节点数为 n ，所以只需要从第 n / 2 - 1 开始就可以了，这是最后一个内部节点。然后进行循环就好了。</p>
+</li>
+<li>
+<p>维护这个大根堆</p>
+<p>有一个当前的节点，根据性质，这个节点的左子节点是 i * 2 + 1, 这个节点的右子节点是 i * 2 + 2, 从这三个节点里选出最大的，作为当前的最大点，然后再依次向下即可。</p>
+</li>
+<li>
+<p>删除节点</p>
+<p>当我们的大根堆维护完了之后，那么就只需要执行对应的几次删除节点操作即可，把最大的和最小的进行替换，同时维护堆大小，然后再维护一次即可，最后根就是答案。</p>
+</li>
+</ol>
+
+    </div>
+    
+    
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
