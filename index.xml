@@ -26,12 +26,12 @@
     </item>
     
     <item>
-      <title>每日LeetCode241</title>
-      <link>https://sundingyi.com/blog/0/</link>
+      <title>每日LeetCode247-248</title>
+      <link>https://sundingyi.com/blog/144/</link>
       <pubDate>Thu, 20 Jan 2022 19:37:58 +0800</pubDate>
       
-      <guid>https://sundingyi.com/blog/0/</guid>
-      <description></description>
+      <guid>https://sundingyi.com/blog/144/</guid>
+      <description>241 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下： F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中</description>
     </item>
     
     <item>
