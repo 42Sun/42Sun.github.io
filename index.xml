@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 24 Jan 2022 20:10:58 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 19:05:04 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -26,12 +26,21 @@
     </item>
     
     <item>
+      <title>每日LeetCode251-252</title>
+      <link>https://sundingyi.com/blog/146/</link>
+      <pubDate>Tue, 25 Jan 2022 19:05:04 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/146/</guid>
+      <description>251 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。 答案需要取模 1e9+7（1000000007</description>
+    </item>
+    
+    <item>
       <title>每日LeetCode249</title>
       <link>https://sundingyi.com/blog/145/</link>
       <pubDate>Mon, 24 Jan 2022 20:10:58 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/145/</guid>
-      <description>249 堆箱子。给你一堆n个箱子，箱子宽 wi、深 di、高 hi。箱子不能翻转，将箱子堆起来时，下面箱子的宽度、高度和深度必须大于上面的箱子。实现一种</description>
+      <description>250 堆箱子。给你一堆n个箱子，箱子宽 wi、深 di、高 hi。箱子不能翻转，将箱子堆起来时，下面箱子的宽度、高度和深度必须大于上面的箱子。实现一种</description>
     </item>
     
     <item>
@@ -40,7 +49,7 @@
       <pubDate>Thu, 20 Jan 2022 19:37:58 +0800</pubDate>
       
       <guid>https://sundingyi.com/blog/144/</guid>
-      <description>247 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下： F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中</description>
+      <description>248 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下： F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中</description>
     </item>
     
     <item>
