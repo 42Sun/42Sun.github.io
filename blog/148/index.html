@@ -10,16 +10,16 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-Spring - 孙丁一的博客
+构造器注入还是setter注入 - 孙丁一的博客
 </title>
 
-<link href="/tags/spring/index.xml" rel="alternate" type="application/rss+xml" title="孙丁一的博客" />
+
 
         
-        <meta property="og:title" content="Spring - 孙丁一的博客" />
+        <meta property="og:title" content="构造器注入还是setter注入 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
-<meta property="og:url" content="https://sundingyi.com/tags/spring/"/>
+<meta property="og:url" content="https://sundingyi.com/blog/148/"/>
 <meta property="og:site_name" content="孙丁一的博客"/>
 
 
@@ -58,7 +58,9 @@ Spring - 孙丁一的博客
             
             <div class="container hero ">
                 
-    <h1 class="bold-title is-1">Tag: spring</h1>
+
+<h1 class="bold-title is-1">文章</h1>
+
 
             </div>
             
@@ -142,29 +144,79 @@ Spring - 孙丁一的博客
 
 
                 
-    <div class="container">
-        <ul>
-            
-            
-            <li>
-                <a href="https://sundingyi.com/blog/148/">2022.6.27 | 构造器注入还是setter注入</a>
-            </li>
-            
-            
-            
-            <li>
-                <a href="https://sundingyi.com/blog/73/">2021.4.17 | SpringAOP</a>
-            </li>
-            
-            
-            
-            <li>
-                <a href="https://sundingyi.com/blog/70/">2021.4.16 | Spring IOC</a>
-            </li>
-            
-            
-        </ul>
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/148/">构造器注入还是setter注入</a>
+    </h2>
+    <div class="post-data">
+        2022.6.27 ・ 
+        共 459 字，您可能需要 1 分钟阅读
+        
     </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/spring">
+             Spring</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    <p>一个经常会遇到的问题，在使用 Spring 作为容器管理 Bean 的时候的依赖问题。</p>
+<p>在 Spring Framework 6.0 的文档中介绍如下。</p>
+<blockquote>
+<p>Since you can mix constructor-based and setter-based DI,  it is a good rule of thumb to use constructors for mandatory dependencies and setter methods or configuration methods for optional dependencies. Note that use of the <a href="https://docs.spring.io/spring-framework/docs/6.0.0-SNAPSHOT/reference/html/core.html#beans-autowired-annotation">@Autowired</a> annotation on a setter method can be used to make the property be a required dependency; however,  constructor injection with programmatic validation of arguments is preferable.</p>
+<p>The Spring team generally advocates constructor injection,  as it lets you implement application components as immutable objects and ensures that required dependencies are not  <code>null</code> . Furthermore,  constructor-injected components are always returned to the client (calling) code in a fully initialized state. As a side note,  a large number of constructor arguments is a bad code smell,  implying that the class likely has too many responsibilities and should be refactored to better address proper separation of concerns.</p>
+<p>Setter injection should primarily only be used for optional dependencies that can be assigned reasonable default values within the class. Otherwise,  not-null checks must be performed everywhere the code uses the dependency. One benefit of setter injection is that setter methods make objects of that class amenable to reconfiguration or re-injection later. Management through <a href="https://docs.spring.io/spring-framework/docs/6.0.0-SNAPSHOT/reference/html/integration.html#jmx">JMX MBeans</a> is therefore a compelling use case for setter injection.</p>
+<p>Use the DI style that makes the most sense for a particular class. Sometimes,  when dealing with third-party classes for which you do not have the source,  the choice is made for you. For example,  if a third-party class does not expose any setter methods,  then constructor injection may be the only available form of DI.</p>
+</blockquote>
+<p>大致意思：</p>
+<ol>
+<li>强制依赖通过构造器的形式或setter 带 @Autowired注解，可选依赖使用 setter。</li>
+<li>更推荐构造器，有几个优点。
+<ol>
+<li>确保依赖 final。</li>
+<li>确保依赖不为空。</li>
+<li>在被使用的时候是完全初始化的。</li>
+</ol>
+</li>
+<li>不要对大量参数使用构造器注入。考虑重构。</li>
+<li>setter 注入用于可选依赖，对使用的地方进行非空检查。优点是可以重复注入。</li>
+<li>随机应变。</li>
+</ol>
+
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
 
 
                 

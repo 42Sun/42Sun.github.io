@@ -6,7 +6,16 @@
     <description>Recent content in Spring on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Apr 2021 15:12:22 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 17:31:40 +0800</lastBuildDate><atom:link href="https://sundingyi.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>构造器注入还是setter注入</title>
+      <link>https://sundingyi.com/blog/148/</link>
+      <pubDate>Mon, 27 Jun 2022 17:31:40 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/148/</guid>
+      <description>一个经常会遇到的问题，在使用 Spring 作为容器管理 Bean 的时候的依赖问题。 在 Spring Framework 6.0 的文档中介绍如下。 Since you can mix constructor-based and setter-based DI, it is a good rule of thumb to use constructors for mandatory dependencies and setter methods or configuration</description>
+    </item>
+    
     <item>
       <title>SpringAOP</title>
       <link>https://sundingyi.com/blog/73/</link>
