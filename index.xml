@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Jun 2022 17:31:40 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 19:24:39 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>LeetCode每日一题</title>
+      <link>https://sundingyi.com/blog/149/</link>
+      <pubDate>Fri, 15 Jul 2022 19:24:39 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/149/</guid>
+      <description>558 四叉树交集 class Solution { public Node intersect(Node quadTree1, Node quadTree2) { if (quadTree1.isLeaf) { if (quadTree1.val == true) { return quadTree1; } else { return quadTree2; } } if (quadTree2.isLeaf) { if (quadTree2.val == true) { return quadTree2; } else { return quadTree1; } } Node topLeft = intersect(quadTree1.topLeft, quadTree2.topLeft); Node topRight = intersect(quadTree1.topRight, quadTree2.topRight); Node bottomLeft = intersect(quadTree1.bottomLeft, quadTree2.bottomLeft); Node bottomRight = intersect(quadTree1.bottomRight, quadTree2.bottomRight);</description>
     </item>
     
     <item>
