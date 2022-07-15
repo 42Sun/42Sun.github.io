@@ -10,13 +10,13 @@
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="含哺而熙，鼓腹而游">
 <title>
-每日 Leet Code 149 - 孙丁一的博客
+Leet Code每日一题 - 孙丁一的博客
 </title>
 
 
 
         
-        <meta property="og:title" content="每日LeetCode 149 - 孙丁一的博客" />
+        <meta property="og:title" content="LeetCode每日一题 - 孙丁一的博客" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="含哺而熙，鼓腹而游"/>
 <meta property="og:url" content="https://sundingyi.com/blog/149/"/>
@@ -146,11 +146,11 @@
                 
 <div class="container">
     <h2 class="title is-1 top-pad strong-post-title">
-        <a href="https://sundingyi.com/blog/149/">每日LeetCode 149</a>
+        <a href="https://sundingyi.com/blog/149/">LeetCode每日一题</a>
     </h2>
     <div class="post-data">
-        2021.5.2 ・ 
-        共 350 字，您可能需要 1 分钟阅读
+        2022.7.15 ・ 
+        共 151 字，您可能需要 1 分钟阅读
         
     </div>
     
@@ -184,58 +184,49 @@
 
 <div class="container markdown top-pad">
     
-<h2 id="149" class="anchor-link"><a href="#149">149</a></h2>
-<p>给定一个 <code>*m* x *n*</code> 的矩阵，如果一个元素为 <strong>0</strong> ，则将其所在行和列的所有元素都设为 <strong>0</strong> 。请使用 <strong><a href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 算法**。**</p>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>一个直观的解决方案是使用  <code>O(*m**n*)</code> 的额外空间，但这并不是一个好的解决方案。</li>
-<li>一个简单的改进方案是使用 <code>O(*m* + *n*)</code> 的额外空间，但这仍然不是最好的解决方案。</li>
-<li>你能想出一个仅使用常量空间的解决方案吗？</li>
-</ul>
-<pre tabindex="0"><code>输入：matrix = [[1,1,1],[1,0,1],[1,1,1]]
-输出：[[1,0,1],[0,0,0],[1,0,1]]
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
-    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setZeroes</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> matrix<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-        <span style="color:#8be9fd">int</span> xLength <span style="color:#ff79c6">=</span> matrix<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
-        <span style="color:#8be9fd">int</span> yLength <span style="color:#ff79c6">=</span> matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
-        <span style="color:#8be9fd">boolean</span> x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">,</span> y <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> xLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+<h2 id="558-四叉树交集" class="anchor-link"><a href="#558-%e5%9b%9b%e5%8f%89%e6%a0%91%e4%ba%a4%e9%9b%86">558 四叉树交集</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> Node <span style="color:#50fa7b">intersect</span><span style="color:#ff79c6">(</span>Node quadTree1<span style="color:#ff79c6">,</span> Node quadTree2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> quadTree1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> quadTree2<span style="color:#ff79c6">;</span>
             <span style="color:#ff79c6">}</span>
         <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> yLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                y <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> quadTree2<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">return</span> quadTree1<span style="color:#ff79c6">;</span>
             <span style="color:#ff79c6">}</span>
         <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> yLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> xLength<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                    matrix<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">][</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
-                <span style="color:#ff79c6">}</span>
-            <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> yLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 1<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> xLength<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>matrix<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">][</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0 <span style="color:#ff79c6">||</span> matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                    matrix<span style="color:#ff79c6">[</span>j<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
-                <span style="color:#ff79c6">}</span>
-            <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> xLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-                matrix<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>0<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">}</span>
-        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>y<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> yLength<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
-                matrix<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">}</span>
+
+        Node topLeft <span style="color:#ff79c6">=</span> intersect<span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">topLeft</span><span style="color:#ff79c6">,</span> quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">topLeft</span><span style="color:#ff79c6">);</span>
+        Node topRight <span style="color:#ff79c6">=</span> intersect<span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">topRight</span><span style="color:#ff79c6">,</span> quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">topRight</span><span style="color:#ff79c6">);</span>
+        Node bottomLeft <span style="color:#ff79c6">=</span> intersect<span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">bottomLeft</span><span style="color:#ff79c6">,</span> quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">bottomLeft</span><span style="color:#ff79c6">);</span>
+        Node bottomRight <span style="color:#ff79c6">=</span> intersect<span style="color:#ff79c6">(</span>quadTree1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">bottomRight</span><span style="color:#ff79c6">,</span> quadTree2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">bottomRight</span><span style="color:#ff79c6">);</span>
+
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                topRight<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                bottomLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                bottomRight<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isLeaf</span> <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">true</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> topRight<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> bottomLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> bottomRight<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">&amp;&amp;</span>
+                topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span> <span style="color:#ff79c6">==</span> bottomRight<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span>
+        <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> Node<span style="color:#ff79c6">(</span>topLeft<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> Node<span style="color:#ff79c6">(</span><span style="color:#ff79c6">false</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">,</span> topLeft<span style="color:#ff79c6">,</span> topRight<span style="color:#ff79c6">,</span> bottomLeft<span style="color:#ff79c6">,</span> bottomRight<span style="color:#ff79c6">);</span>
         <span style="color:#ff79c6">}</span>
     <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
-</code></pre></div>
+
+
+</code></pre></div><p>递归解法。递归最开始应该考虑最后的情况，逐渐往前推动逻辑。</p>
+
 </div>
 <script src="https://utteranc.es/client.js"
     repo="42Sun/blogcomment"
