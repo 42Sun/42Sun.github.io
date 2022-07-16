@@ -6,7 +6,7 @@
     <description>Recent content on 孙丁一的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Jul 2022 19:24:39 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Jul 2022 18:26:25 +0800</lastBuildDate><atom:link href="https://sundingyi.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>照片</title>
       <link>https://sundingyi.com/projects/photography/</link>
@@ -23,6 +23,15 @@
       
       <guid>https://sundingyi.com/projects/design/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>LeetCode每日一题</title>
+      <link>https://sundingyi.com/blog/150/</link>
+      <pubDate>Sat, 16 Jul 2022 18:26:25 +0800</pubDate>
+      
+      <guid>https://sundingyi.com/blog/150/</guid>
+      <description>剑指 Offer II 041. 滑动窗口的平均值 给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。 实现 MovingAverage 类： MovingAverage(int size) 用窗口大小 size</description>
     </item>
     
     <item>
