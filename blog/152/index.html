@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="含哺而熙，鼓腹而游">
+<title>
+Leet Code每日一题 - 孙丁一的博客
+</title>
+
+
+
+        
+        <meta property="og:title" content="LeetCode每日一题 - 孙丁一的博客" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="含哺而熙，鼓腹而游"/>
+<meta property="og:url" content="https://sundingyi.com/blog/152/"/>
+<meta property="og:site_name" content="孙丁一的博客"/>
+
+
+
+
+<meta property="og:image" content="https://sundingyi.com/home/Slice.svg"/>
+
+<meta property="og:image" content="https://sundingyi.com/home/about.png"/>
+
+
+
+
+        
+<link rel="shortcut icon" href="https://pic.downk.cc/item/5fe42cf53ffa7d37b362cfc7.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.5930f02880cbad2cc304ef25da7a053f789376d106e46aa40327c75d8816b9a6.css" integrity="sha256-WTDwKIDLrSzDBO8l2noFP3iTdtEG5GqkAyfHXYgWuaY=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero ">
+                
+
+<h1 class="bold-title is-1">文章</h1>
+
+
+            </div>
+            
+            <div class="section ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/#%E6%96%87%E7%AB%A0">
+                
+                文章
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#%E5%9B%BE">
+                
+                图
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#about">
+                
+                关于
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="/#contact">
+                
+                与我联系
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://pan.sundingyi.com/">
+                
+                网盘
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://www.douban.com/people/104121744/">
+                
+                豆瓣主页
+                
+            </a>
+            
+            
+            
+            <a class="navbar-item" href="https://sundingyi.com/index.xml">
+                
+                RSS
+                
+            </a>
+            
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="https://sundingyi.com/blog/152/">LeetCode每日一题</a>
+    </h2>
+    <div class="post-data">
+        2022.7.18 ・ 
+        共 368 字，您可能需要 1 分钟阅读
+        
+    </div>
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+     <p>
+         Tags: 
+          
+           <a href="/tags/leetcode">
+             LeetCode</a>
+         
+        </p>
+      
+    
+      
+    
+</div>
+
+<div class="container markdown top-pad">
+    
+<h2 id="749-隔离病毒" class="anchor-link"><a href="#749-%e9%9a%94%e7%a6%bb%e7%97%85%e6%af%92">749 隔离病毒</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> directions <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{{</span>1<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">},</span> <span style="color:#ff79c6">{-</span>1<span style="color:#ff79c6">,</span> 0<span style="color:#ff79c6">},</span> <span style="color:#ff79c6">{</span>0<span style="color:#ff79c6">,</span> 1<span style="color:#ff79c6">},</span> <span style="color:#ff79c6">{</span>0<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">}};</span>
+    <span style="color:#8be9fd">int</span> m<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd">int</span> n<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd">int</span> result <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> g<span style="color:#ff79c6">;</span>
+
+    <span style="color:#8be9fd">boolean</span><span style="color:#ff79c6">[][]</span> visited<span style="color:#ff79c6">;</span>
+
+
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">containVirus</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> isInfected<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        g <span style="color:#ff79c6">=</span> isInfected<span style="color:#ff79c6">;</span>
+        m <span style="color:#ff79c6">=</span> g<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+        n <span style="color:#ff79c6">=</span> g<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">].</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>
+
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span> count <span style="color:#ff79c6">=</span> getCount<span style="color:#ff79c6">();</span>
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>count <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">break</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            result <span style="color:#ff79c6">+=</span> count<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+
+        <span style="color:#ff79c6">return</span> result<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">getCount</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">{</span>
+        visited <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span><span style="color:#ff79c6">[</span>m<span style="color:#ff79c6">][</span>n<span style="color:#ff79c6">];</span>
+        <span style="color:#8be9fd">int</span> max <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">;</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        <span style="color:#6272a4">// 连通块点集
+</span><span style="color:#6272a4"></span>        List<span style="color:#ff79c6">&lt;</span>Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> l1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+        <span style="color:#6272a4">// 连通块的候选感染点集
+</span><span style="color:#6272a4"></span>        List<span style="color:#ff79c6">&lt;</span>Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;&gt;</span> l2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">&lt;&gt;();</span>
+
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> m<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>g<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 1 <span style="color:#ff79c6">&amp;&amp;</span> visited<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> s1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+                    Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> s2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> HashSet<span style="color:#ff79c6">&lt;&gt;();</span>
+                    <span style="color:#8be9fd">int</span> b <span style="color:#ff79c6">=</span> bfs<span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">,</span> j<span style="color:#ff79c6">,</span> s1<span style="color:#ff79c6">,</span> s2<span style="color:#ff79c6">),</span> a <span style="color:#ff79c6">=</span> s2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span>
+                    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>a <span style="color:#ff79c6">&gt;</span> max<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                        max <span style="color:#ff79c6">=</span> a<span style="color:#ff79c6">;</span>
+                        ans <span style="color:#ff79c6">=</span> b<span style="color:#ff79c6">;</span>
+                    <span style="color:#ff79c6">}</span>
+                    l1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>s1<span style="color:#ff79c6">);</span>
+                    l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>s2<span style="color:#ff79c6">);</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">();</span> i<span style="color:#ff79c6">++)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> loc <span style="color:#ff79c6">:</span> l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">).</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">==</span> max <span style="color:#ff79c6">?</span> l1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">:</span> l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> loc <span style="color:#ff79c6">/</span> n<span style="color:#ff79c6">,</span> y <span style="color:#ff79c6">=</span> loc <span style="color:#ff79c6">%</span> n<span style="color:#ff79c6">;</span>
+                g<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">][</span>y<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">).</span><span style="color:#50fa7b">size</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">==</span> max <span style="color:#ff79c6">?</span> <span style="color:#ff79c6">-</span>1 <span style="color:#ff79c6">:</span> 1<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+
+    <span style="color:#ff79c6">}</span>
+
+    <span style="color:#6272a4">// 返回当前连通块的威胁指数
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">bfs</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">,</span> Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> s1<span style="color:#ff79c6">,</span> Set<span style="color:#ff79c6">&lt;</span>Integer<span style="color:#ff79c6">&gt;</span> s2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd">int</span> ans <span style="color:#ff79c6">=</span> 0<span style="color:#ff79c6">;</span>
+        Deque<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]&gt;</span> d <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayDeque<span style="color:#ff79c6">&lt;&gt;();</span>
+        visited<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+        d<span style="color:#ff79c6">.</span><span style="color:#50fa7b">addLast</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{</span>i<span style="color:#ff79c6">,</span> j<span style="color:#ff79c6">});</span>
+        s1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>i <span style="color:#ff79c6">*</span> n <span style="color:#ff79c6">+</span> j<span style="color:#ff79c6">);</span>
+        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(!</span>d<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">())</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> info <span style="color:#ff79c6">=</span> d<span style="color:#ff79c6">.</span><span style="color:#50fa7b">pollFirst</span><span style="color:#ff79c6">();</span>
+            <span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> info<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">],</span> y <span style="color:#ff79c6">=</span> info<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">];</span>
+            <span style="color:#ff79c6">for</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> di <span style="color:#ff79c6">:</span> directions<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                <span style="color:#8be9fd">int</span> nx <span style="color:#ff79c6">=</span> x <span style="color:#ff79c6">+</span> di<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">],</span> ny <span style="color:#ff79c6">=</span> y <span style="color:#ff79c6">+</span> di<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">],</span> loc <span style="color:#ff79c6">=</span> nx <span style="color:#ff79c6">*</span> n <span style="color:#ff79c6">+</span> ny<span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>nx <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">||</span> nx <span style="color:#ff79c6">&gt;=</span> m <span style="color:#ff79c6">||</span> ny <span style="color:#ff79c6">&lt;</span> 0 <span style="color:#ff79c6">||</span> ny <span style="color:#ff79c6">&gt;=</span> n <span style="color:#ff79c6">||</span> visited<span style="color:#ff79c6">[</span>nx<span style="color:#ff79c6">][</span>ny<span style="color:#ff79c6">])</span> <span style="color:#ff79c6">continue</span><span style="color:#ff79c6">;</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>g<span style="color:#ff79c6">[</span>nx<span style="color:#ff79c6">][</span>ny<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 1<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    s1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>loc<span style="color:#ff79c6">);</span>
+                    visited<span style="color:#ff79c6">[</span>nx<span style="color:#ff79c6">][</span>ny<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+                    d<span style="color:#ff79c6">.</span><span style="color:#50fa7b">addLast</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]{</span>nx<span style="color:#ff79c6">,</span> ny<span style="color:#ff79c6">});</span>
+                <span style="color:#ff79c6">}</span> <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>g<span style="color:#ff79c6">[</span>nx<span style="color:#ff79c6">][</span>ny<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                    s2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>loc<span style="color:#ff79c6">);</span>
+                    ans<span style="color:#ff79c6">++;</span>
+                <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+
+<span style="color:#ff79c6">}</span>
+</code></pre></div><p>主要考察 bfs 或者 dfs，就是繁琐了一点。</p>
+
+</div>
+<script src="https://utteranc.es/client.js"
+    repo="42Sun/blogcomment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        ©2019-2021 <a href="https://sundingyi.com">孙丁一</a>. All rights reserved.
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="https://sundingyi.com/js/bundle.f1741e9868b2f697e71cf8fccfcc12166540999b3d36f8fb9edd0882ba425d55.js" integrity="sha256-8XQemGiy9pfnHPj8z8wSFmVAmZs9Nvj7nt0IgrpCXVU="></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150971789-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
